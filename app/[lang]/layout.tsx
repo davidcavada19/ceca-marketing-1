@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
+import RecaptchaProvider from '@/components/RecaptchaProvider'
 
 type Props = { params: Promise<{ lang: string }> }
 
@@ -86,9 +86,9 @@ export default async function LangLayout({
   const { lang } = await params
   return (
     <div lang={lang}>
-      <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}>
-        {children}
-      </GoogleReCaptchaProvider>
+      <RecaptchaProvider>
+  {children}
+</RecaptchaProvider>
     </div>
   )
 }
