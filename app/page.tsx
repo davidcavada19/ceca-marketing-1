@@ -15,11 +15,7 @@ import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
 
 export default function Home() {
-  const [lang, setLang] = useState<Lang>(
-  (typeof window !== 'undefined'
-    ? new URLSearchParams(window.location.search).get('lang') ?? TWEAK_DEFAULTS.lang
-    : TWEAK_DEFAULTS.lang) as Lang
-)
+  const [lang, setLang] = useState<Lang>(TWEAK_DEFAULTS.lang)
   const [theme]  = useState<ThemeKey>(TWEAK_DEFAULTS.theme)
   const [accent] = useState<AccentKey>(TWEAK_DEFAULTS.accent)
   const [type]   = useState<TypeKey>(TWEAK_DEFAULTS.type)
