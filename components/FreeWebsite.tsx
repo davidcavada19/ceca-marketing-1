@@ -47,8 +47,7 @@ style={{ display: 'flex', alignItems: 'center', gap: 28, marginTop: 24, paddingT
 
         <div className="free-code-box" style={{ border: '1px solid currentColor', background: 'var(--bg)', color: 'var(--fg)', fontFamily: 'var(--mono)', fontSize: 13  }}>
           <div style={{ padding: '10px 14px', borderBottom: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', color: 'var(--muted)', fontSize: 11, letterSpacing: '.08em', textTransform: 'uppercase' }}>
-            <span>~/ceca/deploy</span>
-            <span>{t.free_box_title}</span>
+            <span>~/ceca/deploy · {t.free_box_title}</span>
           </div>
           <div style={{ padding: '18px 18px 22px' }}>
             {t.free_items.map((item, i) => (

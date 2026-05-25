@@ -91,7 +91,7 @@ const SERVICES_EN: ServiceDef[] = [
   {
     n: '04', title: 'Local SEO', metric: 'TOP-3 GMB',
     desc: 'Rank for the searches that matter in your city — maps, organic, and voice.',
-    tags: ['Google Business', 'On-page SEO', 'Directorios', 'Review strategy'],
+    tags: ['Google Business', 'On-page SEO', 'Directories', 'Review strategy'],
     deliverables: ['Full local audit', 'GMB optimisation', 'Online directories', 'Content calendar', 'Monthly ranking report'],
   },
 ]
