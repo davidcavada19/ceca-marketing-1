@@ -90,12 +90,23 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
         return
       }
 
-      setStatus('success')
-      setTimeout(() => {
-        setStatus('idle')
-        setValues({ name: '', phone: '', biz: '', type: '', challenge: '' })
-        setTouched({})
-      }, 4200)
+      const contactRes = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      })
+
+      if (contactRes.ok) {
+        setStatus('success')
+        setTimeout(() => {
+          setStatus('idle')
+          setValues({ name: '', phone: '', biz: '', type: '', challenge: '' })
+          setTouched({})
+        }, 4200)
+      } else {
+        setStatus('blocked')
+        setTimeout(() => setStatus('idle'), 3000)
+      }
 
     } catch {
       setStatus('blocked')
