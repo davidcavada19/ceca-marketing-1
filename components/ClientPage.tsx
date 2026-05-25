@@ -39,7 +39,7 @@ export default function ClientPage({ lang: initialLang }: { lang: 'en' | 'es' })
   return (
     <ThemeProvider accent={accentDef} theme={themeDef} pair={pair}>
       <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--fg)', paddingTop: 0, overflowX: 'hidden', maxWidth: '100vw' }}>
-        <TopBar t={t} lang={lang} setLang={(l) => setLang(l as Lang)} online={t.online} />
+        <TopBar t={t} lang={lang} setLang={(l) => { setLang(l as Lang); window.location.href = `/${l}` }} online={t.online} />
         <Hero t={t} accent={accentDef.color} lang={lang} />
         <Services t={t} accent={accentDef.color} lang={lang} onOpen={setDrawerService} />
         <HowItWorks t={t} lang={lang} />
