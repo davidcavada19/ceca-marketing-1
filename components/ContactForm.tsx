@@ -72,22 +72,26 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
     if (honeypot) return
     if (!formReady || Date.now() - loadTime < 2000) return
     if (!allValid || status !== 'idle') return
-    if (!executeRecaptcha) return
 
     setStatus('loading')
 
     try {
-      const token = await executeRecaptcha('contact_form')
-      const res = await fetch('/api/verify-recaptcha', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token }),
-      })
+      let token = ''
+      if (executeRecaptcha) {
+        try { token = await executeRecaptcha('contact_form') } catch {}
+      }
 
-      if (!res.ok) {
-        setStatus('blocked')
-        setTimeout(() => setStatus('idle'), 3000)
-        return
+      if (token) {
+        const res = await fetch('/api/verify-recaptcha', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token }),
+        })
+        if (!res.ok) {
+          setStatus('blocked')
+          setTimeout(() => setStatus('idle'), 3000)
+          return
+        }
       }
 
       const contactRes = await fetch('/api/contact', {
@@ -112,7 +116,7 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
       setStatus('blocked')
       setTimeout(() => setStatus('idle'), 3000)
     }
-  }, [executeRecaptcha, honeypot, formReady, loadTime, allValid, status])
+  }, [executeRecaptcha, honeypot, formReady, loadTime, allValid, status, values])
 
   const update = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setValues((v) => ({ ...v, [k]: e.target.value }))
@@ -143,12 +147,9 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
           </div>
 
           <form className="reveal" onSubmit={submit} style={{ border: '1px solid var(--line)', background: 'var(--panel)', padding: 32 }}>
-
-            {/* HONEYPOT */}
             <div style={{ position: 'absolute', left: '-9999px', top: '-9999px', opacity: 0, pointerEvents: 'none' }} aria-hidden="true">
               <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
             </div>
-
             <Row>
               <Field label={t.form_name} state={fieldState('name')}>
                 <input value={values.name} onChange={update('name')} onBlur={blur('name')} placeholder={t.form_name_ph} type="text" autoComplete="name" />
@@ -169,13 +170,11 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
             <Field label={t.form_challenge} state={fieldState('challenge')}>
               <textarea value={values.challenge} onChange={update('challenge')} onBlur={blur('challenge')} placeholder={t.form_challenge_ph} rows={4} />
             </Field>
-
             {status === 'blocked' && (
               <p style={{ color: '#e23b3b', fontFamily: 'var(--mono)', fontSize: 11, marginBottom: 8, textAlign: 'center' }}>
                 {lang === 'es' ? 'Verificación fallida. Intenta de nuevo.' : 'Verification failed. Please try again.'}
               </p>
             )}
-
             <div style={{ marginTop: 8 }}>
               <CtaButton lang={lang} type="submit" fullWidth status={status} forceAccent={allValid || status !== 'idle'} onClick={() => {}}>
                 {t.form_cta}
