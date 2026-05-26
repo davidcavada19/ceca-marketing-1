@@ -82,16 +82,13 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
       }
 
       if (token) {
-        const res = await fetch('/api/verify-recaptcha', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token }),
-        })
-        if (!res.ok) {
-          setStatus('blocked')
-          setTimeout(() => setStatus('idle'), 3000)
-          return
-        }
+        try {
+          await fetch('/api/verify-recaptcha', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token }),
+          })
+        } catch {}
       }
 
       const contactRes = await fetch('/api/contact', {
