@@ -147,7 +147,7 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
 
           <form className="reveal" onSubmit={submit} style={{ border: '1px solid var(--line)', background: 'var(--panel)', padding: 32 }}>
             <div style={{ position: 'absolute', left: '-9999px', top: '-9999px', opacity: 0, pointerEvents: 'none' }} aria-hidden="true">
-              <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+              <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="nope" readOnly />
             </div>
             <Row>
               <Field label={t.form_name} state={fieldState('name')}>
