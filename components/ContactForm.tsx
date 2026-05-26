@@ -69,8 +69,6 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
     e.preventDefault()
     setTouched({ name: true, phone: true, biz: true, type: true, challenge: true })
 
-    console.log('submit fired', { honeypot, formReady, allValid, status, timeDiff: Date.now() - loadTime })
-
     if (honeypot) return
     if (!formReady || Date.now() - loadTime < 2000) return
     if (!allValid || status !== 'idle') return
