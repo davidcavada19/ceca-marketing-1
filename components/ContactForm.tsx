@@ -37,7 +37,7 @@ function Field({ label, children, state }: { label: string; children: React.Reac
 
 export default function ContactForm({ t, lang, selectedNiche, formRef }: ContactFormProps) {
   const { executeRecaptcha } = useGoogleReCaptcha()
-  const [values, setValues] = useState({ name: '', phone: '', biz: '', type: '', challenge: '' })
+  const [values, setValues] = useState({ name: '', email: '', phone: '', biz: '', type: '', challenge: '' })
   const [touched, setTouched] = useState<Record<string, boolean>>({})
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'blocked'>('idle')
   const [honeypot, setHoneypot] = useState('')
@@ -51,6 +51,7 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
 
   const valid = {
     name:      values.name.trim().length >= 2,
+    email:     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email),
     phone:     /^[+\d][\d\s()\-]{6,}$/.test(values.phone),
     biz:       values.biz.trim().length >= 2,
     type:      !!values.type,
@@ -67,7 +68,7 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
 
   const submit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault()
-    setTouched({ name: true, phone: true, biz: true, type: true, challenge: true })
+    setTouched({ name: true, email: true, phone: true, biz: true, type: true, challenge: true })
 
     if (honeypot) return
     if (!formReady || Date.now() - loadTime < 2000) return
@@ -101,7 +102,7 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
         setStatus('success')
         setTimeout(() => {
           setStatus('idle')
-          setValues({ name: '', phone: '', biz: '', type: '', challenge: '' })
+          setValues({ name: '', email: '', phone: '', biz: '', type: '', challenge: '' })
           setTouched({})
         }, 4200)
       } else {
@@ -155,6 +156,9 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
                 <input value={values.phone} onChange={update('phone')} onBlur={blur('phone')} placeholder={t.form_phone_ph} type="tel" autoComplete="tel" />
               </Field>
             </Row>
+            <Field label={lang === 'es' ? 'CORREO ELECTRÓNICO' : 'EMAIL'} state={fieldState('email')}>
+              <input value={values.email} onChange={update('email')} onBlur={blur('email')} placeholder={lang === 'es' ? 'tu@email.com' : 'you@email.com'} type="email" autoComplete="email" />
+            </Field>
             <Field label={t.form_biz} state={fieldState('biz')}>
               <input value={values.biz} onChange={update('biz')} onBlur={blur('biz')} placeholder={t.form_biz_ph} type="text" autoComplete="organization" />
             </Field>
