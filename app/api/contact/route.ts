@@ -4,7 +4,7 @@ import { Resend } from 'resend'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: NextRequest) {
-  const { name, phone, biz, type, challenge } = await req.json()
+  const { name, email, phone, biz, type, challenge } = await req.json()
 
   try {
     await resend.emails.send({
@@ -16,6 +16,7 @@ export async function POST(req: NextRequest) {
         <table>
           <tr><td><b>Nombre:</b></td><td>${name}</td></tr>
           <tr><td><b>Teléfono:</b></td><td>${phone}</td></tr>
+          <tr><td><b>Email:</b></td><td>${email}</td></tr>
           <tr><td><b>Negocio:</b></td><td>${biz}</td></tr>
           <tr><td><b>Tipo:</b></td><td>${type}</td></tr>
           <tr><td><b>Desafío:</b></td><td>${challenge}</td></tr>
