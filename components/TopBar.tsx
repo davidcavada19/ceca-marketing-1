@@ -19,7 +19,7 @@ export default function TopBar({ t, lang, setLang, online }: TopBarProps) {
         {/* Logo */}
         <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 16, letterSpacing: '-.01em', color: 'var(--fg)', flexShrink: 0 }}>
           <span style={{ width: 20, height: 20, background: 'var(--accent)', display: 'inline-block', clipPath: 'polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)' }} />
-          <span>CECA<span style={{ color: 'var(--accent)' }}>.</span> Marketing</span>
+          <span style={{ lineHeight: 1.1 }}>CECA<span style={{ color: 'var(--accent)' }}>.</span><br/>Marketing</span>
         </a>
 
         {/* Centro — solo desktop */}
