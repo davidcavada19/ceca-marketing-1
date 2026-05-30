@@ -1,30 +1,18 @@
 'use client'
-import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { SiteContent } from '@/lib/content'
 
 interface FooterProps { t: SiteContent; online: string }
 
 export default function Footer({ t, online }: FooterProps) {
-  const [clock, setClock] = useState('')
-
-  useEffect(() => {
-    const tick = () => {
-      const now = new Date()
-      const hh = String((now.getUTCHours() + 19) % 24).padStart(2, '0')
-      const mm = String(now.getMinutes()).padStart(2, '0')
-      const ss = String(now.getSeconds()).padStart(2, '0')
-      setClock(`${hh}:${mm}:${ss}`)
-    }
-    tick()
-    const id = setInterval(tick, 1000)
-    return () => clearInterval(id)
-  }, [])
-
   return (
     <footer style={{ padding: '60px 28px 28px' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <div style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(40px, 6vw, 50px)', lineHeight: 0.85, letterSpacing: '-.045em', color: 'var(--fg)' }}>
-          CECA<span style={{ color: 'var(--accent)' }}>.</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <Image src="/ceca_logo_icon.png" alt="CECA Marketing" width={56} height={56} style={{ borderRadius: 12 }} />
+          <div style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(40px, 6vw, 50px)', lineHeight: 0.85, letterSpacing: '-.045em', color: 'var(--fg)' }}>
+            CECA<span style={{ color: 'var(--accent)' }}>.</span>
+          </div>
         </div>
         <div className="footer-grid" style={{ marginTop: 32, display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr', gap: 32, paddingTop: 24, borderTop: '1px solid var(--line)', fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--muted)', letterSpacing: '.04em' }}>
           <div>
@@ -80,9 +68,9 @@ export default function Footer({ t, online }: FooterProps) {
               CECAMarketing
             </a>
           </div>
-          <div>
+          <div className="footer-status">
             <div style={{ color: 'var(--fg)', marginBottom: 8 }}>STATUS</div>
-            <div><span style={{ color: 'var(--accent)' }}>●</span> {online} · <span suppressHydrationWarning>{clock}</span></div>
+            <div><span style={{ color: 'var(--accent)' }}>●</span> {online}</div>
             <div>NODE 01–04 ONLINE</div>
           </div>
         </div>

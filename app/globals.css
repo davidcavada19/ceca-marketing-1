@@ -305,4 +305,7 @@ select {
 @media (max-width: 640px) {
   .nav-center { display: none !important; }
 }
+@media (max-width: 640px) {
+  .footer-status { display: none !important; }
+}
 }

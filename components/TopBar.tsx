@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { SiteContent } from '@/lib/content'
 import { smoothScrollTo } from '@/lib/utils'
 import CtaButton from './ui/CtaButton'
@@ -18,8 +18,8 @@ export default function TopBar({ t, lang, setLang, online }: TopBarProps) {
 
         {/* Logo */}
         <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 16, letterSpacing: '-.01em', color: 'var(--fg)', flexShrink: 0 }}>
-          <span style={{ width: 20, height: 20, background: 'var(--accent)', display: 'inline-block', clipPath: 'polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)' }} />
-          <span style={{ lineHeight: 1.1 }}>CECA<span style={{ color: 'var(--accent)' }}>.</span><br/>Marketing</span>
+          <Image src="/ceca_logo_icon.png" alt="CECA" width={36} height={36} style={{ borderRadius: 8 }} />
+<span style={{ lineHeight: 1.1 }}>CECA<span style={{ color: 'var(--accent)' }}>.</span><br/>Marketing</span>
         </a>
 
         {/* Centro — solo desktop */}
