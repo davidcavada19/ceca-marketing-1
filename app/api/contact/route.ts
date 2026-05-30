@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   try {
     await resend.emails.send({
       from: 'CECA Marketing <noreply@cecamarketing.com>',
-      to: 'davidcavada19@gmail.com',
+      to: 'info@cecamarketing.com',
       subject: `Nuevo lead: ${name} — ${biz}`,
       html: `
         <h2>Nuevo contacto desde cecamarketing.com</h2>
