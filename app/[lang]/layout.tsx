@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: 'website',
       locale: isEs ? 'es_US' : 'en_US',
-      url: isEs ? 'https://cecamarketing.com/es' : 'https://cecamarketing.com/en',
+      url: 'https://cecamarketing.com',
       siteName: 'CECA Marketing',
       title: isEs
         ? 'Agencia de Marketing Digital Houston TX | CECA Marketing'
