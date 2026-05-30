@@ -162,7 +162,7 @@ export default function Hero({ t, accent, lang }: HeroProps) {
       <div style={{ maxWidth: 1320, margin: '72px auto 0', padding: '0 28px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', borderTop: '1px solid var(--line)' }} className="stats-grid">
           <StatCell value={48}  suffix="h" label={t.stat1_label} i={0} />
-          <StatCell value={0} label={t.stat2_label} i={1} />
+          <StatCell value={0} suffix="%" label={t.stat2_label} i={1} />
           <StatCell value={100} suffix="%" label={t.stat3_label} i={2} />
           <StatCell value={127} live       label={t.stat4_label} i={3} last />
         </div>
