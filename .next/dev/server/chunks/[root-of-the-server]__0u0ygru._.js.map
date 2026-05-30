@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 76, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/ksda0/Downloads/ceca-marketing%20mejorado/ceca-marketing/proxy.ts"],"sourcesContent":["import { NextResponse } from 'next/server'\r\nimport type { NextRequest } from 'next/server'\r\n\r\nexport function proxy(request: NextRequest) {\r\n  const { pathname } = request.nextUrl\r\n  if (pathname === '/') {\r\n    return NextResponse.redirect(new URL('/en', request.url))\r\n  }\r\n}\r\n\r\nexport const config = {\r\n  matcher: '/',\r\n}"],"names":["proxy","request","pathname","nextUrl","redirect","URL","url","config","matcher"],"mappings":";;;;;;AAAA;;AAGO,SAASA,MAAMC,OAAoB;IACxC,MAAM,EAAEC,QAAQ,EAAE,GAAGD,QAAQE,OAAO;IACpC,IAAID,aAAa,KAAK;QACpB,OAAO,8IAAY,CAACE,QAAQ,CAAC,IAAIC,IAAI,OAAOJ,QAAQK,GAAG;IACzD;AACF;AAEO,MAAMC,SAAS;IACpBC,SAAS;AACX"}}]
+}

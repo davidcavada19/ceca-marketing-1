@@ -12,33 +12,18 @@ interface TopBarProps {
 }
 
 export default function TopBar({ t, lang, setLang, online }: TopBarProps) {
-  const [clock, setClock] = useState('')
-
-  useEffect(() => {
-    const tick = () => {
-      const now = new Date()
-      const hh = String((now.getUTCHours() + 19) % 24).padStart(2, '0')
-      const mm = String(now.getMinutes()).padStart(2, '0')
-      const ss = String(now.getSeconds()).padStart(2, '0')
-      setClock(`${hh}:${mm}:${ss}`)
-    }
-    tick()
-    const id = setInterval(tick, 1000)
-    return () => clearInterval(id)
-  }, [])
-
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 60, background: 'var(--bg)', borderBottom: '1px solid var(--line)' }}>
-      <nav style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', padding: '14px 20px', borderTop: '1px solid var(--line)' }}>
+      <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderTop: '1px solid var(--line)' }}>
 
-        {/* LEFT — Logo */}
-        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 18, letterSpacing: '-.01em', color: 'var(--fg)' }}>
-          <span style={{ width: 22, height: 22, background: 'var(--accent)', display: 'inline-block', clipPath: 'polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)' }} />
+        {/* Logo */}
+        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 16, letterSpacing: '-.01em', color: 'var(--fg)', flexShrink: 0 }}>
+          <span style={{ width: 20, height: 20, background: 'var(--accent)', display: 'inline-block', clipPath: 'polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)' }} />
           <span>CECA<span style={{ color: 'var(--accent)' }}>.</span> Marketing</span>
         </a>
 
-        {/* CENTER — Contacto + Redes */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+        {/* Centro — solo desktop */}
+        <div className="nav-center" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
           <a href="https://wa.me/18329082728" target="_blank" rel="noopener noreferrer"
             style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--fg)', letterSpacing: '.06em', textTransform: 'uppercase', opacity: 0.75 }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366">
@@ -48,15 +33,13 @@ export default function TopBar({ t, lang, setLang, online }: TopBarProps) {
             (832) 908-2728
           </a>
           <span style={{ width: 1, height: 14, background: 'var(--line)' }} />
-          <a href="mailto:info@cecamarketing.com" title="info@cecamarketing.com"
-  style={{ display: 'flex', alignItems: 'center', opacity: 0.75 }}>
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-  </svg>
-</a>
+          <a href="mailto:info@cecamarketing.com" style={{ display: 'flex', alignItems: 'center', opacity: 0.75 }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </a>
           <span style={{ width: 1, height: 14, background: 'var(--line)' }} />
-          <a href="https://www.instagram.com/ceca_marketing" target="_blank" rel="noopener noreferrer"
-            style={{ display: 'flex', alignItems: 'center', opacity: 0.9 }}>
+          <a href="https://www.instagram.com/ceca_marketing" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', opacity: 0.9 }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#ig-nav)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <defs>
                 <linearGradient id="ig-nav" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -70,25 +53,23 @@ export default function TopBar({ t, lang, setLang, online }: TopBarProps) {
               <circle cx="17.5" cy="6.5" r="1" fill="#bc1888" stroke="none"/>
             </svg>
           </a>
-          <a href="https://www.facebook.com/CECAMarketing" target="_blank" rel="noopener noreferrer"
-            style={{ display: 'flex', alignItems: 'center', opacity: 0.9 }}>
+          <a href="https://www.facebook.com/CECAMarketing" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', opacity: 0.9 }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
             </svg>
           </a>
         </div>
 
-        {/* RIGHT — Lang + CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16, justifyContent: 'flex-end' }}>
-          <a href="/portfolio" className="nav-portfolio" style={{ display: 'none' }}>Portfolio</a>
+        {/* Derecha — Lang + CTA */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
           <div style={{ display: 'flex', border: '1px solid var(--line)', fontFamily: 'var(--mono)', fontSize: 11, padding: 2 }}>
             {['en', 'es'].map((L) => (
               <button key={L} onClick={() => setLang(L)}
-                style={{ background: lang === L ? 'var(--accent)' : 'transparent', color: lang === L ? 'var(--accent-contrast)' : 'var(--fg)', padding: '5px 10px', border: 0, cursor: 'pointer', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' }}
+                style={{ background: lang === L ? 'var(--accent)' : 'transparent', color: lang === L ? 'var(--accent-contrast)' : 'var(--fg)', padding: '5px 8px', border: 0, cursor: 'pointer', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' }}
               >{L}</button>
             ))}
           </div>
-          <CtaButton lang={lang} onClick={() => smoothScrollTo('contact')} style={{ padding: '10px 16px', fontSize: 11 }}>
+          <CtaButton lang={lang} onClick={() => smoothScrollTo('contact')} style={{ padding: '9px 12px', fontSize: 10 }}>
             {t.nav_cta}
           </CtaButton>
         </div>

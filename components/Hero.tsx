@@ -134,6 +134,27 @@ export default function Hero({ t, accent, lang }: HeroProps) {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             info@cecamarketing.com
           </a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, justifyContent: 'center' }}>
+            <a href="https://www.instagram.com/ceca_marketing" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', opacity: 0.9 }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#ig-hero-m)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <defs>
+                  <linearGradient id="ig-hero-m" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#f09433"/>
+                    <stop offset="50%" stopColor="#e6683c"/>
+                    <stop offset="100%" stopColor="#bc1888"/>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="#bc1888" stroke="none"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/CECAMarketing" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', opacity: 0.9 }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#1877F2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
 

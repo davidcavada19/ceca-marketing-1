@@ -302,4 +302,7 @@ select {
     border-top: none !important;
     padding-top: 0 !important;
   }
+@media (max-width: 640px) {
+  .nav-center { display: none !important; }
+}
 }

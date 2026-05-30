@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/ksda0/Downloads/ceca-marketing%20mejorado/ceca-marketing/components/GoogleAnalytics.tsx"],"sourcesContent":["'use client'\r\nimport Script from 'next/script'\r\n\r\nexport default function GoogleAnalytics() {\r\n  const GA_ID = process.env.NEXT_PUBLIC_GA_ID\r\n  if (!GA_ID) return null\r\n  return (\r\n    <>\r\n      <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy=\"afterInteractive\" />\r\n      <Script id=\"google-analytics\" strategy=\"afterInteractive\">\r\n        {`\r\n          window.dataLayer = window.dataLayer || [];\r\n          function gtag(){dataLayer.push(arguments);}\r\n          gtag('js', new Date());\r\n          gtag('config', '${GA_ID}');\r\n        `}\r\n      </Script>\r\n    </>\r\n  )\r\n}"],"names":["GoogleAnalytics","GA_ID","src","strategy","id"],"mappings":";;;;;AACA;AADA;;;AAGe,SAASA;IACtB,MAAMC;IACN;;IACA,qBACE;;0BACE,8OAAC,yIAAM;gBAACC,KAAK,CAAC,4CAA4C,EAAED,OAAO;gBAAEE,UAAS;;;;;;0BAC9E,8OAAC,yIAAM;gBAACC,IAAG;gBAAmBD,UAAS;0BACpC,CAAC;;;;0BAIgB,EAAEF,MAAM;QAC1B,CAAC;;;;;;;;AAIT"}}]
+}
