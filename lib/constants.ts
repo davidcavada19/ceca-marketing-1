@@ -13,9 +13,7 @@ export const ACCENTS: Record<string, AccentDef> = {
 
 export interface TypePairing { name: string; display: string; mono: string }
 export const TYPE_PAIRINGS: Record<string, TypePairing> = {
-  inter: { name: 'Inter Tight / JetBrains', display: 'var(--font-inter-tight), system-ui, sans-serif',    mono: 'var(--font-jetbrains), ui-monospace, monospace' },
-  geist: { name: 'Geist / Geist Mono',      display: 'var(--font-geist), system-ui, sans-serif',          mono: 'var(--font-geist-mono), ui-monospace, monospace' },
-  space: { name: 'Space Grotesk / Mono',    display: 'var(--font-space-grotesk), system-ui, sans-serif',  mono: 'var(--font-jetbrains), ui-monospace, monospace' },
+  inter: { name: 'Inter Tight / JetBrains', display: 'var(--font-inter-tight), system-ui, sans-serif', mono: 'var(--font-jetbrains), ui-monospace, monospace' },
 }
 
 export interface ThemeDef {
@@ -30,7 +28,7 @@ export const THEMES: Record<string, ThemeDef> = {
 export type Lang = 'en' | 'es'
 export type ThemeKey = 'light' | 'dark'
 export type AccentKey = 'orange' | 'navy' | 'amber' | 'teal'
-export type TypeKey  = 'inter' | 'geist' | 'space'
+export type TypeKey = 'inter'
 
 export interface Tweaks {
   accent: AccentKey

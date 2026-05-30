@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     metadataBase: new URL('https://cecamarketing.com'),
     title: isEs
-      ? 'CECA Marketing — Agencia de Marketing Digital Houston TX'
-      : 'CECA Marketing — Digital Marketing Agency Houston TX',
+      ? 'Agencia de Marketing Digital Houston TX | CECA Marketing'
+      : 'Digital Marketing Agency Houston TX | CECA Marketing',
     description: isEs
       ? 'Agencia de marketing digital en Houston Texas. Anuncios pagados, SEO local, automatizaciones y sitios web gratis para negocios locales. Enfocados en resultados.'
       : 'Houston digital marketing agency specializing in paid ads, local SEO, automations, and websites for local service businesses. Free website included.',
@@ -55,18 +55,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: isEs ? 'https://cecamarketing.com/es' : 'https://cecamarketing.com/en',
       siteName: 'CECA Marketing',
       title: isEs
-        ? 'CECA Marketing — Agencia de Marketing Digital Houston TX'
-        : 'CECA Marketing — Digital Marketing Agency Houston TX',
+        ? 'Agencia de Marketing Digital Houston TX | CECA Marketing'
+        : 'Digital Marketing Agency Houston TX | CECA Marketing',
       description: isEs
         ? 'Anuncios pagados, SEO local, automatizaciones y sitios web gratis para negocios locales en Houston.'
         : 'Paid ads, local SEO, automations, and free websites for Houston local businesses.',
       images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'CECA Marketing Houston' }],
     },
     alternates: {
-      canonical: isEs ? 'https://cecamarketing.com/es' : 'https://cecamarketing.com/en',
+      canonical: 'https://cecamarketing.com',
       languages: {
         'en-US': 'https://cecamarketing.com/en',
         'es-US': 'https://cecamarketing.com/es',
+        'x-default': 'https://cecamarketing.com',
       },
     },
   }
@@ -85,10 +86,8 @@ export default async function LangLayout({
 }) {
   const { lang } = await params
   return (
-    <div lang={lang}>
-      <RecaptchaProvider>
-  {children}
-</RecaptchaProvider>
-    </div>
+    <RecaptchaProvider>
+      {children}
+    </RecaptchaProvider>
   )
 }
