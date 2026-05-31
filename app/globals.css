@@ -308,4 +308,15 @@ select {
 @media (max-width: 640px) {
   .footer-status { display: none !important; }
 }
+.footer-social-mobile {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .footer-social-mobile {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+  }
+}
 }

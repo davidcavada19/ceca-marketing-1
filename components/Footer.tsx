@@ -18,7 +18,7 @@ export default function Footer({ t, online }: FooterProps) {
           <div>
             <div style={{ color: 'var(--fg)', marginBottom: 8 }}>// {t.footer_tagline}</div>
             <div>© 2026 CECA Marketing. {t.footer_rights}</div>
-<div style={{ display: 'flex', gap: 16, marginTop: 12 }}>
+<div className="footer-social-mobile">
   <a href="https://www.instagram.com/ceca_marketing" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', opacity: 0.9 }}>
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#ig-footer-m)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <defs>
