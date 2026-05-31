@@ -308,6 +308,7 @@ select {
 @media (max-width: 640px) {
   .footer-status { display: none !important; }
 }
+}
 .footer-social-mobile {
   display: none;
 }
@@ -318,5 +319,4 @@ select {
     gap: 16px;
     margin-top: 12px;
   }
-}
 }
