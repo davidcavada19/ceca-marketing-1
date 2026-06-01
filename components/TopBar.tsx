@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { SiteContent } from '@/lib/content'
 import { smoothScrollTo } from '@/lib/utils'
 import CtaButton from './ui/CtaButton'
@@ -7,11 +8,12 @@ import CtaButton from './ui/CtaButton'
 interface TopBarProps {
   t: SiteContent
   lang: string
-  setLang: (l: string) => void
   online: string
 }
 
-export default function TopBar({ t, lang, setLang, online }: TopBarProps) {
+export default function TopBar({ t, lang, online }: TopBarProps) {
+  const router = useRouter()
+
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 60, background: 'var(--bg)', borderBottom: '1px solid var(--line)' }}>
       <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderTop: '1px solid var(--line)' }}>
@@ -19,7 +21,7 @@ export default function TopBar({ t, lang, setLang, online }: TopBarProps) {
         {/* Logo */}
         <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 16, letterSpacing: '-.01em', color: 'var(--fg)', flexShrink: 0 }}>
           <Image src="/ceca_logo_icon.png" alt="CECA" width={36} height={36} style={{ borderRadius: 8 }} />
-<span style={{ lineHeight: 1.1 }}>CECA<span style={{ color: 'var(--accent)' }}>.</span><br/>Marketing</span>
+          <span style={{ lineHeight: 1.1 }}>CECA<span style={{ color: 'var(--accent)' }}>.</span><br/>Marketing</span>
         </a>
 
         {/* Centro — solo desktop */}
@@ -63,8 +65,8 @@ export default function TopBar({ t, lang, setLang, online }: TopBarProps) {
         {/* Derecha — Lang + CTA */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
           <div style={{ display: 'flex', border: '1px solid var(--line)', fontFamily: 'var(--mono)', fontSize: 11, padding: 2 }}>
-            {['en', 'es'].map((L) => (
-              <button key={L} onClick={() => setLang(L)}
+            {(['en', 'es'] as const).map((L) => (
+              <button key={L} onClick={() => router.push(`/${L}`)}
                 style={{ background: lang === L ? 'var(--accent)' : 'transparent', color: lang === L ? 'var(--accent-contrast)' : 'var(--fg)', padding: '5px 8px', border: 0, cursor: 'pointer', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' }}
               >{L}</button>
             ))}

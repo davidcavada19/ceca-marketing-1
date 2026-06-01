@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     languages: {
       'en-US': 'https://cecamarketing.com/en',
       'es-US': 'https://cecamarketing.com/es',
-      'x-default': 'https://cecamarketing.com',
+      'x-default': 'https://cecamarketing.com/en',
     },
   },
 }
