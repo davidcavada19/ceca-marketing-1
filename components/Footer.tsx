@@ -108,7 +108,7 @@ export default function Footer({ t, online }: FooterProps) {
         <div style={{ paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12, fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted)', letterSpacing: '.04em' }}>
           <div>© 2026 CECA Marketing. {t.footer_rights}</div>
           <div style={{ display: 'flex', gap: 20 }}>
-            <a href={`${base}/about`} style={{ color: 'var(--muted)', textDecoration: 'none' }}>Privacy Policy</a>
+            <a href={`${base}/privacy-policy`} style={{ color: 'var(--muted)', textDecoration: 'none' }}>Privacy Policy</a>
             <a href={`${base}/contact`} style={{ color: 'var(--muted)', textDecoration: 'none' }}>Contact</a>
           </div>
         </div>
