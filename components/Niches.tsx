@@ -7,44 +7,44 @@ interface NichesProps { t: SiteContent; lang: string }
 const GROUPS_EN = [
   {
     emoji: '🔧',
-    title: 'Home Services',
-    items: ['HVAC', 'Plumbers', 'Electricians', 'Roofers'],
-  },
-  {
-    emoji: '🏥',
-    title: 'Medical & Aesthetic',
-    items: ['Dentists', 'Med Spas', 'Plastic Surgeons'],
+    title: 'Mechanical Trades',
+    items: ['HVAC', 'Plumbers', 'Electricians'],
   },
   {
     emoji: '🏗️',
-    title: 'Construction & Contractors',
-    items: ['Remodelers', 'Flooring', 'Painters'],
+    title: 'Construction & Exterior',
+    items: ['Roofers', 'General Contractors', 'Remodelers'],
+  },
+  {
+    emoji: '🎨',
+    title: 'Specialty Trades',
+    items: ['Painters', 'Flooring', 'Landscapers'],
   },
 ]
 
 const GROUPS_ES = [
   {
     emoji: '🔧',
-    title: 'Servicios del Hogar',
-    items: ['HVAC', 'Plomeros', 'Electricistas', 'Roofing'],
-  },
-  {
-    emoji: '🏥',
-    title: 'Médico y Estético',
-    items: ['Dentistas', 'Med Spas', 'Cirugía Plástica'],
+    title: 'Oficios Mecánicos',
+    items: ['HVAC', 'Plomeros', 'Electricistas'],
   },
   {
     emoji: '🏗️',
-    title: 'Construcción y Contratistas',
-    items: ['Remodelación', 'Pisos', 'Pintura'],
+    title: 'Construcción y Exterior',
+    items: ['Roofing', 'Contratista General', 'Remodelación'],
+  },
+  {
+    emoji: '🎨',
+    title: 'Oficios Especializados',
+    items: ['Pintura', 'Pisos', 'Jardinería'],
   },
 ]
 
 export default function Niches({ t, lang }: NichesProps) {
   const groups = lang === 'es' ? GROUPS_ES : GROUPS_EN
   const tagline = lang === 'es'
-    ? 'Si tu negocio vende un servicio y necesitas más clientes — somos tu agencia.'
-    : 'If your business sells a service and needs more customers — we\'re built for you.'
+    ? 'Si eres contratista y necesitas más leads y más trabajos cerrados — somos tu agencia.'
+    : "If you're a contractor who needs more leads and more booked jobs — we're built for you."
 
   return (
     <section style={{ padding: '112px 28px', borderBottom: '1px solid var(--line)' }}>
