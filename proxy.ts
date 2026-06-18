@@ -3,11 +3,12 @@ import type { NextRequest } from 'next/server'
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
-  if (pathname === '/') {
-    return NextResponse.redirect(new URL('/en', request.url))
+  if (pathname === '/en') {
+    return NextResponse.redirect(new URL('/', request.url), 301)
   }
+  return NextResponse.next()
 }
 
 export const config = {
-  matcher: '/',
+  matcher: ['/', '/en'],
 }

@@ -16,29 +16,45 @@ const localBusinessSchema = {
   url: 'https://cecamarketing.com',
   logo: 'https://cecamarketing.com/ceca_logo.png',
   image: 'https://cecamarketing.com/og-image.jpg',
-  description: 'Houston digital marketing agency specializing in paid ads, local SEO, automations, and free websites for local service businesses.',
+  description: 'Digital marketing agency for local service businesses specializing in Google Ads management, local SEO services, marketing automation, and website design for contractors.',
   telephone: '+18329082728',
   email: 'info@cecamarketing.com',
+  priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Houston',
     addressRegion: 'TX',
     addressCountry: 'US',
   },
-  areaServed: { '@type': 'City', name: 'Houston' },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 29.7604,
+    longitude: -95.3698,
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Houston', sameAs: 'https://en.wikipedia.org/wiki/Houston' },
+    { '@type': 'State', name: 'Texas', sameAs: 'https://en.wikipedia.org/wiki/Texas' },
+    { '@type': 'Country', name: 'United States' },
+  ],
   sameAs: [
     'https://www.instagram.com/ceca_marketing',
     'https://www.facebook.com/CECAMarketing',
   ],
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '18:00',
+  },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Digital Marketing Services',
+    name: 'Digital Marketing Services for Local Businesses',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Local SEO Houston' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Google Ads Management Houston' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Paid Social Media Ads Houston' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Marketing Automation Houston' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Design Houston TX' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Design for Contractors', description: 'Custom website design for contractors and service businesses. Free with any monthly marketing plan.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Google Ads Management', description: 'Google Ads management for local service businesses built around cost-per-lead targets.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Meta Ads Management', description: 'Facebook and Instagram ads management for contractors and service businesses.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Local SEO Services', description: 'Local SEO services for contractors, HVAC companies, plumbers, roofers, and service businesses.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Marketing Automation Services', description: 'Small business marketing automation including CRM setup, SMS flows, and review automation.' } },
     ],
   },
 }
@@ -83,12 +99,12 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
-  alternates: {
+ alternates: {
     canonical: 'https://cecamarketing.com',
     languages: {
-      'en-US': 'https://cecamarketing.com/en',
-      'es-US': 'https://cecamarketing.com/es',
-      'x-default': 'https://cecamarketing.com/en',
+      'en': 'https://cecamarketing.com',
+      'es': 'https://cecamarketing.com/es',
+      'x-default': 'https://cecamarketing.com',
     },
   },
 }

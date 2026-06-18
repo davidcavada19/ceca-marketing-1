@@ -52,13 +52,13 @@ export default function Hero({ t, accent, lang }: HeroProps) {
       <InteractiveTicker items={t.ticker} />
 
       {/* Desktop layout */}
-      <div className="hero-desktop" style={{ maxWidth: 1320, margin: '0 auto', padding: '56px 28px 0', display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 56, alignItems: 'center' }}>
+      <div className="hero-desktop" style={{ maxWidth: 1520, margin: '0 auto', padding: '80px 28px 80px', display: 'grid', gridTemplateColumns: '1.5fr 0.9fr', gap: 56, alignItems: 'center' }}>
         <div>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, border: '1px solid var(--line)', padding: '6px 12px', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--fg)', letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: 32 }}>
             <span style={{ width: 6, height: 6, borderRadius: 99, background: 'var(--accent)' }} className="blink" />
             <span>{t.badge}</span>
           </div>
-          <h1 style={{ margin: 0, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(48px, 7.5vw, 124px)', lineHeight: 0.92, letterSpacing: '-.035em', color: 'var(--fg)' }}>
+          <h1 style={{ margin: 0, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(36px, 5vw, 80px)', lineHeight: 0.92, letterSpacing: '-.035em', color: 'var(--fg)' }}>
             {t.h1_lines.map((line, i) => (
               <span key={i} style={{ display: 'block' }}>
                 {i === stressIdx
@@ -157,16 +157,6 @@ export default function Hero({ t, accent, lang }: HeroProps) {
           </div>
         </div>
       </div>
-
-      {/* Stats */}
-      <div style={{ maxWidth: 1320, margin: '72px auto 0', padding: '0 28px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', borderTop: '1px solid var(--line)' }} className="stats-grid">
-          <StatCell value={48}  suffix="h" label={t.stat1_label} i={0} />
-          <StatCell value={100} suffix="%" label={t.stat2_label} i={1} />
-          <StatCell value={100} suffix="%" label={t.stat3_label} i={2} />
-          <StatCell value={127} live       label={t.stat4_label} i={3} last />
-        </div>
-      </div>
-    </section>
+      </section>  
   )
 }

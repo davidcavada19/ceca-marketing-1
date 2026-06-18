@@ -1,58 +1,79 @@
 'use client'
-import { useState } from 'react'
-import { SiteContent, NicheDef } from '@/lib/content'
+import { SiteContent } from '@/lib/content'
 import { SectionLabel, H2 } from './ui/SectionLabel'
 
-interface NichesProps { t: SiteContent; selectedNiche: NicheDef | null; onSelectNiche: (n: NicheDef) => void; lang: string }
+interface NichesProps { t: SiteContent; lang: string }
 
-function NicheCard({ n, selected, onSelect, lang }: { n: NicheDef; selected: boolean; onSelect: (n: NicheDef) => void; lang: string }) {
-  const [hover, setHover] = useState(false)
-  const active = hover || selected
-  const verb = lang === 'es' ? 'Seleccionado' : 'Selected'
-  return (
-    <div
-      className={`niche-card${selected ? ' is-selected' : ''}`}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      onClick={() => onSelect(n)}
-      style={{
-        padding: '26px 22px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
-        minHeight: 130, position: 'relative', overflow: 'hidden',
-        background: active ? 'var(--accent)' : 'var(--panel)',
-        color: active ? 'var(--accent-contrast)' : 'var(--fg)',
-        transition: 'background .25s ease, color .25s ease, transform .2s ease',
-        transform: hover ? 'translateY(-2px)' : 'translateY(0)',
-      }}
-    >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <span style={{ fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: '.1em', textTransform: 'uppercase', opacity: 0.6 }}>{n.code}</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" opacity="0.4" />
-          <path className="check-path" d="M7 12l4 4 6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 36 }}>
-        <span style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 18, letterSpacing: '-.01em' }}>{n.name}</span>
-        <span style={{ fontFamily: 'var(--mono)', fontSize: 11, opacity: active ? 1 : 0.5, letterSpacing: '.06em', textTransform: 'uppercase' }}>
-          {selected ? `✓ ${verb}` : '→'}
-        </span>
-      </div>
-    </div>
-  )
-}
+const GROUPS_EN = [
+  {
+    emoji: '🔧',
+    title: 'Home Services',
+    items: ['HVAC', 'Plumbers', 'Electricians', 'Roofers'],
+  },
+  {
+    emoji: '🏥',
+    title: 'Medical & Aesthetic',
+    items: ['Dentists', 'Med Spas', 'Plastic Surgeons'],
+  },
+  {
+    emoji: '🏗️',
+    title: 'Construction & Contractors',
+    items: ['Remodelers', 'Flooring', 'Painters'],
+  },
+]
 
-export default function Niches({ t, selectedNiche, onSelectNiche, lang }: NichesProps) {
+const GROUPS_ES = [
+  {
+    emoji: '🔧',
+    title: 'Servicios del Hogar',
+    items: ['HVAC', 'Plomeros', 'Electricistas', 'Roofing'],
+  },
+  {
+    emoji: '🏥',
+    title: 'Médico y Estético',
+    items: ['Dentistas', 'Med Spas', 'Cirugía Plástica'],
+  },
+  {
+    emoji: '🏗️',
+    title: 'Construcción y Contratistas',
+    items: ['Remodelación', 'Pisos', 'Pintura'],
+  },
+]
+
+export default function Niches({ t, lang }: NichesProps) {
+  const groups = lang === 'es' ? GROUPS_ES : GROUPS_EN
+  const tagline = lang === 'es'
+    ? 'Si tu negocio vende un servicio y necesitas más clientes — somos tu agencia.'
+    : 'If your business sells a service and needs more customers — we\'re built for you.'
+
   return (
     <section style={{ padding: '112px 28px', borderBottom: '1px solid var(--line)' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <SectionLabel label={`// ${t.niches_label}`} num="SEC.04 / 06" />
+      <div style={{ maxWidth: 1520, margin: '0 auto' }}>
+        <SectionLabel label={`// ${t.niches_label}`} num="SEC.03 / 05" />
         <H2 lines={t.niches_title} />
-        <p className="reveal" style={{ maxWidth: 540, marginTop: 24, fontSize: 17, lineHeight: 1.55, color: 'var(--muted)' }}>{t.niches_sub}</p>
-        <div className="reveal niches-grid" style={{ marginTop: 56, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12 }}>
-          {t.niches.map((n) => (
-            <NicheCard key={n.code} n={n} selected={selectedNiche?.code === n.code} onSelect={onSelectNiche} lang={lang} />
+
+        <div className="reveal" style={{ marginTop: 56, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 1, border: '1px solid var(--line)' }}>
+          {groups.map((g) => (
+            <div key={g.title} style={{ padding: '40px 36px', borderRight: '1px solid var(--line)', background: 'var(--panel)' }}>
+              <div style={{ fontSize: 36, marginBottom: 16 }}>{g.emoji}</div>
+              <div style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 20, letterSpacing: '-.02em', color: 'var(--fg)', marginBottom: 16 }}>
+                {g.title}
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {g.items.map((item) => (
+                  <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--muted)', letterSpacing: '.04em' }}>
+                    <span style={{ color: 'var(--accent)', fontSize: 8 }}>◆</span>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
+
+        <p className="reveal" style={{ marginTop: 32, fontSize: 16, color: 'var(--muted)', fontFamily: 'var(--body)', lineHeight: 1.6 }}>
+          {tagline}
+        </p>
       </div>
     </section>
   )

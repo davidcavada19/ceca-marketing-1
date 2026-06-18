@@ -1,82 +1,155 @@
 'use client'
+import { useState } from 'react'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { SiteContent } from '@/lib/content'
-import { smoothScrollTo } from '@/lib/utils'
 import CtaButton from './ui/CtaButton'
 
 interface TopBarProps {
   t: SiteContent
   lang: string
   online: string
+  isRoot?: boolean
 }
 
-export default function TopBar({ t, lang, online }: TopBarProps) {
+export default function TopBar({ t, lang, online, isRoot: isRootProp }: TopBarProps) {
   const router = useRouter()
+  const pathname = usePathname()
+  const [menuOpen, setMenuOpen] = useState(false)
+const isRoot = isRootProp ?? (!pathname.startsWith('/en') && !pathname.startsWith('/es'))
+  const base = isRoot ? '' : `/${lang}`
+
+  const navLinks = [
+    { label: t.nav_home, href: isRoot ? '/' : `/${lang}` },
+    { label: t.nav_about, href: `${base}/about` },
+    { label: t.nav_services, href: `${base}/services` },
+    { label: t.nav_blog, href: `${base}/blog` },
+    { label: t.nav_faq, href: `${base}/faq` },
+    { label: t.nav_contact, href: `${base}/contact` },
+  ]
+
+  const switchLang = (L: string) => {
+    if (L === 'en') {
+      // Si estamos en /es/about → va a /about
+      // Si estamos en /es → va a /
+      const newPath = pathname.replace(/^\/es/, '') || '/'
+      router.push(newPath)
+    } else {
+      // Si estamos en /about → va a /es/about
+      // Si estamos en / → va a /es
+      const newPath = `/es${pathname === '/' ? '' : pathname}`
+      router.push(newPath)
+    }
+  }
 
   return (
-    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 60, background: 'var(--bg)', borderBottom: '1px solid var(--line)' }}>
-      <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderTop: '1px solid var(--line)' }}>
+    <>
+      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 60, background: 'var(--bg)', borderBottom: '1px solid var(--line)' }}>
+        <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderTop: '1px solid var(--line)' }}>
 
-        {/* Logo */}
-        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 16, letterSpacing: '-.01em', color: 'var(--fg)', flexShrink: 0 }}>
-          <Image src="/ceca_logo_icon.png" alt="CECA" width={36} height={36} style={{ borderRadius: 8 }} />
-          <span style={{ lineHeight: 1.1 }}>CECA<span style={{ color: 'var(--accent)' }}>.</span><br/>Marketing</span>
-        </a>
+          {/* Logo */}
+          <a href={isRoot ? '/' : `/${lang}`} style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 16, letterSpacing: '-.01em', color: 'var(--fg)', flexShrink: 0, textDecoration: 'none' }}>
+            <Image src="/ceca_logo_icon.png" alt="CECA" width={36} height={36} style={{ borderRadius: 8 }} />
+            <span style={{ lineHeight: 1.1 }}>CECA<span style={{ color: 'var(--accent)' }}>.</span><br />Marketing</span>
+          </a>
 
-        {/* Centro — solo desktop */}
-        <div className="nav-center" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <a href="https://wa.me/18329082728" target="_blank" rel="noopener noreferrer"
-            style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--fg)', letterSpacing: '.06em', textTransform: 'uppercase', opacity: 0.75 }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.857L.057 23.882l6.19-1.453A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.027-1.384l-.36-.214-3.733.876.936-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/>
-            </svg>
-            (832) 908-2728
-          </a>
-          <span style={{ width: 1, height: 14, background: 'var(--line)' }} />
-          <a href="mailto:info@cecamarketing.com" style={{ display: 'flex', alignItems: 'center', opacity: 0.75 }}>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
-          </a>
-          <span style={{ width: 1, height: 14, background: 'var(--line)' }} />
-          <a href="https://www.instagram.com/ceca_marketing" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', opacity: 0.9 }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#ig-nav)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <defs>
-                <linearGradient id="ig-nav" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#f09433"/>
-                  <stop offset="50%" stopColor="#e6683c"/>
-                  <stop offset="100%" stopColor="#bc1888"/>
-                </linearGradient>
-              </defs>
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="1" fill="#bc1888" stroke="none"/>
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/CECAMarketing" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', opacity: 0.9 }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
-          </a>
-        </div>
-
-        {/* Derecha — Lang + CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
-          <div style={{ display: 'flex', border: '1px solid var(--line)', fontFamily: 'var(--mono)', fontSize: 11, padding: 2 }}>
-            {(['en', 'es'] as const).map((L) => (
-              <button key={L} onClick={() => router.push(`/${L}`)}
-                style={{ background: lang === L ? 'var(--accent)' : 'transparent', color: lang === L ? 'var(--accent-contrast)' : 'var(--fg)', padding: '5px 8px', border: 0, cursor: 'pointer', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' }}
-              >{L}</button>
-            ))}
+          {/* Centro — Nav links (solo desktop) */}
+          <div className="nav-center" style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href
+              return (
+                <a key={link.href} href={link.href} style={{
+                  fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '.06em',
+                  textTransform: 'uppercase', textDecoration: 'none',
+                  color: isActive ? 'var(--accent)' : 'var(--fg)',
+                  opacity: isActive ? 1 : 0.7,
+                  fontWeight: isActive ? 700 : 400,
+                  borderBottom: isActive ? '1px solid var(--accent)' : '1px solid transparent',
+                  paddingBottom: 2, transition: 'opacity .15s, color .15s',
+                }}>
+                  {link.label}
+                </a>
+              )
+            })}
           </div>
-          <CtaButton lang={lang} onClick={() => smoothScrollTo('contact')} style={{ padding: '9px 12px', fontSize: 10 }}>
-            {t.nav_cta}
-          </CtaButton>
-        </div>
 
-      </nav>
-    </div>
+          {/* Derecha — Desktop: Lang + CTA / Mobile: Lang + Hamburger */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+            {/* Lang switcher — siempre visible */}
+            <div style={{ display: 'flex', border: '1px solid var(--line)', fontFamily: 'var(--mono)', fontSize: 11, padding: 2 }}>
+              {(['en', 'es'] as const).map((L) => (
+                <button key={L} onClick={() => switchLang(L)}
+                  style={{ background: lang === L ? 'var(--accent)' : 'transparent', color: lang === L ? 'var(--accent-contrast)' : 'var(--fg)', padding: '5px 8px', border: 0, cursor: 'pointer', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' }}
+                >{L}</button>
+              ))}
+            </div>
+
+            {/* CTA — solo desktop */}
+            <div className="nav-cta-desktop">
+              <CtaButton lang={lang} onClick={() => router.push(`${base}/contact`)} style={{ padding: '9px 12px', fontSize: 10 }}>
+                {t.nav_cta}
+              </CtaButton>
+            </div>
+
+            {/* Hamburger — solo mobile */}
+            <button
+              className="nav-hamburger"
+              onClick={() => setMenuOpen(!menuOpen)}
+              style={{ background: 'transparent', border: '1px solid var(--line)', padding: '7px 9px', cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: 4 }}
+              aria-label="Menu"
+            >
+              <span style={{ display: 'block', width: 18, height: 1.5, background: menuOpen ? 'var(--accent)' : 'var(--fg)', transition: 'transform .2s', transform: menuOpen ? 'rotate(45deg) translate(4px, 4px)' : 'none' }} />
+              <span style={{ display: 'block', width: 18, height: 1.5, background: 'var(--fg)', opacity: menuOpen ? 0 : 1, transition: 'opacity .15s' }} />
+              <span style={{ display: 'block', width: 18, height: 1.5, background: menuOpen ? 'var(--accent)' : 'var(--fg)', transition: 'transform .2s', transform: menuOpen ? 'rotate(-45deg) translate(4px, -4px)' : 'none' }} />
+            </button>
+          </div>
+
+        </nav>
+      </div>
+
+      {/* Mobile menu overlay */}
+      {menuOpen && (
+        <div style={{
+          position: 'fixed', top: 61, left: 0, right: 0, bottom: 0,
+          zIndex: 59, background: 'var(--bg)', borderTop: '1px solid var(--line)',
+          display: 'flex', flexDirection: 'column', padding: '24px 20px', gap: 0,
+        }}
+          onClick={() => setMenuOpen(false)}
+        >
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href
+            return (
+              <a key={link.href} href={link.href} style={{
+                fontFamily: 'var(--mono)', fontSize: 13, letterSpacing: '.08em',
+                textTransform: 'uppercase', textDecoration: 'none',
+                color: isActive ? 'var(--accent)' : 'var(--fg)',
+                fontWeight: isActive ? 700 : 400,
+                padding: '18px 0',
+                borderBottom: '1px solid var(--line)',
+                opacity: isActive ? 1 : 0.8,
+              }}>
+                {link.label}
+              </a>
+            )
+          })}
+          <div style={{ marginTop: 28 }}>
+            <CtaButton lang={lang} onClick={() => { setMenuOpen(false); router.push(`${base}/contact`) }} style={{ width: '100%', padding: '14px', fontSize: 12, textAlign: 'center' }}>
+              {t.nav_cta}
+            </CtaButton>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        .nav-center { display: flex !important; }
+        .nav-cta-desktop { display: block !important; }
+        .nav-hamburger { display: none !important; }
+        @media (max-width: 768px) {
+          .nav-center { display: none !important; }
+          .nav-cta-desktop { display: none !important; }
+          .nav-hamburger { display: flex !important; }
+        }
+      `}</style>
+    </>
   )
 }

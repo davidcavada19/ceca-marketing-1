@@ -9,6 +9,7 @@
   --accent: #f26419;
   --accent-contrast: #ffffff;
   --display: 'Inter Tight', system-ui, sans-serif;
+  --body: 'Inter Tight', system-ui, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 

@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation'
+import ClientPage from '@/components/ClientPage'
 
 export default function Home() {
-  redirect('/en')
+  return <ClientPage lang="en" isRoot={true} />
 }

@@ -1,6 +1,6 @@
 'use client'
 import { useState, useRef, useCallback } from 'react'
-import { ACCENTS, TYPE_PAIRINGS, THEMES, TWEAK_DEFAULTS, type Lang, type ThemeKey, type AccentKey, type TypeKey } from '@/lib/constants'
+import { ACCENTS, TYPE_PAIRINGS, THEMES, TWEAK_DEFAULTS, type ThemeKey, type AccentKey, type TypeKey } from '@/lib/constants'
 import { CECA_CONTENT, type NicheDef, type ServiceDef } from '@/lib/content'
 import { useReveal } from '@/lib/hooks'
 import { smoothScrollTo } from '@/lib/utils'
@@ -14,7 +14,7 @@ import FreeWebsite from '@/components/FreeWebsite'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
 
-export default function ClientPage({ lang }: { lang: 'en' | 'es' }) {
+export default function ClientPage({ lang, isRoot = false }: { lang: 'en' | 'es', isRoot?: boolean }) {
   const [theme]  = useState<ThemeKey>(TWEAK_DEFAULTS.theme)
   const [accent] = useState<AccentKey>(TWEAK_DEFAULTS.accent)
   const [type]   = useState<TypeKey>(TWEAK_DEFAULTS.type)
@@ -38,11 +38,11 @@ export default function ClientPage({ lang }: { lang: 'en' | 'es' }) {
   return (
     <ThemeProvider accent={accentDef} theme={themeDef} pair={pair}>
       <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--fg)', paddingTop: 0, overflowX: 'hidden', maxWidth: '100vw' }}>
-        <TopBar t={t} lang={lang} online={t.online} />
+        <TopBar t={t} lang={lang} online={t.online} isRoot={isRoot} />
         <Hero t={t} accent={accentDef.color} lang={lang} />
         <Services t={t} accent={accentDef.color} lang={lang} onOpen={setDrawerService} />
         <HowItWorks t={t} lang={lang} />
-        <Niches t={t} selectedNiche={selectedNiche} onSelectNiche={handleSelectNiche} lang={lang} />
+        <Niches t={t} lang={lang} />
         <FreeWebsite t={t} lang={lang} />
         <ContactForm t={t} lang={lang} selectedNiche={selectedNiche} formRef={formRef} />
         <Footer t={t} online={t.online} />

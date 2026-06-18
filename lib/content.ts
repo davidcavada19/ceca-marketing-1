@@ -21,11 +21,21 @@ export interface SiteContent {
   cta1: string
   cta2: string
   ticker: string[]
-  // Stats
+  // Stats (kept for backwards compat)
   stat1_label: string
   stat2_label: string
   stat3_label: string
   stat4_label: string
+  // Value strip
+  value_tag1: string
+  value_title1: string
+  value_body1: string
+  value_tag2: string
+  value_title2: string
+  value_body2: string
+  value_tag3: string
+  value_title3: string
+  value_body3: string
   // Services
   services_label: string
   services_title: string[]
@@ -67,12 +77,18 @@ export interface SiteContent {
   // Footer
   footer_tagline: string
   footer_rights: string
+  nav_home: string
+  nav_about: string
+  nav_services: string
+  nav_blog: string
+  nav_faq: string
+  nav_contact: string
 }
 
 const SERVICES_EN: ServiceDef[] = [
   {
     n: '01', title: 'Websites', metric: 'FREE WITH YOUR PLAN',
-    desc: 'Fast, conversion-optimised sites that rank and convert — included free with any marketing plan.',
+    desc: 'Fast, conversion-optimized sites that rank and convert — included free with any marketing plan.',
     tags: ['Design', 'Dev', 'Speed', 'More Clients'],
     deliverables: ['Strategy session', 'Custom single-page site (5 sections)', 'Mobile optimized', 'Speed optimisation', 'Analytics & Search Console'],
   },
@@ -90,7 +106,7 @@ const SERVICES_EN: ServiceDef[] = [
   },
   {
     n: '04', title: 'Local SEO', metric: 'TOP-3 GMB',
-    desc: 'Rank for the searches that matter in your city — maps, organic, and voice.',
+    desc: 'Rank for the searches that matter in your market — maps, organic, and voice.',
     tags: ['Google Business', 'On-page SEO', 'Directories', 'Review strategy'],
     deliverables: ['Full local audit', 'GMB optimisation', 'Online directories', 'Content calendar', 'Monthly ranking report'],
   },
@@ -117,41 +133,52 @@ const SERVICES_ES: ServiceDef[] = [
   },
   {
     n: '04', title: 'SEO Local', metric: 'TOP-3 GMB',
-    desc: 'Posiciónate en las búsquedas que importan en tu ciudad — mapas, orgánico y voz.',
+    desc: 'Posiciónate en las búsquedas que importan en tu mercado — mapas, orgánico y voz.',
     tags: ['Google Business', 'SEO On-page', 'Directorios', 'Estrategia de reseñas'],
     deliverables: ['Auditoría local completa', 'Optimización GMB', 'Directorios online', 'Calendario de contenido', 'Reporte mensual de posiciones'],
   },
-  
-  
 ]
 
 const STEPS_EN: StepDef[] = [
-  { n: '01', title: 'Audit', desc: 'We analyse your current digital footprint, competitors, and quick-win opportunities.', t: '~20 min' },
-  { n: '02', title: 'Build', desc: 'Ads, automations, and your site go live — fast. Most clients are running within 5 days.', t: '~5 days' },
-  { n: '03', title: 'Launch', desc: 'Campaigns switch on. We monitor daily to catch anything early.', t: 'Day 1' },
-  { n: '04', title: 'Optimise', desc: 'Monthly data reviews to cut what\'s losing and double what\'s winning.', t: 'Monthly' },
+  { n: '01', title: 'Audit', desc: 'We analyze your digital presence, competitors, and quick-win opportunities.', t: '~20 min' },
+  { n: '02', title: 'Build', desc: 'Your site, ads, and automations go live — fast. Most clients are running within 5 days.', t: '~5 days' },
+  { n: '03', title: 'Launch', desc: 'Campaigns switch on. We monitor daily to catch everything early.', t: 'Day 1' },
+  { n: '04', title: 'Grow', desc: 'Monthly reviews to cut what loses and double what wins.', t: 'Monthly' },
 ]
 
 const STEPS_ES: StepDef[] = [
   { n: '01', title: 'Auditoría', desc: 'Analizamos tu presencia digital, competidores y oportunidades de victoria rápida.', t: '~20 min' },
-  { n: '02', title: 'Construir', desc: 'Anuncios, automatizaciones y tu sitio en vivo — rápido. La mayoría en 5 días.', t: '~5 días' },
-  { n: '03', title: 'Lanzar', desc: 'Las campañas se activan. Monitoreamos diariamente para detectar todo a tiempo.', t: 'Día 1' },
-  { n: '04', title: 'Optimizar', desc: 'Revisiones mensuales de datos para cortar lo que pierde y duplicar lo que gana.', t: 'Mensual' },
+  { n: '02', title: 'Construir', desc: 'Tu sitio, anuncios y automatizaciones en vivo — rápido. La mayoría en 5 días.', t: '~5 días' },
+  { n: '03', title: 'Lanzar', desc: 'Las campañas se activan. Monitoreamos diariamente desde el día 1.', t: 'Día 1' },
+  { n: '04', title: 'Crecer', desc: 'Revisiones mensuales para cortar lo que pierde y duplicar lo que gana.', t: 'Mensual' },
 ]
 
-const NICHES: NicheDef[] = [
-  { code: 'hvac',      name: 'HVAC' },
-  { code: 'plumbing',  name: 'Plumbing' },
-  { code: 'dental',    name: 'Dental' },
-  { code: 'roofing',   name: 'Roofing' },
-  { code: 'legal',     name: 'Legal' },
-  { code: 'realty',    name: 'Real Estate' },
-  { code: 'med-spa',   name: 'Med Spa' },
-  { code: 'auto',      name: 'Auto' },
-  { code: 'pest',      name: 'Pest Control' },
-  { code: 'electric',  name: 'Electrical' },
-  { code: 'chiro',     name: 'Chiropractic' },
-  { code: 'other',     name: 'Other' },
+const NICHES_EN: NicheDef[] = [
+  { code: 'hvac',            name: 'HVAC' },
+  { code: 'plumbing',        name: 'Plumbers' },
+  { code: 'electrical',      name: 'Electricians' },
+  { code: 'roofing',         name: 'Roofers' },
+  { code: 'dental',          name: 'Dentists' },
+  { code: 'medspa',          name: 'Med Spas' },
+  { code: 'plastic-surgery', name: 'Plastic Surgeons' },
+  { code: 'remodeling',      name: 'Remodelers' },
+  { code: 'flooring',        name: 'Flooring' },
+  { code: 'painting',        name: 'Painters' },
+  { code: 'other',           name: 'Other' },
+]
+
+const NICHES_ES: NicheDef[] = [
+  { code: 'hvac',            name: 'HVAC' },
+  { code: 'plomeria',        name: 'Plomeros' },
+  { code: 'electricistas',   name: 'Electricistas' },
+  { code: 'roofing',         name: 'Roofing' },
+  { code: 'dental',          name: 'Dentistas' },
+  { code: 'medspa',          name: 'Med Spas' },
+  { code: 'cirugia-plastica',name: 'Cirugía Plástica' },
+  { code: 'remodelacion',    name: 'Remodelación' },
+  { code: 'pisos',           name: 'Pisos' },
+  { code: 'pintura',         name: 'Pintura' },
+  { code: 'otro',            name: 'Otro' },
 ]
 
 const FREE_ITEMS_EN = [
@@ -162,6 +189,7 @@ const FREE_ITEMS_EN = [
   'Contact / booking form',
   'Google Analytics setup',
 ]
+
 const FREE_ITEMS_ES = [
   'Sitio web personalizado de una página',
   'Optimizado para celular',
@@ -173,40 +201,49 @@ const FREE_ITEMS_ES = [
 
 export const CECA_CONTENT: Record<string, SiteContent> = {
   en: {
-    nav_cta: 'Get a free audit',
+    nav_cta: 'Get a Free Audit',
     online: 'ONLINE',
-    badge: 'Houston-based · Revenue-focused',
-    h1_lines: ['We grow', 'Houston', 'businesses.'],
-    h1_stress_word: 'Houston',
-    subtitle: 'Paid ads, local SEO, automations, and websites that actually convert — for local businesses that are done playing small.',
-    cta1: 'Get a free audit',
-    cta2: 'See our work',
-    ticker: ['Paid Ads', 'Local SEO', 'Automations', 'Web Design', 'CRM Setup', 'Review Growth', 'Google Ads', 'Meta Ads', 'Lead Gen'],
-    stat1_label: 'Client launch time',
+    badge: 'Digital Marketing Agency · Built for Growth',
+    h1_lines: ['The Digital Marketing', 'Agency Built for', 'Small Business.'],
+    h1_stress_word: 'Small',
+    subtitle: 'Paid ads, local SEO, automations, and websites that convert — for service businesses ready to scale.',
+    cta1: 'Get a Free Audit',
+    cta2: 'See Our Work',
+    ticker: ['Digital Marketing', 'Local SEO', 'Paid Ads', 'Web Design', 'Marketing Automation', 'Lead Generation', 'Google Ads', 'Meta Ads', 'Contractor Marketing', 'Small Business Growth', 'SEO Services', 'Revenue Marketing'],
+    stat1_label: 'Average client launch',
     stat2_label: 'Satisfaction guarantee',
-    stat3_label: 'US-based team',
-    stat4_label: 'Active campaigns',
+    stat3_label: 'Average ROAS',
+    stat4_label: 'Small businesses grown',
+    value_tag1: 'FAST LAUNCH',
+    value_title1: 'Live in 5 business days',
+    value_body1: 'From signed agreement to a live, SEO-ready website — no waiting months, no back-and-forth.',
+    value_tag2: 'PAID ADS · LOCAL SEO',
+    value_title2: 'Ads that pay for themselves',
+    value_body2: 'Google Ads and Meta campaigns built for service businesses — every dollar tracked, every lead counted.',
+    value_tag3: 'AUTOMATIONS',
+    value_title3: 'Systems that run while you work',
+    value_body3: 'Follow-ups, review requests, and booking reminders — automated so you close more jobs without extra work.',
     services_label: 'What we do',
-    services_title: ['Digital Marketing Services', 'in Houston, TX.'],
-    services_sub: 'Every service is designed to work alone or stack together for compounding results.',
+    services_title: ['Full-Service Digital Marketing', 'for Local Businesses.'],
+    services_sub: 'Every service is built around one goal: more revenue for your business.',
     services: SERVICES_EN,
     how_label: 'How it works',
-    how_title: ['How Our Houston Marketing', 'Agency Works.'],
-    how_sub: 'From first call to live campaigns — faster than you think.',
+    how_title: ['From First Call to', 'Live Campaigns — Fast.'],
+    how_sub: 'Most clients are live within 5 days.',
     steps: STEPS_EN,
-    niches_label: 'Who we serve',
-    niches_title: ['Houston Local Service', 'Businesses', 'We Work With.'],
-    niches_sub: 'We know your industry. Select your niche to get a pre-filled discovery call.',
-    niches: NICHES,
-    free_label: 'Free website',
-    free_title: ['Free Website Design', 'for Houston Businesses.'],
-    free_sub: 'Every client gets a fast, custom, conversion-optimised website — included free with any marketing plan. No templates. No drag-and-drop. Real code, real speed.',
-    free_cta: 'Claim your free site',
-    free_note: '* Free with any monthly marketing plan. No contracts.',
+    niches_label: 'Who We Serve',
+    niches_title: ['We Work With Local', 'Service Businesses.'],
+    niches_sub: 'If your business sells a service and needs more customers — we\'re built for you.',
+    niches: NICHES_EN,
+    free_label: 'Free Website',
+    free_title: ['Every Client Gets a', 'Free Custom Website.'],
+    free_sub: 'Fast, conversion-optimized, and built to rank — included free with any digital marketing plan. No templates. No drag-and-drop. Real code, real speed.',
+    free_cta: 'Claim Your Free Website →',
+    free_note: '* Free one-page website (5 sections + contact form + social & WhatsApp integration) included with any monthly marketing plan. Restrictions apply. No contracts.',
     free_box_title: 'deploy log',
     free_items: FREE_ITEMS_EN,
     form_label: 'Contact',
-    form_title: ['Get a Free Marketing', 'Audit in Houston.'],
+    form_title: ['Ready to Grow Your', 'Service Business?'],
     form_name: 'Full name',
     form_name_ph: 'Jane Smith',
     form_phone: 'Phone',
@@ -214,49 +251,64 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
     form_biz: 'Business name',
     form_biz_ph: 'Smith HVAC LLC',
     form_type: 'Business type',
-    form_type_ph: 'Select your niche',
+    form_type_ph: 'Select your industry',
     form_challenge: 'Biggest challenge',
     form_challenge_ph: 'Tell us what\'s not working…',
-    form_cta: 'Send — we respond in <24h',
-    form_note: 'No spam. No pressure. Just a conversation.',
-    footer_tagline: 'Revenue-focused digital marketing.',
+    form_cta: 'Get a Free Audit →',
+    form_note: 'No contracts. No pressure. Just results.',
+    footer_tagline: 'Digital marketing agency built for growth.',
     footer_rights: 'All rights reserved.',
+    nav_home: 'Home',
+    nav_about: 'About',
+    nav_services: 'Services',
+    nav_blog: 'Blog',
+    nav_faq: 'FAQ',
+    nav_contact: 'Contact',
   },
   es: {
-    nav_cta: 'Auditoría gratis',
+    nav_cta: 'Auditoría Gratis',
     online: 'EN LÍNEA',
-    badge: 'Houston · Enfocados en resultados',
-    h1_lines: ['Hacemos crecer', 'negocios en', 'Houston.'],
-    h1_stress_word: 'Houston',
-    subtitle: 'Anuncios pagados, SEO local, automatizaciones y sitios web que convierten — para negocios locales que ya no quieren jugar pequeño.',
-    cta1: 'Auditoría gratis',
-    cta2: 'Ver nuestro trabajo',
-    ticker: ['Anuncios Pagados', 'SEO Local', 'Automatizaciones', 'Diseño Web', 'CRM', 'Reseñas', 'Google Ads', 'Meta Ads', 'Generación de Leads'],
-    stat1_label: 'Tiempo de lanzamiento',
+    badge: 'Agencia de Marketing Digital · Resultados Reales',
+    h1_lines: ['La Agencia de Marketing', 'Digital Que Hace', 'Crecer Tu Negocio.'],
+    h1_stress_word: 'Crecer',
+    subtitle: 'Anuncios pagados, SEO local, automatizaciones y sitios web que convierten — para negocios de servicio listos para crecer.',
+    cta1: 'Auditoría Gratis',
+    cta2: 'Ver Nuestro Trabajo',
+    ticker: ['Marketing Digital', 'SEO Local', 'Anuncios Pagados', 'Diseño Web', 'Automatización', 'Generación de Leads', 'Google Ads', 'Meta Ads', 'Marketing para Contratistas', 'Crecer Mi Negocio', 'SEO para Negocios', 'Marketing de Resultados'],
+    stat1_label: 'Lanzamiento promedio',
     stat2_label: 'Garantía de satisfacción',
-    stat3_label: 'Equipo en EE.UU.',
-    stat4_label: 'Campañas activas',
+    stat3_label: 'ROAS promedio',
+    stat4_label: 'Negocios locales crecidos',
+    value_tag1: 'LANZAMIENTO RÁPIDO',
+    value_title1: 'En vivo en 5 días hábiles',
+    value_body1: 'Desde el acuerdo firmado hasta un sitio web en vivo y listo para SEO — sin meses de espera ni idas y venidas.',
+    value_tag2: 'ANUNCIOS · SEO LOCAL',
+    value_title2: 'Anuncios que se pagan solos',
+    value_body2: 'Campañas de Google Ads y Meta construidas para negocios de servicio — cada peso rastreado, cada lead contado.',
+    value_tag3: 'AUTOMATIZACIONES',
+    value_title3: 'Sistemas que trabajan mientras tú trabajas',
+    value_body3: 'Seguimientos, solicitudes de reseñas y recordatorios de citas — automatizados para que cierres más trabajos sin esfuerzo extra.',
     services_label: 'Lo que hacemos',
-    services_title: ['Servicios de Marketing Digital', 'en Houston, TX.'],
-    services_sub: 'Cada servicio está diseñado para funcionar solo o combinarse para resultados multiplicados.',
+    services_title: ['Marketing Digital Completo', 'para Negocios Locales.'],
+    services_sub: 'Cada servicio está construido alrededor de un objetivo: más ingresos para tu negocio.',
     services: SERVICES_ES,
     how_label: 'Cómo funciona',
-    how_title: ['Cómo trabaja nuestra', 'agencia en Houston.'],
-    how_sub: 'Desde la primera llamada hasta campañas en vivo — más rápido de lo que piensas.',
+    how_title: ['De la Primera Llamada a', 'Campañas en Vivo — Rápido.'],
+    how_sub: 'La mayoría de clientes están en vivo en 5 días.',
     steps: STEPS_ES,
-    niches_label: 'A quién servimos',
-    niches_title: ['Negocios de servicio', 'local en Houston', 'que atendemos.'],
-    niches_sub: 'Conocemos tu industria. Selecciona tu nicho para una llamada de discovery pre-completada.',
-    niches: NICHES,
-    free_label: 'Sitio web gratis',
-    free_title: ['Diseño Web Gratis', 'para negocios en Houston.'],
-    free_sub: 'Cada cliente recibe un sitio web rápido, personalizado y optimizado para conversión — incluido gratis con cualquier plan de marketing.',
-    free_cta: 'Reclamar sitio gratis',
-    free_note: '* Gratis con cualquier plan mensual de marketing. Sin contratos.',
+    niches_label: 'A Quién Servimos',
+    niches_title: ['Trabajamos con Negocios', 'de Servicio Local.'],
+    niches_sub: 'Si tu negocio vende un servicio y necesitas más clientes — somos tu agencia.',
+    niches: NICHES_ES,
+    free_label: 'Sitio Web Gratis',
+    free_title: ['Cada Cliente Recibe un', 'Sitio Web Gratis.'],
+    free_sub: 'Rápido, optimizado para conversión y construido para posicionar — incluido gratis con cualquier plan de marketing digital. Sin plantillas. Código real, velocidad real.',
+    free_cta: 'Reclamar Sitio Web Gratis →',
+    free_note: '* Sitio web de una página gratis (5 secciones + formulario de contacto + integración con redes sociales y WhatsApp) incluido con cualquier plan mensual. Aplican restricciones. Sin contratos.',
     free_box_title: 'log de deploy',
     free_items: FREE_ITEMS_ES,
     form_label: 'Contacto',
-    form_title: ['Auditoría de Marketing', 'Gratis en Houston.'],
+    form_title: ['¿Listo para Hacer Crecer', 'Tu Negocio?'],
     form_name: 'Nombre completo',
     form_name_ph: 'Juan Pérez',
     form_phone: 'Teléfono',
@@ -264,12 +316,18 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
     form_biz: 'Nombre del negocio',
     form_biz_ph: 'Pérez HVAC LLC',
     form_type: 'Tipo de negocio',
-    form_type_ph: 'Selecciona tu nicho',
+    form_type_ph: 'Selecciona tu industria',
     form_challenge: 'Mayor desafío',
     form_challenge_ph: 'Cuéntanos qué no está funcionando…',
-    form_cta: 'Enviar — respondemos en <24h',
-    form_note: 'Sin spam. Sin presión. Solo una conversación.',
-    footer_tagline: 'Marketing digital enfocado en ingresos.',
+    form_cta: 'Auditoría Gratis →',
+    form_note: 'Sin contratos. Sin presión. Solo resultados.',
+    footer_tagline: 'Agencia de marketing digital construida para crecer.',
     footer_rights: 'Todos los derechos reservados.',
+    nav_home: 'Inicio',
+    nav_about: 'Nosotros',
+    nav_services: 'Servicios',
+    nav_blog: 'Blog',
+    nav_faq: 'FAQ',
+    nav_contact: 'Contacto',
   },
 }
