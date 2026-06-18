@@ -85,104 +85,214 @@ export interface SiteContent {
   nav_contact: string
 }
 
+// ─── SERVICES ────────────────────────────────────────────────────────────────
+
 const SERVICES_EN: ServiceDef[] = [
   {
-    n: '01', title: 'Websites', metric: 'FREE WITH YOUR PLAN',
-    desc: 'Fast, conversion-optimized sites that rank and convert — included free with any marketing plan.',
-    tags: ['Design', 'Dev', 'Speed', 'More Clients'],
-    deliverables: ['Strategy session', 'Custom single-page site (5 sections)', 'Mobile optimized', 'Speed optimisation', 'Analytics & Search Console'],
+    n: '01',
+    title: 'Contractor SEO',
+    metric: 'RANK HIGHER · GET MORE LEADS',
+    desc: 'Rank on Google when contractors in your area search for your services. Local SEO that drives real calls and estimate requests.',
+    tags: ['Local SEO', 'Google Business', 'Location Pages', 'On-Page SEO'],
+    deliverables: [
+      'Full local SEO audit',
+      'Google Business Profile optimization',
+      'Location & service pages',
+      'On-page SEO implementation',
+      'Monthly ranking report',
+    ],
   },
   {
-    n: '02', title: 'Automations', metric: 'SAVES 12h/WK',
-    desc: 'Follow-up sequences, missed-call texts, review requests — running 24/7 without lifting a finger.',
-    tags: ['CRM setup', 'SMS/Email flows', 'Review automation', 'Lead routing'],
-    deliverables: ['CRM audit & setup', 'Custom automation map', '5 core workflows built', 'Team walkthrough', '30-day check-in'],
+    n: '02',
+    title: 'Contractor Websites',
+    metric: 'FREE WITH YOUR PLAN',
+    desc: 'Fast, conversion-optimized websites built specifically for contractors — designed to turn visitors into calls and estimate requests.',
+    tags: ['Web Design', 'Mobile Optimized', 'Fast Load', 'Lead Focused'],
+    deliverables: [
+      'Custom contractor website',
+      'Mobile optimized',
+      'Speed & Core Web Vitals',
+      'Contact & booking form',
+      'Google Analytics setup',
+    ],
   },
   {
-    n: '03', title: 'Paid Ads', metric: 'AVG 4.2× ROAS',
-    desc: 'Google, Meta & YouTube campaigns built around your cost-per-lead target, not vanity metrics.',
-    tags: ['Google Ads', 'Meta Ads', 'Retargeting'],
-    deliverables: ['Discovery call (20 min)', 'Audience & competitor research', 'Campaign architecture + copy', 'Weekly optimisation', 'Plain-english monthly report'],
+    n: '03',
+    title: 'Marketing Automation',
+    metric: 'NEVER MISS A LEAD',
+    desc: 'Instant lead response, missed-call texts, automated follow-ups, and review requests — running 24/7 so you never lose a job to slow response.',
+    tags: ['CRM Setup', 'Missed Call Text Back', 'Follow-Up Sequences', 'Review Automation'],
+    deliverables: [
+      'CRM audit & setup',
+      'Missed call text-back',
+      '5 core automation workflows',
+      'Review request sequences',
+      '30-day check-in',
+    ],
   },
   {
-    n: '04', title: 'Local SEO', metric: 'TOP-3 GMB',
-    desc: 'Rank for the searches that matter in your market — maps, organic, and voice.',
-    tags: ['Google Business', 'On-page SEO', 'Directories', 'Review strategy'],
-    deliverables: ['Full local audit', 'GMB optimisation', 'Online directories', 'Content calendar', 'Monthly ranking report'],
+    n: '04',
+    title: 'Lead Generation',
+    metric: 'MORE CALLS · MORE JOBS',
+    desc: 'Google Ads, Meta Ads, and SEO systems built to generate qualified leads for contractors — every dollar tracked, every lead counted.',
+    tags: ['Google Ads', 'Meta Ads', 'Lead Tracking', 'Conversion Optimization'],
+    deliverables: [
+      'Discovery call (20 min)',
+      'Audience & competitor research',
+      'Campaign architecture + copy',
+      'Weekly optimization',
+      'Plain-english monthly report',
+    ],
   },
 ]
 
 const SERVICES_ES: ServiceDef[] = [
   {
-    n: '01', title: 'Sitios Web', metric: 'GRATIS CON TU PLAN',
-    desc: 'Sitios rápidos y optimizados para conversión que posicionan y convierten — incluido gratis con cualquier plan.',
-    tags: ['Diseño', 'Desarrollo', 'Velocidad', 'Más Clientes'],
-    deliverables: ['Sesión de estrategia', 'Sitio de una página con 5 secciones', 'Optimizado para celular', 'Optimización de velocidad', 'Analytics & Search Console'],
+    n: '01',
+    title: 'SEO para Contratistas',
+    metric: 'POSICIONA MEJOR · MÁS LEADS',
+    desc: 'Posiciónate en Google cuando contratistas en tu área busquen tus servicios. SEO local que genera llamadas y solicitudes de cotización reales.',
+    tags: ['SEO Local', 'Google Business', 'Páginas de Ubicación', 'SEO On-Page'],
+    deliverables: [
+      'Auditoría SEO local completa',
+      'Optimización de Google Business Profile',
+      'Páginas de ubicación y servicio',
+      'Implementación SEO on-page',
+      'Reporte mensual de posiciones',
+    ],
   },
   {
-    n: '02', title: 'Automatizaciones', metric: 'AHORRA 12h/SEM',
-    desc: 'Seguimientos, textos por llamada perdida, solicitudes de reseñas — funcionando 24/7 sin mover un dedo.',
-    tags: ['CRM', 'Flujos SMS/Email', 'Automatización de reseñas', 'Enrutamiento de leads'],
-    deliverables: ['Auditoría y configuración de CRM', 'Mapa de automatización personalizado', '5 flujos principales construidos', 'Capacitación del equipo', 'Revisión a los 30 días'],
+    n: '02',
+    title: 'Páginas Web para Contratistas',
+    metric: 'GRATIS CON TU PLAN',
+    desc: 'Sitios web rápidos y optimizados para conversión, diseñados específicamente para contratistas — para convertir visitas en llamadas y cotizaciones.',
+    tags: ['Diseño Web', 'Optimizado para Móvil', 'Carga Rápida', 'Enfocado en Leads'],
+    deliverables: [
+      'Sitio web personalizado para contratistas',
+      'Optimizado para móvil',
+      'Velocidad y Core Web Vitals',
+      'Formulario de contacto y reserva',
+      'Configuración de Google Analytics',
+    ],
   },
   {
-    n: '03', title: 'Anuncios Pagados', metric: 'PROMEDIO 4.2× ROAS',
-    desc: 'Campañas en Google, Meta y YouTube construidas alrededor de tu costo por lead, no métricas de vanidad.',
-    tags: ['Google Ads', 'Meta Ads', 'Retargeting'],
-    deliverables: ['Llamada de discovery (20 min)', 'Investigación de audiencia y competencia', 'Arquitectura de campaña + copy', 'Optimización semanal', 'Reporte mensual en lenguaje claro'],
+    n: '03',
+    title: 'Automatización de Marketing',
+    metric: 'NUNCA PIERDAS UN LEAD',
+    desc: 'Respuesta inmediata a leads, textos por llamada perdida, seguimientos automáticos y solicitudes de reseñas — corriendo 24/7.',
+    tags: ['CRM', 'Texto por Llamada Perdida', 'Secuencias de Seguimiento', 'Automatización de Reseñas'],
+    deliverables: [
+      'Auditoría y configuración de CRM',
+      'Texto automático por llamada perdida',
+      '5 flujos de automatización principales',
+      'Secuencias de solicitud de reseñas',
+      'Revisión a los 30 días',
+    ],
   },
   {
-    n: '04', title: 'SEO Local', metric: 'TOP-3 GMB',
-    desc: 'Posiciónate en las búsquedas que importan en tu mercado — mapas, orgánico y voz.',
-    tags: ['Google Business', 'SEO On-page', 'Directorios', 'Estrategia de reseñas'],
-    deliverables: ['Auditoría local completa', 'Optimización GMB', 'Directorios online', 'Calendario de contenido', 'Reporte mensual de posiciones'],
+    n: '04',
+    title: 'Generación de Leads',
+    metric: 'MÁS LLAMADAS · MÁS TRABAJOS',
+    desc: 'Google Ads, Meta Ads y sistemas SEO construidos para generar leads calificados para contratistas — cada peso rastreado, cada lead contado.',
+    tags: ['Google Ads', 'Meta Ads', 'Rastreo de Leads', 'Optimización de Conversión'],
+    deliverables: [
+      'Llamada de discovery (20 min)',
+      'Investigación de audiencia y competencia',
+      'Arquitectura de campaña + copy',
+      'Optimización semanal',
+      'Reporte mensual en lenguaje claro',
+    ],
   },
 ]
 
+// ─── STEPS ───────────────────────────────────────────────────────────────────
+
 const STEPS_EN: StepDef[] = [
-  { n: '01', title: 'Audit', desc: 'We analyze your digital presence, competitors, and quick-win opportunities.', t: '~20 min' },
-  { n: '02', title: 'Build', desc: 'Your site, ads, and automations go live — fast. Most clients are running within 5 days.', t: '~5 days' },
-  { n: '03', title: 'Launch', desc: 'Campaigns switch on. We monitor daily to catch everything early.', t: 'Day 1' },
-  { n: '04', title: 'Grow', desc: 'Monthly reviews to cut what loses and double what wins.', t: 'Monthly' },
+  {
+    n: '01',
+    title: 'Diagnosis',
+    desc: 'We audit your online presence, competitors, and identify exactly where you\'re losing leads right now.',
+    t: '~20 min',
+  },
+  {
+    n: '02',
+    title: 'Strategy',
+    desc: 'We build a custom marketing plan around your trade, your market, and your growth targets.',
+    t: '~2 days',
+  },
+  {
+    n: '03',
+    title: 'Build',
+    desc: 'Your website, automations, and campaigns go live. Most contractors are running within 5 days.',
+    t: '~5 days',
+  },
+  {
+    n: '04',
+    title: 'Grow',
+    desc: 'Monthly reviews to cut what\'s not working and double down on what\'s bringing in jobs.',
+    t: 'Monthly',
+  },
 ]
 
 const STEPS_ES: StepDef[] = [
-  { n: '01', title: 'Auditoría', desc: 'Analizamos tu presencia digital, competidores y oportunidades de victoria rápida.', t: '~20 min' },
-  { n: '02', title: 'Construir', desc: 'Tu sitio, anuncios y automatizaciones en vivo — rápido. La mayoría en 5 días.', t: '~5 días' },
-  { n: '03', title: 'Lanzar', desc: 'Las campañas se activan. Monitoreamos diariamente desde el día 1.', t: 'Día 1' },
-  { n: '04', title: 'Crecer', desc: 'Revisiones mensuales para cortar lo que pierde y duplicar lo que gana.', t: 'Mensual' },
+  {
+    n: '01',
+    title: 'Diagnóstico',
+    desc: 'Auditamos tu presencia online, competidores e identificamos exactamente dónde estás perdiendo leads ahora mismo.',
+    t: '~20 min',
+  },
+  {
+    n: '02',
+    title: 'Estrategia',
+    desc: 'Construimos un plan de marketing personalizado alrededor de tu oficio, tu mercado y tus metas de crecimiento.',
+    t: '~2 días',
+  },
+  {
+    n: '03',
+    title: 'Construir',
+    desc: 'Tu sitio web, automatizaciones y campañas se activan. La mayoría de contratistas están corriendo en 5 días.',
+    t: '~5 días',
+  },
+  {
+    n: '04',
+    title: 'Crecer',
+    desc: 'Revisiones mensuales para cortar lo que no funciona y duplicar lo que está trayendo trabajos.',
+    t: 'Mensual',
+  },
 ]
 
+// ─── NICHES ──────────────────────────────────────────────────────────────────
+
 const NICHES_EN: NicheDef[] = [
-  { code: 'hvac',            name: 'HVAC' },
-  { code: 'plumbing',        name: 'Plumbers' },
-  { code: 'electrical',      name: 'Electricians' },
-  { code: 'roofing',         name: 'Roofers' },
-  { code: 'dental',          name: 'Dentists' },
-  { code: 'medspa',          name: 'Med Spas' },
-  { code: 'plastic-surgery', name: 'Plastic Surgeons' },
-  { code: 'remodeling',      name: 'Remodelers' },
-  { code: 'flooring',        name: 'Flooring' },
-  { code: 'painting',        name: 'Painters' },
-  { code: 'other',           name: 'Other' },
+  { code: 'hvac',             name: 'HVAC' },
+  { code: 'plumbing',         name: 'Plumbers' },
+  { code: 'electrical',       name: 'Electricians' },
+  { code: 'roofing',          name: 'Roofers' },
+  { code: 'remodeling',       name: 'Remodelers' },
+  { code: 'painting',         name: 'Painters' },
+  { code: 'flooring',         name: 'Flooring' },
+  { code: 'landscaping',      name: 'Landscapers' },
+  { code: 'general',          name: 'General Contractors' },
+  { code: 'other',            name: 'Other Trades' },
 ]
 
 const NICHES_ES: NicheDef[] = [
-  { code: 'hvac',            name: 'HVAC' },
-  { code: 'plomeria',        name: 'Plomeros' },
-  { code: 'electricistas',   name: 'Electricistas' },
-  { code: 'roofing',         name: 'Roofing' },
-  { code: 'dental',          name: 'Dentistas' },
-  { code: 'medspa',          name: 'Med Spas' },
-  { code: 'cirugia-plastica',name: 'Cirugía Plástica' },
-  { code: 'remodelacion',    name: 'Remodelación' },
-  { code: 'pisos',           name: 'Pisos' },
-  { code: 'pintura',         name: 'Pintura' },
-  { code: 'otro',            name: 'Otro' },
+  { code: 'hvac',             name: 'HVAC' },
+  { code: 'plomeria',         name: 'Plomeros' },
+  { code: 'electricistas',    name: 'Electricistas' },
+  { code: 'roofing',          name: 'Roofing' },
+  { code: 'remodelacion',     name: 'Remodelación' },
+  { code: 'pintura',          name: 'Pintura' },
+  { code: 'pisos',            name: 'Pisos' },
+  { code: 'jardineria',       name: 'Jardinería' },
+  { code: 'contratista',      name: 'Contratista General' },
+  { code: 'otro',             name: 'Otro Oficio' },
 ]
 
+// ─── FREE WEBSITE ITEMS ──────────────────────────────────────────────────────
+
 const FREE_ITEMS_EN = [
-  'Custom one-page website',
+  'Custom contractor website',
   'Mobile optimized',
   'Speed & Core Web Vitals',
   'On-page SEO foundation',
@@ -191,7 +301,7 @@ const FREE_ITEMS_EN = [
 ]
 
 const FREE_ITEMS_ES = [
-  'Sitio web personalizado de una página',
+  'Sitio web personalizado para contratistas',
   'Optimizado para celular',
   'Velocidad y Core Web Vitals',
   'Base de SEO on-page',
@@ -199,64 +309,108 @@ const FREE_ITEMS_ES = [
   'Configuración de Google Analytics',
 ]
 
+// ─── MAIN CONTENT EXPORT ─────────────────────────────────────────────────────
+
 export const CECA_CONTENT: Record<string, SiteContent> = {
   en: {
-    nav_cta: 'Get a Free Audit',
+    // ── Nav ──────────────────────────────────────────────────────────────────
+    nav_cta: 'Get My Free Diagnosis',
     online: 'ONLINE',
-    badge: 'Digital Marketing Agency · Built for Growth',
-    h1_lines: ['The Digital Marketing', 'Agency Built for', 'Small Business.'],
-    h1_stress_word: 'Small',
-    subtitle: 'Paid ads, local SEO, automations, and websites that convert — for service businesses ready to scale.',
-    cta1: 'Get a Free Audit',
-    cta2: 'See Our Work',
-    ticker: ['Digital Marketing', 'Local SEO', 'Paid Ads', 'Web Design', 'Marketing Automation', 'Lead Generation', 'Google Ads', 'Meta Ads', 'Contractor Marketing', 'Small Business Growth', 'SEO Services', 'Revenue Marketing'],
-    stat1_label: 'Average client launch',
+    badge: 'Contractor Marketing Agency · Houston, TX',
+
+    // ── Hero ─────────────────────────────────────────────────────────────────
+    h1_lines: ['Contractor Marketing', 'That Gets You More', 'Leads and More Jobs.'],
+    h1_stress_word: 'More',
+    subtitle:
+      'We help contractors generate more leads, respond faster, and book more jobs — with websites, SEO, automation, and lead generation systems built for the trades.',
+    cta1: 'Get My Free Diagnosis',
+    cta2: 'See How It Works',
+    ticker: [
+      'Contractor Marketing',
+      'Contractor SEO',
+      'Contractor Web Design',
+      'Marketing Automation',
+      'Lead Generation',
+      'Google Ads for Contractors',
+      'Meta Ads for Contractors',
+      'Local SEO',
+      'HVAC Marketing',
+      'Roofing Marketing',
+      'Plumber Marketing',
+      'Electrician Marketing',
+    ],
+
+    // ── Stats ────────────────────────────────────────────────────────────────
+    stat1_label: 'Average contractor launch',
     stat2_label: 'Satisfaction guarantee',
     stat3_label: 'Average ROAS',
-    stat4_label: 'Small businesses grown',
-    value_tag1: 'FAST LAUNCH',
-    value_title1: 'Live in 5 business days',
-    value_body1: 'From signed agreement to a live, SEO-ready website — no waiting months, no back-and-forth.',
-    value_tag2: 'PAID ADS · LOCAL SEO',
-    value_title2: 'Ads that pay for themselves',
-    value_body2: 'Google Ads and Meta campaigns built for service businesses — every dollar tracked, every lead counted.',
-    value_tag3: 'AUTOMATIONS',
-    value_title3: 'Systems that run while you work',
-    value_body3: 'Follow-ups, review requests, and booking reminders — automated so you close more jobs without extra work.',
+    stat4_label: 'Contractors grown',
+
+    // ── Value Strip ──────────────────────────────────────────────────────────
+    value_tag1: 'CONTRACTOR SEO',
+    value_title1: 'Rank when customers search',
+    value_body1:
+      'We build location pages, optimize your Google Business Profile, and implement on-page SEO so contractors in your area find you first.',
+
+    value_tag2: 'LEAD GENERATION',
+    value_title2: 'More calls, more estimate requests',
+    value_body2:
+      'Google Ads and Meta campaigns built specifically for contractors — every dollar tracked, every lead counted, every campaign optimized around your cost-per-job.',
+
+    value_tag3: 'MARKETING AUTOMATION',
+    value_title3: 'Never lose a job to slow response',
+    value_body3:
+      'Missed-call texts, instant lead follow-up, review requests, and appointment reminders — automated so you close more jobs without extra work.',
+
+    // ── Services ─────────────────────────────────────────────────────────────
     services_label: 'What we do',
-    services_title: ['Full-Service Digital Marketing', 'for Local Businesses.'],
-    services_sub: 'Every service is built around one goal: more revenue for your business.',
+    services_title: ['Marketing Systems Built', 'for Contractors.'],
+    services_sub:
+      'Every service is built around one goal: more leads, more booked jobs, and more revenue for your contracting business.',
     services: SERVICES_EN,
+
+    // ── How It Works ─────────────────────────────────────────────────────────
     how_label: 'How it works',
-    how_title: ['From First Call to', 'Live Campaigns — Fast.'],
-    how_sub: 'Most clients are live within 5 days.',
+    how_title: ['From Free Diagnosis', 'to Live System — Fast.'],
+    how_sub: 'Most contractors are generating leads within 5 days.',
     steps: STEPS_EN,
-    niches_label: 'Who We Serve',
-    niches_title: ['We Work With Local', 'Service Businesses.'],
-    niches_sub: 'If your business sells a service and needs more customers — we\'re built for you.',
+
+    // ── Niches ───────────────────────────────────────────────────────────────
+    niches_label: 'Who We Help',
+    niches_title: ['Contractors We Help', 'Grow Their Business.'],
+    niches_sub:
+      'If you\'re a contractor who needs more leads and more booked jobs — we\'re built for you.',
     niches: NICHES_EN,
+
+    // ── Free Website ─────────────────────────────────────────────────────────
     free_label: 'Free Website',
-    free_title: ['Every Client Gets a', 'Free Custom Website.'],
-    free_sub: 'Fast, conversion-optimized, and built to rank — included free with any digital marketing plan. No templates. No drag-and-drop. Real code, real speed.',
-    free_cta: 'Claim Your Free Website →',
-    free_note: '* Free one-page website (5 sections + contact form + social & WhatsApp integration) included with any monthly marketing plan. Restrictions apply. No contracts.',
+    free_title: ['Every Contractor Gets a', 'Free Custom Website.'],
+    free_sub:
+      'Fast, conversion-optimized, and built to rank — included free with any marketing plan. No templates. No drag-and-drop. Real code, real speed, built for contractors.',
+    free_cta: 'Claim Your Free Contractor Website →',
+    free_note:
+      '* Free one-page website (5 sections + contact form + social & WhatsApp integration) included with any monthly marketing plan. Restrictions apply. No contracts.',
     free_box_title: 'deploy log',
     free_items: FREE_ITEMS_EN,
-    form_label: 'Contact',
-    form_title: ['Ready to Grow Your', 'Service Business?'],
+
+    // ── Form ─────────────────────────────────────────────────────────────────
+    form_label: 'Free Diagnosis',
+    form_title: ['Ready to Get More Leads', 'and Book More Jobs?'],
     form_name: 'Full name',
-    form_name_ph: 'Jane Smith',
+    form_name_ph: 'Mike Johnson',
     form_phone: 'Phone',
     form_phone_ph: '(713) 000-0000',
     form_biz: 'Business name',
-    form_biz_ph: 'Smith HVAC LLC',
-    form_type: 'Business type',
-    form_type_ph: 'Select your industry',
-    form_challenge: 'Biggest challenge',
-    form_challenge_ph: 'Tell us what\'s not working…',
-    form_cta: 'Get a Free Audit →',
-    form_note: 'No contracts. No pressure. Just results.',
-    footer_tagline: 'Digital marketing agency built for growth.',
+    form_biz_ph: 'Johnson HVAC LLC',
+    form_type: 'Trade / Industry',
+    form_type_ph: 'HVAC, Roofing, Plumbing...',
+    form_challenge: 'Biggest challenge right now',
+    form_challenge_ph: 'Tell us what\'s not working — leads, response time, website...',
+    form_cta: 'Get My Free Diagnosis →',
+    form_note: 'No contracts. No pressure. Just a straight answer on what\'s holding your business back.',
+
+    // ── Footer ───────────────────────────────────────────────────────────────
+    footer_tagline: 'Contractor marketing agency built for the trades.',
     footer_rights: 'All rights reserved.',
     nav_home: 'Home',
     nav_about: 'About',
@@ -265,63 +419,97 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
     nav_faq: 'FAQ',
     nav_contact: 'Contact',
   },
+
+  // ── SPANISH ────────────────────────────────────────────────────────────────
   es: {
-    nav_cta: 'Auditoría Gratis',
+    nav_cta: 'Diagnóstico Gratis',
     online: 'EN LÍNEA',
-    badge: 'Agencia de Marketing Digital · Resultados Reales',
-    h1_lines: ['La Agencia de Marketing', 'Digital Que Hace', 'Crecer Tu Negocio.'],
-    h1_stress_word: 'Crecer',
-    subtitle: 'Anuncios pagados, SEO local, automatizaciones y sitios web que convierten — para negocios de servicio listos para crecer.',
-    cta1: 'Auditoría Gratis',
-    cta2: 'Ver Nuestro Trabajo',
-    ticker: ['Marketing Digital', 'SEO Local', 'Anuncios Pagados', 'Diseño Web', 'Automatización', 'Generación de Leads', 'Google Ads', 'Meta Ads', 'Marketing para Contratistas', 'Crecer Mi Negocio', 'SEO para Negocios', 'Marketing de Resultados'],
+    badge: 'Agencia de Marketing para Contratistas · Houston, TX',
+
+    h1_lines: ['Marketing para Contratistas', 'Que Te Consigue Más', 'Clientes y Más Trabajo.'],
+    h1_stress_word: 'Más',
+    subtitle:
+      'Ayudamos a contratistas a generar más leads, responder más rápido y cerrar más trabajos — con páginas web, SEO, automatización y sistemas de generación de leads.',
+    cta1: 'Diagnóstico Gratis',
+    cta2: 'Ver Cómo Funciona',
+    ticker: [
+      'Marketing para Contratistas',
+      'SEO para Contratistas',
+      'Páginas Web para Contratistas',
+      'Automatización de Marketing',
+      'Generación de Leads',
+      'Google Ads para Contratistas',
+      'Meta Ads para Contratistas',
+      'SEO Local',
+      'Marketing para HVAC',
+      'Marketing para Roofing',
+      'Marketing para Plomeros',
+      'Marketing para Electricistas',
+    ],
+
     stat1_label: 'Lanzamiento promedio',
     stat2_label: 'Garantía de satisfacción',
     stat3_label: 'ROAS promedio',
-    stat4_label: 'Negocios locales crecidos',
-    value_tag1: 'LANZAMIENTO RÁPIDO',
-    value_title1: 'En vivo en 5 días hábiles',
-    value_body1: 'Desde el acuerdo firmado hasta un sitio web en vivo y listo para SEO — sin meses de espera ni idas y venidas.',
-    value_tag2: 'ANUNCIOS · SEO LOCAL',
-    value_title2: 'Anuncios que se pagan solos',
-    value_body2: 'Campañas de Google Ads y Meta construidas para negocios de servicio — cada peso rastreado, cada lead contado.',
-    value_tag3: 'AUTOMATIZACIONES',
-    value_title3: 'Sistemas que trabajan mientras tú trabajas',
-    value_body3: 'Seguimientos, solicitudes de reseñas y recordatorios de citas — automatizados para que cierres más trabajos sin esfuerzo extra.',
+    stat4_label: 'Contratistas crecidos',
+
+    value_tag1: 'SEO PARA CONTRATISTAS',
+    value_title1: 'Posiciónate cuando busquen tus servicios',
+    value_body1:
+      'Creamos páginas de ubicación, optimizamos tu Google Business Profile e implementamos SEO on-page para que los contratistas en tu área te encuentren primero.',
+
+    value_tag2: 'GENERACIÓN DE LEADS',
+    value_title2: 'Más llamadas, más cotizaciones',
+    value_body2:
+      'Campañas de Google Ads y Meta construidas específicamente para contratistas — cada peso rastreado, cada lead contado, cada campaña optimizada alrededor de tu costo por trabajo.',
+
+    value_tag3: 'AUTOMATIZACIÓN',
+    value_title3: 'Nunca pierdas un trabajo por responder tarde',
+    value_body3:
+      'Textos por llamada perdida, seguimiento inmediato de leads, solicitudes de reseñas y recordatorios de citas — automatizados para que cierres más trabajos sin esfuerzo extra.',
+
     services_label: 'Lo que hacemos',
-    services_title: ['Marketing Digital Completo', 'para Negocios Locales.'],
-    services_sub: 'Cada servicio está construido alrededor de un objetivo: más ingresos para tu negocio.',
+    services_title: ['Sistemas de Marketing', 'para Contratistas.'],
+    services_sub:
+      'Cada servicio está construido alrededor de un objetivo: más leads, más trabajos cerrados y más ingresos para tu negocio.',
     services: SERVICES_ES,
+
     how_label: 'Cómo funciona',
-    how_title: ['De la Primera Llamada a', 'Campañas en Vivo — Rápido.'],
-    how_sub: 'La mayoría de clientes están en vivo en 5 días.',
+    how_title: ['Del Diagnóstico Gratis', 'al Sistema en Vivo — Rápido.'],
+    how_sub: 'La mayoría de contratistas está generando leads en 5 días.',
     steps: STEPS_ES,
-    niches_label: 'A Quién Servimos',
-    niches_title: ['Trabajamos con Negocios', 'de Servicio Local.'],
-    niches_sub: 'Si tu negocio vende un servicio y necesitas más clientes — somos tu agencia.',
+
+    niches_label: 'A Quién Ayudamos',
+    niches_title: ['Contratistas a los que Ayudamos', 'a Crecer Su Negocio.'],
+    niches_sub:
+      'Si eres contratista y necesitas más leads y más trabajos cerrados — somos tu agencia.',
     niches: NICHES_ES,
+
     free_label: 'Sitio Web Gratis',
-    free_title: ['Cada Cliente Recibe un', 'Sitio Web Gratis.'],
-    free_sub: 'Rápido, optimizado para conversión y construido para posicionar — incluido gratis con cualquier plan de marketing digital. Sin plantillas. Código real, velocidad real.',
-    free_cta: 'Reclamar Sitio Web Gratis →',
-    free_note: '* Sitio web de una página gratis (5 secciones + formulario de contacto + integración con redes sociales y WhatsApp) incluido con cualquier plan mensual. Aplican restricciones. Sin contratos.',
+    free_title: ['Cada Contratista Recibe', 'un Sitio Web Gratis.'],
+    free_sub:
+      'Rápido, optimizado para conversión y construido para posicionar — incluido gratis con cualquier plan de marketing. Sin plantillas. Código real, velocidad real, hecho para contratistas.',
+    free_cta: 'Reclamar Mi Sitio Web Gratis →',
+    free_note:
+      '* Sitio web de una página gratis (5 secciones + formulario de contacto + integración con redes sociales y WhatsApp) incluido con cualquier plan mensual. Aplican restricciones. Sin contratos.',
     free_box_title: 'log de deploy',
     free_items: FREE_ITEMS_ES,
-    form_label: 'Contacto',
-    form_title: ['¿Listo para Hacer Crecer', 'Tu Negocio?'],
+
+    form_label: 'Diagnóstico Gratis',
+    form_title: ['¿Listo para Conseguir Más Leads', 'y Cerrar Más Trabajos?'],
     form_name: 'Nombre completo',
-    form_name_ph: 'Juan Pérez',
+    form_name_ph: 'Carlos García',
     form_phone: 'Teléfono',
     form_phone_ph: '(713) 000-0000',
     form_biz: 'Nombre del negocio',
-    form_biz_ph: 'Pérez HVAC LLC',
-    form_type: 'Tipo de negocio',
-    form_type_ph: 'Selecciona tu industria',
-    form_challenge: 'Mayor desafío',
-    form_challenge_ph: 'Cuéntanos qué no está funcionando…',
-    form_cta: 'Auditoría Gratis →',
-    form_note: 'Sin contratos. Sin presión. Solo resultados.',
-    footer_tagline: 'Agencia de marketing digital construida para crecer.',
+    form_biz_ph: 'García HVAC LLC',
+    form_type: 'Oficio / Industria',
+    form_type_ph: 'HVAC, Roofing, Plomería...',
+    form_challenge: 'Mayor desafío ahora mismo',
+    form_challenge_ph: 'Cuéntanos qué no está funcionando — leads, tiempo de respuesta, página web...',
+    form_cta: 'Obtener Mi Diagnóstico Gratis →',
+    form_note: 'Sin contratos. Sin presión. Solo una respuesta directa sobre qué está frenando tu negocio.',
+
+    footer_tagline: 'Agencia de marketing para contratistas, construida para el oficio.',
     footer_rights: 'Todos los derechos reservados.',
     nav_home: 'Inicio',
     nav_about: 'Nosotros',

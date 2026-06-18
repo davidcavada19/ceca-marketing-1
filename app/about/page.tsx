@@ -1,11 +1,13 @@
+// app/about/page.tsx  ← root redirect (same pattern as services)
 export const metadata = {
-  title: 'About CECA Marketing | Results-Driven Marketing Agency for Small Business',
-  description: 'CECA Marketing is a results-driven digital marketing agency built for local service businesses and contractors. No contracts, 100% satisfaction guarantee.',
+  title: 'About CECA Marketing | Contractor Marketing Agency Houston TX',
+  description:
+    'CECA Marketing is a contractor marketing agency based in Houston, TX. We help HVAC, roofing, plumbing, electrical, and general contractors generate more leads and book more jobs.',
   alternates: {
     canonical: 'https://cecamarketing.com/about',
     languages: {
-      'en': 'https://cecamarketing.com/about',
-      'es': 'https://cecamarketing.com/es/about',
+      en: 'https://cecamarketing.com/about',
+      es: 'https://cecamarketing.com/es/about',
     },
   },
 }

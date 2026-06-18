@@ -4,7 +4,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://cecamarketing.com'
   const lastModified = new Date()
 
-  const pages = ['', '/about', '/services', '/blog', '/faq', '/contact']
+  const pages = [
+    '',
+    '/about',
+    '/services',
+    '/blog',
+    '/faq',
+    '/contact',
+  ]
 
   const enPages = pages.map((page) => ({
     url: `${baseUrl}${page}`,

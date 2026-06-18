@@ -1,11 +1,13 @@
+// app/faq/page.tsx
 export const metadata = {
-  title: 'FAQ | Digital Marketing for Local Service Businesses | CECA Marketing',
-  description: 'Answers to the most common questions about digital marketing for service businesses. How long does SEO take? Does Google Ads work? How much does it cost?',
+  title: 'Contractor Marketing FAQ | CECA Marketing',
+  description:
+    'Answers to the most common questions about contractor marketing, contractor SEO, lead generation, and marketing automation for HVAC, roofing, plumbing, and electrical contractors.',
   alternates: {
     canonical: 'https://cecamarketing.com/faq',
     languages: {
-      'en': 'https://cecamarketing.com/faq',
-      'es': 'https://cecamarketing.com/es/faq',
+      en: 'https://cecamarketing.com/faq',
+      es: 'https://cecamarketing.com/es/faq',
     },
   },
 }

@@ -16,7 +16,7 @@ const localBusinessSchema = {
   url: 'https://cecamarketing.com',
   logo: 'https://cecamarketing.com/ceca_logo.png',
   image: 'https://cecamarketing.com/og-image.jpg',
-  description: 'Digital marketing agency for local service businesses specializing in Google Ads management, local SEO services, marketing automation, and website design for contractors.',
+  description: 'Contractor marketing agency specializing in SEO, websites, marketing automation, and lead generation for HVAC, roofing, plumbing, electrical, and general contractors.',
   telephone: '+18329082728',
   email: 'info@cecamarketing.com',
   priceRange: '$$',
@@ -48,13 +48,40 @@ const localBusinessSchema = {
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Digital Marketing Services for Local Businesses',
+    name: 'Contractor Marketing Services',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Design for Contractors', description: 'Custom website design for contractors and service businesses. Free with any monthly marketing plan.' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Google Ads Management', description: 'Google Ads management for local service businesses built around cost-per-lead targets.' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Meta Ads Management', description: 'Facebook and Instagram ads management for contractors and service businesses.' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Local SEO Services', description: 'Local SEO services for contractors, HVAC companies, plumbers, roofers, and service businesses.' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Marketing Automation Services', description: 'Small business marketing automation including CRM setup, SMS flows, and review automation.' } },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Contractor SEO',
+          description: 'Local SEO for contractors — rank higher on Google and generate more leads for HVAC, roofing, plumbing, electrical, and remodeling businesses.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Contractor Web Design',
+          description: 'Custom websites for contractors built to generate calls and estimate requests. Free with any monthly marketing plan.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Marketing Automation for Contractors',
+          description: 'Missed-call text back, automated follow-up, review requests, and CRM setup for contractors.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Lead Generation for Contractors',
+          description: 'Google Ads and Meta Ads campaigns built for contractors — every lead tracked, every dollar accountable.',
+        },
+      },
     ],
   },
 }
@@ -62,19 +89,29 @@ const localBusinessSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://cecamarketing.com'),
   title: {
-    default: 'CECA Marketing | Digital Marketing Agency Houston TX',
-    template: '%s',
+    default: 'Contractor Marketing Agency | SEO, Websites & Automation | CECA Marketing',
+    template: '%s | CECA Marketing',
   },
-  description: 'Houston digital marketing agency specializing in paid ads, local SEO, automations, and websites for local service businesses. Free website included.',
+  description:
+    'CECA Marketing helps contractors generate more leads and book more jobs with SEO, websites, automation, and lead generation systems. Serving HVAC, roofing, plumbing, electrical, and general contractors.',
   keywords: [
-    'digital marketing agency Houston', 'digital marketing Houston TX', 'local SEO Houston',
-    'Google Ads Houston', 'paid ads Houston', 'marketing agency Houston Texas',
-    'HVAC marketing Houston', 'plumber marketing Houston', 'dental marketing Houston',
-    'roofing marketing Houston', 'Houston small business marketing', 'lead generation Houston',
-    'website design Houston TX', 'marketing automation Houston',
-    'agencia de marketing digital Houston', 'agencia marketing digital Houston TX',
-    'SEO local Houston', 'publicidad en Google Houston',
-    'marketing para negocios locales Houston', 'diseño web Houston Texas',
+    'contractor marketing',
+    'contractor marketing agency',
+    'digital marketing for contractors',
+    'marketing for contractors',
+    'contractor SEO',
+    'contractor web design',
+    'marketing automation for contractors',
+    'lead generation for contractors',
+    'local SEO for contractors',
+    'HVAC marketing',
+    'roofing marketing',
+    'plumber marketing',
+    'electrician marketing',
+    'contractor marketing Houston',
+    'contractor marketing agency Houston TX',
+    'agencia de marketing para contratistas',
+    'marketing para contratistas Houston',
   ],
   authors: [{ name: 'CECA Marketing', url: 'https://cecamarketing.com' }],
   creator: 'CECA Marketing',
@@ -84,14 +121,16 @@ export const metadata: Metadata = {
     alternateLocale: 'es_US',
     url: 'https://cecamarketing.com',
     siteName: 'CECA Marketing',
-    title: 'CECA Marketing | Digital Marketing Agency Houston TX',
-    description: 'Paid ads, local SEO, automations, and free websites for Houston local businesses.',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'CECA Marketing Houston' }],
+    title: 'Contractor Marketing Agency | SEO, Websites & Automation | CECA Marketing',
+    description:
+      'CECA Marketing helps contractors generate more leads and book more jobs with SEO, websites, automation, and lead generation systems.',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'CECA Marketing — Contractor Marketing Agency' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CECA Marketing | Digital Marketing Agency Houston TX',
-    description: 'Paid ads, local SEO, automations, and free websites for Houston local businesses.',
+    title: 'Contractor Marketing Agency | SEO, Websites & Automation | CECA Marketing',
+    description:
+      'CECA Marketing helps contractors generate more leads and book more jobs with SEO, websites, automation, and lead generation systems.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -99,7 +138,7 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
- alternates: {
+  alternates: {
     canonical: 'https://cecamarketing.com',
     languages: {
       'en': 'https://cecamarketing.com',

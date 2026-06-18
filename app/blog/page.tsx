@@ -1,11 +1,13 @@
+// app/blog/page.tsx
 export const metadata = {
-  title: 'Marketing Tips for Local Service Businesses | CECA Marketing Blog',
-  description: 'Practical marketing guides, strategies, and insights for contractors, HVAC companies, plumbers, roofers, and service businesses that want to grow.',
+  title: 'Contractor Marketing Blog | Tips, Guides & Strategies | CECA Marketing',
+  description:
+    'Practical contractor marketing guides, SEO tips, and lead generation strategies for HVAC, roofing, plumbing, electrical, and general contractors.',
   alternates: {
     canonical: 'https://cecamarketing.com/blog',
     languages: {
-      'en': 'https://cecamarketing.com/blog',
-      'es': 'https://cecamarketing.com/es/blog',
+      en: 'https://cecamarketing.com/blog',
+      es: 'https://cecamarketing.com/es/blog',
     },
   },
 }

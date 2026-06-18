@@ -8,12 +8,12 @@ import TopBar from '@/components/TopBar'
 import Footer from '@/components/Footer'
 
 const PLACEHOLDER_POSTS = [
-  { slug: 'how-to-get-more-leads', category: 'Lead Gen', title: 'How to Get More Leads Without Spending More on Ads', date: 'Jun 2026', read: '5 min' },
-  { slug: 'local-seo-guide', category: 'SEO', title: 'The Local SEO Guide for Service Businesses in 2026', date: 'May 2026', read: '7 min' },
-  { slug: 'google-ads-mistakes', category: 'Google Ads', title: '5 Google Ads Mistakes That Are Wasting Your Budget', date: 'May 2026', read: '4 min' },
-  { slug: 'meta-ads-contractors', category: 'Meta Ads', title: 'Why Meta Ads Work for Contractors (And How to Do It Right)', date: 'Apr 2026', read: '6 min' },
-  { slug: 'website-speed-matters', category: 'Web', title: 'Why Your Website Speed Is Killing Your Conversion Rate', date: 'Apr 2026', read: '3 min' },
-  { slug: 'crm-automation', category: 'Automations', title: 'How CRM Automation Saves 12 Hours Per Week for Service Businesses', date: 'Mar 2026', read: '5 min' },
+  { slug: 'digital-marketing-for-contractors', category: 'Contractor Marketing', title: 'Digital Marketing for Contractors: The Complete Guide for 2026', date: 'Jun 2026', read: '8 min' },
+  { slug: 'contractor-seo-guide', category: 'Contractor SEO', title: 'Contractor SEO: How to Rank Higher and Generate More Leads', date: 'Jun 2026', read: '7 min' },
+  { slug: 'local-seo-for-contractors', category: 'Local SEO', title: 'Local SEO for Contractors: The Complete Guide', date: 'May 2026', read: '6 min' },
+  { slug: 'marketing-automation-for-contractors', category: 'Automation', title: 'Marketing Automation for Contractors: Never Miss Another Lead', date: 'May 2026', read: '5 min' },
+  { slug: 'contractor-markup-vs-profit-margin', category: 'Business', title: 'Contractor Markup vs Profit Margin: What\'s the Difference?', date: 'Apr 2026', read: '4 min' },
+  { slug: 'lead-generation-for-contractors', category: 'Lead Gen', title: 'How Contractors Generate Leads Without Buying Leads', date: 'Apr 2026', read: '5 min' },
 ]
 
 export default function BlogPage() {
@@ -40,21 +40,24 @@ export default function BlogPage() {
 
           {/* Hero */}
           <section style={{ padding: 'clamp(60px,10vw,120px) clamp(20px,5vw,80px)', maxWidth: 1320, margin: '0 auto' }}>
-            <div style={{ fontFamily: 'var(--mono)', fontSize: 36, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 16 }}>
-              {isEn ? 'Blog' : 'Blog'}
+            <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 16 }}>
+              {isEn ? '// Contractor Marketing Blog' : '// Blog de Marketing para Contratistas'}
             </div>
             <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(40px,7vw,80px)', lineHeight: 0.95, letterSpacing: '-.04em', color: 'var(--fg)', marginBottom: 24 }}>
-              {isEn ? <>Marketing tips that<br /><span style={{ color: 'var(--accent)' }}>actually work.</span></> : <>Tips de marketing que<br /><span style={{ color: 'var(--accent)' }}>realmente funcionan.</span></>}
+              {isEn
+                ? <>Contractor Marketing<br /><span style={{ color: 'var(--accent)' }}>Guides That Actually Work.</span></>
+                : <>Guías de Marketing<br /><span style={{ color: 'var(--accent)' }}>para Contratistas.</span></>}
             </h1>
             <p style={{ fontFamily: 'var(--body)', fontSize: 'clamp(16px,2vw,20px)', color: 'var(--muted)', maxWidth: 600, lineHeight: 1.6 }}>
               {isEn
-                ? 'Practical guides, strategies, and insights for service businesses that want to grow.'
-                : 'Guías prácticas, estrategias e insights para negocios de servicio que quieren crecer.'}
+                ? 'Practical SEO guides, lead generation strategies, and marketing tips for HVAC, roofing, plumbing, electrical, and general contractors.'
+                : 'Guías prácticas de SEO, estrategias de generación de leads y tips de marketing para contratistas de HVAC, roofing, plomería, electricidad y contratistas generales.'}
             </p>
           </section>
 
           {/* Posts grid */}
           <section style={{ padding: '0 clamp(20px,5vw,80px) clamp(60px,8vw,100px)', maxWidth: 1320, margin: '0 auto' }}>
+
             {/* Featured post */}
             <div style={{ border: '1px solid var(--line)', padding: 'clamp(28px,4vw,48px)', marginBottom: 1, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px,1fr))', gap: 32, alignItems: 'center' }}>
               <div>
@@ -102,14 +105,14 @@ export default function BlogPage() {
           {/* Newsletter */}
           <section style={{ background: 'var(--panel)', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', padding: 'clamp(40px,6vw,80px) clamp(20px,5vw,80px)', textAlign: 'center' }}>
             <div style={{ maxWidth: 520, margin: '0 auto' }}>
-              <div style={{ fontFamily: 'var(--mono)', fontSize: 36, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 12 }}>
-                {isEn ? 'Newsletter' : 'Newsletter'}
+              <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 12 }}>
+                {isEn ? '// Newsletter' : '// Newsletter'}
               </div>
               <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(24px,3vw,36px)', letterSpacing: '-.03em', color: 'var(--fg)', marginBottom: 12 }}>
-                {isEn ? 'Weekly tips for service businesses.' : 'Tips semanales para negocios de servicio.'}
+                {isEn ? 'Weekly tips for contractors.' : 'Tips semanales para contratistas.'}
               </h2>
               <p style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--muted)', marginBottom: 24 }}>
-                {isEn ? 'No spam. Just one useful tip every week.' : 'Sin spam. Solo un tip útil cada semana.'}
+                {isEn ? 'No spam. Just one useful contractor marketing tip every week.' : 'Sin spam. Solo un tip útil de marketing para contratistas cada semana.'}
               </p>
               <div style={{ display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <input type="email" placeholder={isEn ? 'your@email.com' : 'tu@email.com'}

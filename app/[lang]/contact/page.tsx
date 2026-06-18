@@ -41,18 +41,18 @@ export default function ContactPage() {
 
           {/* Hero */}
           <section style={{ padding: 'clamp(60px,10vw,120px) clamp(20px,5vw,80px)', maxWidth: 1320, margin: '0 auto' }}>
-            <div style={{ fontFamily: 'var(--mono)', fontSize: 36, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 16 }}>
-              {isEn ? 'Free Marketing Audit' : 'Auditoría de Marketing Gratis'}
+            <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 16 }}>
+              {isEn ? '// Free Marketing Diagnosis' : '// Diagnóstico de Marketing Gratis'}
             </div>
             <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(40px,7vw,80px)', lineHeight: 0.95, letterSpacing: '-.04em', color: 'var(--fg)', marginBottom: 24 }}>
               {isEn
-                ? <>Get More Leads for<br /><span style={{ color: 'var(--accent)' }}>Your Service Business.</span></>
-                : <>Consigue Más Clientes<br /><span style={{ color: 'var(--accent)' }}>para Tu Negocio.</span></>}
+                ? <>Get More Leads and<br /><span style={{ color: 'var(--accent)' }}>Book More Jobs.</span></>
+                : <>Consigue Más Leads<br /><span style={{ color: 'var(--accent)' }}>y Más Trabajos.</span></>}
             </h1>
             <p style={{ fontFamily: 'var(--body)', fontSize: 'clamp(16px,2vw,20px)', color: 'var(--muted)', maxWidth: 600, lineHeight: 1.6 }}>
               {isEn
-                ? 'Start with a free digital marketing audit. We analyze your current online presence, identify gaps, and show you exactly what it would take to generate more leads — no pressure, no contracts.'
-                : 'Empieza con una auditoría de marketing digital gratuita. Analizamos tu presencia online actual, identificamos brechas y te mostramos exactamente qué se necesita para generar más clientes — sin presión, sin contratos.'}
+                ? 'Start with a free contractor marketing diagnosis. We analyze your online presence, identify what is costing you leads, and show you exactly what it would take to fix it — no pressure, no contracts.'
+                : 'Empieza con un diagnóstico de marketing gratis. Analizamos tu presencia online, identificamos qué te está costando leads y te mostramos exactamente qué se necesita para solucionarlo — sin presión, sin contratos.'}
             </p>
           </section>
 
@@ -60,12 +60,12 @@ export default function ContactPage() {
           <section style={{ background: 'var(--panel)', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', padding: '20px clamp(20px,5vw,80px)' }}>
             <div style={{ maxWidth: 1320, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 32, alignItems: 'center', justifyContent: 'center' }}>
               {(isEn ? [
-                '✓ Free audit — no credit card',
+                '✓ Free diagnosis — no credit card',
                 '✓ Response in under 24h',
                 '✓ No long-term contracts',
                 '✓ 100% satisfaction guarantee',
               ] : [
-                '✓ Auditoría gratis — sin tarjeta',
+                '✓ Diagnóstico gratis — sin tarjeta',
                 '✓ Respuesta en menos de 24h',
                 '✓ Sin contratos largos',
                 '✓ Garantía de satisfacción 100%',
@@ -81,8 +81,8 @@ export default function ContactPage() {
 
               {/* Form */}
               <div>
-                <div style={{ fontFamily: 'var(--mono)', fontSize: 36, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 24 }}>
-                  {isEn ? 'Start here — it\'s free' : 'Empieza aquí — es gratis'}
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 24 }}>
+                  {isEn ? '// Start here — it\'s free' : '// Empieza aquí — es gratis'}
                 </div>
 
                 {status === 'success' ? (
@@ -114,7 +114,7 @@ export default function ContactPage() {
                           placeholder={f.placeholder}
                           value={form[f.key as keyof typeof form]}
                           onChange={e => setForm({ ...form, [f.key]: e.target.value })}
-                          style={{ width: '100%', fontFamily: 'var(--body)', fontSize: 15, padding: '14px 16px', border: '1px solid var(--line)', background: 'transparent', color: 'var(--fg)', outline: 'none', boxSizing: 'border-box', transition: 'border-color .15s' }}
+                          style={{ width: '100%', fontFamily: 'var(--body)', fontSize: 15, padding: '14px 16px', border: '1px solid var(--line)', background: 'transparent', color: 'var(--fg)', outline: 'none', boxSizing: 'border-box' }}
                         />
                       </div>
                     ))}
@@ -145,11 +145,11 @@ export default function ContactPage() {
                     <button
                       onClick={handleSubmit}
                       disabled={status === 'sending'}
-                      style={{ fontFamily: 'var(--mono)', fontSize: 12, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', padding: '18px', background: 'var(--accent)', color: 'var(--accent-contrast)', border: 'none', cursor: status === 'sending' ? 'wait' : 'pointer', opacity: status === 'sending' ? 0.7 : 1, transition: 'opacity .15s' }}
+                      style={{ fontFamily: 'var(--mono)', fontSize: 12, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', padding: '18px', background: 'var(--accent)', color: 'var(--accent-contrast)', border: 'none', cursor: status === 'sending' ? 'wait' : 'pointer', opacity: status === 'sending' ? 0.7 : 1 }}
                     >
                       {status === 'sending'
                         ? (isEn ? 'Sending…' : 'Enviando…')
-                        : (isEn ? 'Get My Free Audit →' : 'Obtener Auditoría Gratis →')}
+                        : (isEn ? 'Get My Free Diagnosis →' : 'Obtener Mi Diagnóstico Gratis →')}
                     </button>
 
                     <p style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted)', textAlign: 'center', margin: 0, letterSpacing: '.04em' }}>
@@ -164,21 +164,21 @@ export default function ContactPage() {
 
                 {/* What happens next */}
                 <div>
-                  <div style={{ fontFamily: 'var(--mono)', fontSize: 36, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 20 }}>
-                    {isEn ? 'What happens next' : 'Qué pasa después'}
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 20 }}>
+                    {isEn ? '// What happens next' : '// Qué pasa después'}
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
                     {(isEn ? [
-                      { n: '01', title: 'We review your info', desc: 'We look at your current online presence — website, Google Business Profile, and competitors.' },
-                      { n: '02', title: 'Free audit delivered', desc: 'You get a clear breakdown of what is working, what is not, and what the opportunity looks like.' },
-                      { n: '03', title: 'Strategy call (20 min)', desc: 'We walk you through the audit and show you exactly what it would take to generate more leads.' },
-                      { n: '04', title: 'You decide', desc: 'No pressure. You decide if CECA is the right fit for your business — we never push.' },
+                      { n: '01', title: 'We review your info', desc: 'We look at your current online presence — website, Google Business Profile, and competitors in your market.' },
+                      { n: '02', title: 'Free diagnosis delivered', desc: 'You get a clear breakdown of what is working, what is not, and where you are losing leads right now.' },
+                      { n: '03', title: 'Strategy call (20 min)', desc: 'We walk you through the diagnosis and show you exactly what it would take to generate more leads and book more jobs.' },
+                      { n: '04', title: 'You decide', desc: 'No pressure. You decide if CECA is the right fit for your contracting business — we never push.' },
                     ] : [
-                      { n: '01', title: 'Revisamos tu información', desc: 'Analizamos tu presencia online actual — sitio web, Google Business Profile y competidores.' },
-                      { n: '02', title: 'Auditoría entregada', desc: 'Recibes un desglose claro de qué está funcionando, qué no y cuál es la oportunidad.' },
-                      { n: '03', title: 'Llamada de estrategia (20 min)', desc: 'Te guiamos por la auditoría y te mostramos exactamente qué se necesita para generar más clientes.' },
+                      { n: '01', title: 'Revisamos tu información', desc: 'Analizamos tu presencia online actual — sitio web, Google Business Profile y competidores en tu mercado.' },
+                      { n: '02', title: 'Diagnóstico entregado', desc: 'Recibes un desglose claro de qué está funcionando, qué no y dónde estás perdiendo leads ahora mismo.' },
+                      { n: '03', title: 'Llamada de estrategia (20 min)', desc: 'Te guiamos por el diagnóstico y te mostramos exactamente qué se necesita para generar más leads y cerrar más trabajos.' },
                       { n: '04', title: 'Tú decides', desc: 'Sin presión. Tú decides si CECA es el fit correcto para tu negocio — nunca presionamos.' },
-                    ]).map((step, i) => (
+                    ]).map((step) => (
                       <div key={step.n} style={{ display: 'flex', gap: 16, padding: '16px 0', borderBottom: '1px solid var(--line)' }}>
                         <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', flexShrink: 0, marginTop: 2 }}>{step.n}</div>
                         <div>
@@ -192,8 +192,8 @@ export default function ContactPage() {
 
                 {/* Contact info */}
                 <div style={{ border: '1px solid var(--line)', padding: 28 }}>
-                  <div style={{ fontFamily: 'var(--mono)', fontSize: 36, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 20 }}>
-                    {isEn ? 'Prefer to talk first?' : '¿Prefieres hablar primero?'}
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 20 }}>
+                    {isEn ? '// Prefer to talk first?' : '// ¿Prefieres hablar primero?'}
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                     <a href="https://wa.me/18329082728" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }}>
@@ -226,8 +226,8 @@ export default function ContactPage() {
 
                 {/* Social */}
                 <div>
-                  <div style={{ fontFamily: 'var(--mono)', fontSize: 36, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 16 }}>
-                    {isEn ? 'Follow us' : 'Síguenos'}
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 16 }}>
+                    {isEn ? '// Follow us' : '// Síguenos'}
                   </div>
                   <div style={{ display: 'flex', gap: 16 }}>
                     <a href="https://www.instagram.com/ceca_marketing" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--muted)', textDecoration: 'none', letterSpacing: '.04em' }}>Instagram →</a>

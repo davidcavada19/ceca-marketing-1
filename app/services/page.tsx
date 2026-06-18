@@ -1,11 +1,12 @@
 export const metadata = {
-  title: 'Digital Marketing Services | Google Ads, Local SEO & Web Design for Contractors',
-  description: 'Full-service digital marketing for local service businesses. Google Ads management, local SEO services, marketing automation, and website design for contractors.',
+  title: 'Contractor Marketing Services | SEO, Websites, Automation & Lead Generation',
+  description:
+    'CECA Marketing offers contractor SEO, website design, marketing automation, and lead generation for HVAC, roofing, plumbing, electrical, and general contractors.',
   alternates: {
     canonical: 'https://cecamarketing.com/services',
     languages: {
-      'en': 'https://cecamarketing.com/services',
-      'es': 'https://cecamarketing.com/es/services',
+      en: 'https://cecamarketing.com/services',
+      es: 'https://cecamarketing.com/es/services',
     },
   },
 }
