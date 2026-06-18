@@ -259,6 +259,29 @@ select {
   .free-section-grid {
     grid-template-columns: 1fr !important;
   }
+  /* Free Website H2 — was overflowing on mobile */
+  div[style*="font-size: clamp(40px, 6vw, 96px)"] {
+    font-size: clamp(30px, 9vw, 48px) !important;
+    line-height: 1.05 !important;
+    word-break: break-word !important;
+  }
+
+  .free-section-content {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .free-section-content p {
+    max-width: 100% !important;
+  }
+
+  .free-section-content .cta,
+  .free-section-content button,
+  .free-section-content a[class*="cta"] {
+    white-space: normal !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
   .contact-grid {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
