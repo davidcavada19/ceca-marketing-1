@@ -259,8 +259,7 @@ select {
   .free-section-grid {
     grid-template-columns: 1fr !important;
   }
-  /* Free Website H2 — was overflowing on mobile */
-  div[style*="font-size: clamp(40px, 6vw, 96px)"] {
+  .free-section-content h2 {
     font-size: clamp(30px, 9vw, 48px) !important;
     line-height: 1.05 !important;
     word-break: break-word !important;
