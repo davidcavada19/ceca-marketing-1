@@ -16,13 +16,16 @@ export default function TopBar({ t, lang, online, isRoot: isRootProp }: TopBarPr
   const router = useRouter()
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
-const isRoot = isRootProp ?? (!pathname.startsWith('/en') && !pathname.startsWith('/es'))
+  const isRoot = isRootProp ?? (!pathname.startsWith('/en') && !pathname.startsWith('/es'))
   const base = isRoot ? '' : `/${lang}`
+
+  const portfolioLabel = lang === 'en' ? 'PORTFOLIO' : 'PORTAFOLIO'
 
   const navLinks = [
     { label: t.nav_home, href: isRoot ? '/' : `/${lang}` },
     { label: t.nav_about, href: `${base}/about` },
     { label: t.nav_services, href: `${base}/services` },
+    { label: portfolioLabel, href: `${base}/portfolio` },
     { label: t.nav_blog, href: `${base}/blog` },
     { label: t.nav_faq, href: `${base}/faq` },
     { label: t.nav_contact, href: `${base}/contact` },

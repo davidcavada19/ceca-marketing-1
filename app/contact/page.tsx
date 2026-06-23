@@ -1,15 +1,19 @@
-// app/contact/page.tsx
+import ContactPageClient from '@/components/ContactPageClient'
+
 export const metadata = {
-  title: 'Free Marketing Diagnosis for Contractors | CECA Marketing',
+  title: 'Get a Free Marketing Diagnosis | Contact CECA Marketing',
   description:
-    'Get a free contractor marketing diagnosis. We analyze your online presence and show you exactly what it would take to generate more leads and book more jobs.',
+    'Get a free contractor marketing diagnosis from CECA Marketing. We help HVAC, roofing, plumbing, electrical, and general contractors in Houston, TX generate more leads and book more jobs.',
   alternates: {
     canonical: 'https://cecamarketing.com/contact',
     languages: {
       en: 'https://cecamarketing.com/contact',
       es: 'https://cecamarketing.com/es/contact',
+      'x-default': 'https://cecamarketing.com/contact',
     },
   },
 }
 
-export { default } from '@/app/[lang]/contact/page'
+export default function ContactPage() {
+  return <ContactPageClient lang="en" />
+}

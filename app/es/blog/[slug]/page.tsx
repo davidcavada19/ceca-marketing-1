@@ -8,23 +8,20 @@ import TopBar from '@/components/TopBar'
 import Footer from '@/components/Footer'
 
 interface PageParams {
-  params: Promise<{ lang: string; slug: string }>
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
-  const enSlugs = getAllPostSlugs('en').map((slug) => ({ lang: 'en', slug }))
-  const esSlugs = getAllPostSlugs('es').map((slug) => ({ lang: 'es', slug }))
-  return [...enSlugs, ...esSlugs]
+  return getAllPostSlugs('es').map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
-  const { lang, slug } = await params
-  const safeLang = lang === 'es' ? 'es' : 'en'
+  const { slug } = await params
+  const baseUrl = 'https://cecamarketing.com'
 
   try {
-    const post = await getPostBySlug(safeLang, slug)
-    const baseUrl = 'https://cecamarketing.com'
-    const url = safeLang === 'en' ? `${baseUrl}/blog/${slug}` : `${baseUrl}/es/blog/${slug}`
+    const post = await getPostBySlug('es', slug)
+    const url = `${baseUrl}/es/blog/${slug}`
 
     return {
       title: post.title,
@@ -34,6 +31,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
         languages: {
           en: `${baseUrl}/blog/${slug}`,
           es: `${baseUrl}/es/blog/${slug}`,
+          'x-default': `${baseUrl}/blog/${slug}`,
         },
       },
       openGraph: {
@@ -44,24 +42,23 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
       },
     }
   } catch {
-    return { title: 'Post Not Found | CECA Marketing' }
+    return { title: 'Artículo No Encontrado | CECA Marketing' }
   }
 }
 
-export default async function BlogPostPage({ params }: PageParams) {
-  const { lang, slug } = await params
-  const safeLang = (lang === 'en' || lang === 'es') ? lang : 'en'
+export default async function BlogPostPageEs({ params }: PageParams) {
+  const { slug } = await params
 
   let post
   try {
-    post = await getPostBySlug(safeLang as 'en' | 'es', slug)
+    post = await getPostBySlug('es', slug)
   } catch {
     notFound()
   }
 
-  const t = CECA_CONTENT[safeLang] || CECA_CONTENT.en
-  const online = safeLang === 'en' ? 'ONLINE' : 'EN LÍNEA'
-  const isEn = safeLang === 'en'
+  const lang = 'es'
+  const t = CECA_CONTENT.es
+  const online = 'EN LÍNEA'
   const accentDef = ACCENTS[TWEAK_DEFAULTS.accent]
   const pair = TYPE_PAIRINGS[TWEAK_DEFAULTS.type]
   const themeDef = THEMES[TWEAK_DEFAULTS.theme]
@@ -87,10 +84,9 @@ export default async function BlogPostPage({ params }: PageParams) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
         />
-        <TopBar t={t} lang={safeLang} online={online} />
+        <TopBar t={t} lang={lang} online={online} />
         <main style={{ paddingTop: 80 }}>
 
-          {/* Article header */}
           <section style={{ padding: 'clamp(60px,10vw,100px) clamp(20px,5vw,80px) clamp(40px,6vw,60px)', maxWidth: 760, margin: '0 auto' }}>
             <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 20 }}>
               {post.category}
@@ -99,36 +95,27 @@ export default async function BlogPostPage({ params }: PageParams) {
               {post.title}
             </h1>
             <div style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--muted)', letterSpacing: '.04em' }}>
-              {post.date} · {post.readTime} {isEn ? 'read' : 'de lectura'}
+              {post.date} · {post.readTime} de lectura
             </div>
           </section>
 
-          {/* Article body */}
           <section style={{ padding: '0 clamp(20px,5vw,80px) clamp(60px,8vw,100px)', maxWidth: 760, margin: '0 auto' }}>
             <div
               className="blog-content"
-              style={{
-                fontFamily: 'var(--body)',
-                fontSize: 17,
-                lineHeight: 1.8,
-                color: 'var(--fg)',
-              }}
+              style={{ fontFamily: 'var(--body)', fontSize: 17, lineHeight: 1.8, color: 'var(--fg)' }}
               dangerouslySetInnerHTML={{ __html: post.contentHtml }}
             />
           </section>
 
-          {/* CTA */}
           <section style={{ background: 'var(--accent)', padding: 'clamp(40px,6vw,80px) clamp(20px,5vw,80px)', textAlign: 'center' }}>
             <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(26px,3.5vw,42px)', color: 'var(--accent-contrast)', marginBottom: 16, letterSpacing: '-.03em' }}>
-              {isEn ? 'Ready to Get More Leads and Book More Jobs?' : '¿Listo para Conseguir Más Leads y Cerrar Más Trabajos?'}
+              ¿Listo para Conseguir Más Leads y Cerrar Más Trabajos?
             </h2>
             <p style={{ fontFamily: 'var(--body)', fontSize: 16, color: 'var(--accent-contrast)', opacity: 0.85, marginBottom: 28 }}>
-              {isEn
-                ? 'Get a free contractor marketing diagnosis — no pressure, no contracts.'
-                : 'Obtén un diagnóstico de marketing gratis — sin presión, sin contratos.'}
+              Obtén un diagnóstico de marketing gratis — sin presión, sin contratos.
             </p>
-            <a href={`/${safeLang}/contact`} style={{ display: 'inline-block', background: 'var(--accent-contrast)', color: 'var(--accent)', fontFamily: 'var(--mono)', fontSize: 12, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', padding: '14px 28px', textDecoration: 'none' }}>
-              {isEn ? 'Get My Free Diagnosis →' : 'Obtener Mi Diagnóstico Gratis →'}
+            <a href="/es/contact" style={{ display: 'inline-block', background: 'var(--accent-contrast)', color: 'var(--accent)', fontFamily: 'var(--mono)', fontSize: 12, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', padding: '14px 28px', textDecoration: 'none' }}>
+              Obtener Mi Diagnóstico Gratis →
             </a>
           </section>
 

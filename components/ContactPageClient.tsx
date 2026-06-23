@@ -1,21 +1,12 @@
 'use client'
-import { useState, useEffect } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { ACCENTS, TYPE_PAIRINGS, THEMES, TWEAK_DEFAULTS } from '@/lib/constants'
 import { CECA_CONTENT } from '@/lib/content'
 import ThemeProvider from '@/components/ThemeProvider'
 import TopBar from '@/components/TopBar'
 import Footer from '@/components/Footer'
 
-export default function ContactPage() {
-  const params = useParams()
-  const router = useRouter()
-  const lang = (params?.lang as string) || 'en'
-
-  useEffect(() => {
-    if (lang !== 'en' && lang !== 'es') router.push('/en/contact')
-  }, [lang, router])
-
+export default function ContactPageClient({ lang }: { lang: 'en' | 'es' }) {
   const t = CECA_CONTENT[lang] || CECA_CONTENT.en
   const online = lang === 'en' ? 'ONLINE' : 'EN LÍNEA'
   const isEn = lang === 'en'
@@ -32,6 +23,8 @@ export default function ContactPage() {
     await new Promise(r => setTimeout(r, 1200))
     setStatus('success')
   }
+
+  const contactPath = lang === 'en' ? '/contact' : '/es/contact'
 
   return (
     <ThemeProvider accent={accentDef} theme={themeDef} pair={pair}>
@@ -82,7 +75,7 @@ export default function ContactPage() {
               {/* Form */}
               <div>
                 <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 24 }}>
-                  {isEn ? '// Start here — it\'s free' : '// Empieza aquí — es gratis'}
+                  {isEn ? "// Start here — it's free" : '// Empieza aquí — es gratis'}
                 </div>
 
                 {status === 'success' ? (
@@ -162,7 +155,6 @@ export default function ContactPage() {
               {/* Info sidebar */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
 
-                {/* What happens next */}
                 <div>
                   <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 20 }}>
                     {isEn ? '// What happens next' : '// Qué pasa después'}
@@ -190,7 +182,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Contact info */}
                 <div style={{ border: '1px solid var(--line)', padding: 28 }}>
                   <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 20 }}>
                     {isEn ? '// Prefer to talk first?' : '// ¿Prefieres hablar primero?'}
@@ -224,7 +215,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Social */}
                 <div>
                   <div style={{ fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 16 }}>
                     {isEn ? '// Follow us' : '// Síguenos'}

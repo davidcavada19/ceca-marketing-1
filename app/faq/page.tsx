@@ -1,4 +1,5 @@
-// app/faq/page.tsx
+import FAQPageClient from '@/components/FAQPageClient'
+
 export const metadata = {
   title: 'Contractor Marketing FAQ | CECA Marketing',
   description:
@@ -8,8 +9,11 @@ export const metadata = {
     languages: {
       en: 'https://cecamarketing.com/faq',
       es: 'https://cecamarketing.com/es/faq',
+      'x-default': 'https://cecamarketing.com/faq',
     },
   },
 }
 
-export { default } from '@/app/[lang]/faq/page'
+export default function FAQPage() {
+  return <FAQPageClient lang="en" />
+}
