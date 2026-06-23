@@ -316,13 +316,13 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
     // ── Nav ──────────────────────────────────────────────────────────────────
     nav_cta: 'Get My Free Diagnosis',
     online: 'ONLINE',
-    badge: 'Contractor Marketing Agency · Houston, TX',
+    badge: 'Digital Marketing Agency for Contractors · Houston, TX',
 
     // ── Hero ─────────────────────────────────────────────────────────────────
     h1_lines: ['Contractor Marketing', 'That Gets You More', 'Leads and More Jobs.'],
     h1_stress_word: 'More',
     subtitle:
-      'We help contractors generate more leads, respond faster, and book more jobs — with websites, SEO, automation, and lead generation systems built for the trades.',
+  'CECA is a digital marketing agency for contractors. We help general contractors, roofers, HVAC, plumbing, electrical, and remodeling companies generate more leads, respond faster, and book more jobs — with websites, SEO, automation, and lead generation systems built for the trades.',
     cta1: 'Get My Free Diagnosis',
     cta2: 'See How It Works',
     ticker: [
@@ -424,12 +424,12 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
   es: {
     nav_cta: 'Diagnóstico Gratis',
     online: 'EN LÍNEA',
-    badge: 'Agencia de Marketing para Contratistas · Houston, TX',
+    badge: 'Agencia de Marketing Digital para Contratistas · Houston, TX',
 
     h1_lines: ['Marketing para Contratistas', 'Que Te Consigue Más', 'Clientes y Más Trabajo.'],
     h1_stress_word: 'Más',
     subtitle:
-      'Ayudamos a contratistas a generar más leads, responder más rápido y cerrar más trabajos — con páginas web, SEO, automatización y sistemas de generación de leads.',
+  'CECA es una agencia de marketing digital para contratistas. Ayudamos a contratistas generales, roofers, HVAC, plomería, electricidad y empresas de remodelación a generar más leads, responder más rápido y cerrar más trabajos — con páginas web, SEO, automatización y sistemas de generación de leads.',
     cta1: 'Diagnóstico Gratis',
     cta2: 'Ver Cómo Funciona',
     ticker: [

@@ -39,8 +39,8 @@ const services = [
   {
     n: '02',
     metric: 'GRATIS CON TU PLAN',
-    title: 'Páginas Web para Contratistas que Generan Llamadas y Cotizaciones.',
-    intro: 'Tu sitio web es tu herramienta de ventas #1 — y la mayoría de sitios de contratistas están perdiendo clientes antes de que lean una sola palabra. Construimos sitios web rápidos y personalizados diseñados específicamente para contratistas. Ya seas empresa de HVAC, roofer, plomero, electricista o contratista general — tu sitio debe ser tu mejor vendedor, trabajando 24/7 incluso cuando estás en el trabajo. Sin plantillas. Sin constructores de páginas. Código real, construido desde cero para tu negocio.',
+    title: 'Diseño de Sitios Web para Contratistas que Generan Llamadas y Cotizaciones.',
+intro: 'Tu sitio web es tu herramienta de ventas #1 — y la mayoría de sitios de contratistas están perdiendo clientes antes de que lean una sola palabra. Nuestro diseño de sitios web para contratistas se construye rápido y a medida, hecho específicamente para contratistas',
     why: 'Un sitio web profesional para contratistas genera confianza antes de la primera llamada. Los clientes te buscan en Google antes de llamarte — asegúrate de que lo que encuentren los convierta.',
     note: '* Gratis con cualquier plan mensual de marketing. Aplican restricciones. Sitio de una página, 5 secciones.',
     deliverables: [
@@ -112,7 +112,7 @@ export default function ServicesPageEs() {
               Sistemas de Marketing<br /><span style={{ color: 'var(--accent)' }}>para Contratistas.</span>
             </h1>
             <p style={{ fontFamily: 'var(--body)', fontSize: 'clamp(16px,2vw,20px)', color: 'var(--muted)', maxWidth: 640, lineHeight: 1.6 }}>
-              Cada servicio está construido alrededor de un objetivo: más leads, más trabajos cerrados y más ingresos para tu negocio. Úsalos individualmente o combínalos para un crecimiento multiplicado.
+             CECA es una agencia de marketing digital para contratistas. Cada servicio está construido alrededor de un objetivo: más leads, más trabajos cerrados y más ingresos — para contratistas generales, roofing, HVAC, plomería, electricidad y empresas de remodelación.
             </p>
           </section>
 

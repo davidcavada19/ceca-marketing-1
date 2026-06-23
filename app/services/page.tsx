@@ -39,8 +39,8 @@ const services = [
   {
     n: '02',
     metric: 'FREE WITH YOUR PLAN',
-    title: 'Contractor Websites Built to Generate Calls and Estimate Requests.',
-    intro: 'Your website is your #1 sales tool — and most contractor websites are losing customers before they even read a word. We build fast, custom websites designed specifically for contractors. Whether you are an HVAC company, roofer, plumber, electrician, or general contractor — your website should be your best salesperson, working 24/7 even when you are on the job. No templates. No page builders. Real code, built from scratch for your business, your trade, and your market.',
+    title: 'Contractor Website Design Built to Generate Calls and Estimate Requests.',
+    intro: 'Your website is your #1 sales tool — and most contractor websites are losing customers before they even read a word. Our contractor website design is built fast and custom, made specifically for contractors',
     why: 'A professional contractor website builds trust before the first phone call. Customers Google you before they call — make sure what they find converts them into a lead.',
     note: '* Free with any monthly marketing plan. Restrictions apply. One-page site, 5 sections.',
     deliverables: [
@@ -112,9 +112,9 @@ export default function ServicesPage() {
             <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(40px,7vw,80px)', lineHeight: 0.95, letterSpacing: '-.04em', color: 'var(--fg)', marginBottom: 24 }}>
               Marketing Systems Built<br /><span style={{ color: 'var(--accent)' }}>for Contractors.</span>
             </h1>
-            <p style={{ fontFamily: 'var(--body)', fontSize: 'clamp(16px,2vw,20px)', color: 'var(--muted)', maxWidth: 640, lineHeight: 1.6 }}>
-              Every service is built around one goal: more leads, more booked jobs, and more revenue for your contracting business. Use them individually or stack them for compounding growth.
-            </p>
+             <p style={{ fontFamily: 'var(--body)', fontSize: 'clamp(16px,2vw,20px)', color: 'var(--muted)', maxWidth: 640, lineHeight: 1.6 }}>
+               CECA is a digital marketing agency for contractors. Every service is built around one goal: more leads, more booked jobs, and more revenue for your contracting business — for general contractors, roofing, HVAC, plumbing, electrical, and remodeling companies alike.
+             </p>
           </section>
 
           {/* Services */}
