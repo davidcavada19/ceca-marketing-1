@@ -23,16 +23,28 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     const post = await getPostBySlug('es', slug)
     const url = `${baseUrl}/es/blog/${slug}`
 
+    let enExists = false
+    try {
+      await getPostBySlug('en', slug)
+      enExists = true
+    } catch {
+      enExists = false
+    }
+
+    const languages: Record<string, string> = {
+      es: `${baseUrl}/es/blog/${slug}`,
+      'x-default': enExists ? `${baseUrl}/blog/${slug}` : `${baseUrl}/es/blog/${slug}`,
+    }
+    if (enExists) {
+      languages.en = `${baseUrl}/blog/${slug}`
+    }
+
     return {
       title: post.title,
       description: post.description,
       alternates: {
         canonical: url,
-        languages: {
-          en: `${baseUrl}/blog/${slug}`,
-          es: `${baseUrl}/es/blog/${slug}`,
-          'x-default': `${baseUrl}/blog/${slug}`,
-        },
+        languages,
       },
       openGraph: {
         type: 'article',

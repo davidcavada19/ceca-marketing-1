@@ -23,16 +23,29 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     const post = await getPostBySlug('en', slug)
     const url = `${baseUrl}/blog/${slug}`
 
+    // Solo declarar la versión en español si esa traducción realmente existe
+    let esExists = false
+    try {
+      await getPostBySlug('es', slug)
+      esExists = true
+    } catch {
+      esExists = false
+    }
+
+    const languages: Record<string, string> = {
+      en: `${baseUrl}/blog/${slug}`,
+      'x-default': `${baseUrl}/blog/${slug}`,
+    }
+    if (esExists) {
+      languages.es = `${baseUrl}/es/blog/${slug}`
+    }
+
     return {
       title: post.title,
       description: post.description,
       alternates: {
         canonical: url,
-        languages: {
-          en: `${baseUrl}/blog/${slug}`,
-          es: `${baseUrl}/es/blog/${slug}`,
-          'x-default': `${baseUrl}/blog/${slug}`,
-        },
+        languages,
       },
       openGraph: {
         type: 'article',

@@ -27,7 +27,7 @@ function HvacAfter() {
       <div className="hv-a-hero">
         <div className="hv-a-left">
           <span className="hv-a-eye"><span className="hv-a-dot"></span>24/7 emergency service · Houston metro</span>
-          <h1 className="hv-a-h1">AC repair in<br/><em>under 60 minutes.</em></h1>
+          <h2 className="hv-a-h1">AC repair in<br/><em>under 60 minutes.</em></h2>
           <p className="hv-a-sub">Licensed Houston techs, flat-rate transparent pricing, and a 5-year parts warranty on every repair. Se habla español.</p>
           <div className="hv-a-row">
             <a className="hv-a-ctaA"><span className="hv-a-ctaIco">☎</span><span><small>Call now</small><b>(713) 555-COOL</b></span></a>
@@ -105,7 +105,7 @@ function DentalAfter() {
       <div className="dn-a-hero">
         <div className="dn-a-left">
           <span className="dn-a-eye">Houston Heights · Open today until 6pm</span>
-          <h1 className="dn-a-h1">Your best smile,<br/><em>by Houston&apos;s most-loved</em><br/>dental team.</h1>
+          <h2 className="dn-a-h1">Your best smile,<br/><em>by Houston&apos;s most-loved</em><br/>dental team.</h2>
           <p className="dn-a-sub">General, cosmetic, and family dentistry. Same-day visits for cleanings and emergencies. Bilingual front desk, all major PPO insurance accepted.</p>
           <div className="dn-a-row">
             <a className="dn-a-ctaA"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.5.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.5 1 1 0 0 1-.2 1z"/></svg><span><small>Call today</small><b>(713) 555-7645</b></span></a>
@@ -167,7 +167,7 @@ function PlumbingAfter() {
       <div className="pl-a-hero">
         <div className="pl-a-left">
           <div className="pl-a-eye"><span className="pl-a-pulse"></span><span>EMERGENCY · LIVE DISPATCH RIGHT NOW</span></div>
-          <h1 className="pl-a-h1">Burst pipe?<br/>Backed-up drain?<br/><em>We&apos;re 60 min away.</em></h1>
+          <h2 className="pl-a-h1">Burst pipe?<br/>Backed-up drain?<br/><em>We&apos;re 60 min away.</em></h2>
           <p className="pl-a-sub">Houston&apos;s fastest emergency plumbing. Licensed, insured, and on the road 24/7. Flat-rate quotes — pay after the job is done.</p>
           <div className="pl-a-row">
             <a className="pl-a-ctaA"><span className="pl-a-cta-ico">☎</span><span className="pl-a-cta-text"><small>CALL DISPATCH</small><b>(713) 555-FLOW</b></span></a>
@@ -236,7 +236,7 @@ function RoofingAfter() {
       <div className="rf-a-hero">
         <div className="rf-a-left">
           <div className="rf-a-eye"><span className="rf-a-eye-line"></span><span>Insurance-claim specialists · GAF Master Elite®</span></div>
-          <h1 className="rf-a-h1">Houston&apos;s most<br/>trusted roofers<br/><em>since 1998.</em></h1>
+          <h2 className="rf-a-h1">Houston&apos;s most<br/>trusted roofers<br/><em>since 1998.</em></h2>
           <p className="rf-a-sub">Hail damage, insurance claims, and full replacements. Hundreds of Houston-area roofs and a lifetime workmanship warranty.</p>
           <div className="rf-a-row">
             <a className="rf-a-ctaA">Free roof inspection <span className="rf-a-ctaA-arrow">→</span></a>
@@ -287,7 +287,7 @@ function LandscapingAfter() {
       <div className="ls-a-hero">
         <div className="ls-a-left">
           <span className="ls-a-eye"><svg viewBox="0 0 12 12" width="10" height="10"><circle cx="6" cy="6" r="3" fill="#7bc043"/></svg>Booking Spring projects · Houston metro</span>
-          <h1 className="ls-a-h1">Transform your<br/>Houston yard into<br/><em>a backyard escape.</em></h1>
+          <h2 className="ls-a-h1">Transform your<br/>Houston yard into<br/><em>a backyard escape.</em></h2>
           <p className="ls-a-sub">Full-service design, install, and weekly maintenance. Drought-smart Texas landscaping. Free quote in 24 hours.</p>
           <div className="ls-a-row">
             <a className="ls-a-ctaA">Get a free quote</a>
