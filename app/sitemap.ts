@@ -1,4 +1,5 @@
 ﻿import { MetadataRoute } from 'next'
+import { getAllPostSlugs } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://cecamarketing.com'
@@ -8,9 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/about',
     '/services',
+    '/portfolio',
     '/blog',
     '/faq',
     '/contact',
+    '/privacy-policy',
   ]
 
   const enPages = pages.map((page) => ({
@@ -27,5 +30,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: page === '' ? 0.9 : 0.7,
   }))
 
-  return [...enPages, ...esPages]
+  const enBlogSlugs = getAllPostSlugs('en').map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  const esBlogSlugs = getAllPostSlugs('es').map((slug) => ({
+    url: `${baseUrl}/es/blog/${slug}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  return [...enPages, ...esPages, ...enBlogSlugs, ...esBlogSlugs]
 }
