@@ -7,12 +7,17 @@ import { smoothScrollTo } from '@/lib/utils'
 import ThemeProvider from '@/components/ThemeProvider'
 import TopBar from '@/components/TopBar'
 import Hero from '@/components/Hero'
-import Services, { ServiceDrawer } from '@/components/Services'
 import HowItWorks from '@/components/HowItWorks'
 import Niches from '@/components/Niches'
-import FreeWebsite from '@/components/FreeWebsite'
-import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
+import dynamic from 'next/dynamic'
+import Services from '@/components/Services'
+
+const ServiceDrawer = dynamic(() => import('@/components/Services').then(mod => mod.ServiceDrawer), {
+  ssr: false,
+})
+const FreeWebsite = dynamic(() => import('@/components/FreeWebsite'))
+const ContactForm = dynamic(() => import('@/components/ContactForm'))
 
 export default function ClientPage({ lang, isRoot = false }: { lang: 'en' | 'es', isRoot?: boolean }) {
   const [theme]  = useState<ThemeKey>(TWEAK_DEFAULTS.theme)
