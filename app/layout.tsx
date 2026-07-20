@@ -89,7 +89,7 @@ const localBusinessSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://cecamarketing.com'),
   title: {
-    default: 'Contractor Marketing Agency | SEO, Websites & Automation | CECA Marketing',
+    default: 'Digital Marketing for Contractors | CECA Marketing',
     template: '%s | CECA Marketing',
   },
   description:

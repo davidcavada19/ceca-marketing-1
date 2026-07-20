@@ -1,7 +1,7 @@
 import ClientPage from '@/components/ClientPage'
 
 export const metadata = {
-  title: 'CECA Marketing | Digital Marketing Agency for Contractors in Houston TX',
+  title: 'Digital Marketing for Contractors in Houston TX | CECA Marketing',
   description:
     'CECA Marketing helps HVAC, roofing, plumbing, electrical, and general contractors in Houston, TX generate more leads and book more jobs through SEO, websites, automation, and paid ads.',
   alternates: {
