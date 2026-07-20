@@ -29,7 +29,7 @@ export default function Footer({ t, online }: FooterProps) {
           {/* Col 1 — Logo + tagline + nav */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-              <Image src="/ceca_logo_icon.png" alt="CECA Marketing" width={44} height={44} style={{ borderRadius: 10 }} />
+              <Image src="/logo-ceca.png" alt="CECA Marketing" width={44} height={44} style={{ borderRadius: 10 }} />
               <div style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 28, lineHeight: 0.9, letterSpacing: '-.04em', color: 'var(--fg)' }}>
                 CECA<span style={{ color: 'var(--accent)' }}>.</span>
               </div>

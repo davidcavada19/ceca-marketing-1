@@ -21,10 +21,11 @@ export default function ThemeProvider({ accent, theme, pair, children }: ThemePr
     r.setProperty('--accent',         accent.color)
     r.setProperty('--accent-contrast',accent.contrast)
     r.setProperty('--display',        pair.display)
-    r.setProperty('--mono',           pair.mono)
+    r.setProperty('--body',           pair.mono)
+    r.setProperty('--mono',           'ui-monospace, monospace')
     document.body.style.background  = theme.bg
     document.body.style.color       = theme.fg
-    document.body.style.fontFamily  = pair.display
+    document.body.style.fontFamily  = pair.mono
   }, [accent, theme, pair])
 
   return <>{children}</>

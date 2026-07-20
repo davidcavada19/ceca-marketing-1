@@ -1,24 +1,35 @@
 :root {
-  color-scheme: light;
-  --bg: #f8f5ee;
-  --fg: #0f1f3d;
-  --muted: #586075;
-  --line: #dcd7c8;
-  --panel: #efeada;
-  --subtle: #e4dfd1;
-  --accent: #f26419;
-  --accent-contrast: #ffffff;
-  --display: 'Inter Tight', system-ui, sans-serif;
-  --body: 'Inter Tight', system-ui, sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  color-scheme: dark;
+  --bg:             #0A0F1E;
+  --bg-card:        #0F1629;
+  --bg-hover:       #1A2240;
+  --fg:             #F9FAFB;
+  --muted:          #9CA3AF;
+  --line:           #1E2A45;
+  --panel:          #0F1629;
+  --subtle:         #1A2240;
+  --accent:         #F97316;
+  --accent-dark:    #EA580C;
+  --accent-blue:    #3B82F6;
+  --accent-contrast:#ffffff;
+  --display: var(--font-outfit), system-ui, sans-serif;
+  --body:    var(--font-dm-sans), system-ui, sans-serif;
+  --mono:    ui-monospace, monospace;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
+/* PON: */
 body {
   background: var(--bg);
   color: var(--fg);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--display);
+  font-weight: 800;
 }
 a { color: inherit; text-decoration: none; }
 button, input, textarea, select { font: inherit; color: inherit; }

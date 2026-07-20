@@ -177,7 +177,7 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
               </p>
             )}
             <div style={{ marginTop: 8 }}>
-              <CtaButton lang={lang} type="submit" fullWidth status={status} forceAccent={allValid || status !== 'idle'} onClick={() => {}}>
+              <CtaButton lang={lang} type="submit" fullWidth status={status} forceAccent onClick={() => {}}>
                 {t.form_cta}
               </CtaButton>
             </div>

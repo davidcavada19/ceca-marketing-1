@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter_Tight, JetBrains_Mono } from 'next/font/google'
+import { Outfit, DM_Sans } from 'next/font/google'
 import './globals.css'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 
-const interTight = Inter_Tight({ subsets: ['latin'], weight: ['400','500','600','700','800','900'], variable: '--font-inter-tight', display: 'swap' })
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], weight: ['400','500','600'], variable: '--font-jetbrains', display: 'swap' })
+const outfit = Outfit({ subsets: ['latin'], weight: ['700','800'], variable: '--font-outfit', display: 'swap' })
+const dmSans = DM_Sans({ subsets: ['latin'], weight: ['300','400','500','600'], variable: '--font-dm-sans', display: 'swap' })
 
-const fontVars = [interTight.variable, jetbrainsMono.variable].join(' ')
+const fontVars = [outfit.variable, dmSans.variable].join(' ')
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',

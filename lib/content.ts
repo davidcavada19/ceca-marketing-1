@@ -316,29 +316,27 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
     // ── Nav ──────────────────────────────────────────────────────────────────
     nav_cta: 'Get My Free Diagnosis',
     online: 'ONLINE',
-    badge: 'Digital Marketing Agency for Contractors · Houston, TX',
+    badge: 'Digital Marketing Agency for Contractors',
 
-    // ── Hero ─────────────────────────────────────────────────────────────────
-    h1_lines: ['Contractor Marketing', 'That Gets You More', 'Leads and More Jobs.'],
-    h1_stress_word: 'More',
-    subtitle:
-  'CECA is a digital marketing agency for contractors. We help general contractors, roofers, HVAC, plumbing, electrical, and remodeling companies generate more leads, respond faster, and book more jobs — with websites, SEO, automation, and lead generation systems built for the trades.',
-    cta1: 'Get My Free Diagnosis',
-    cta2: 'See How It Works',
-    ticker: [
-      'Contractor Marketing',
-      'Contractor SEO',
-      'Contractor Web Design',
-      'Marketing Automation',
-      'Lead Generation',
-      'Google Ads for Contractors',
-      'Meta Ads for Contractors',
-      'Local SEO',
-      'HVAC Marketing',
-      'Roofing Marketing',
-      'Plumber Marketing',
-      'Electrician Marketing',
-    ],
+h1_lines: ['Digital Marketing for Contractors', 'That Actually Brings', 'In Jobs.'],
+h1_stress_word: 'Brings',
+subtitle: 'You do the work. We make sure the phone rings. CECA Marketing is a bilingual digital marketing agency built specifically for contractors — no generic playbooks, no wasted ad spend.',
+cta1: 'Get a Free Marketing Audit',
+cta2: 'See How It Works',
+   ticker: [
+  'HVAC',
+  'Plumbing',
+  'Electrical',
+  'Roofing',
+  'Remodeling',
+  'Painting',
+  'Flooring',
+  'Landscaping',
+  'General Contracting',
+  'Concrete',
+  'Fencing',
+  'Pressure Washing',
+],
 
     // ── Stats ────────────────────────────────────────────────────────────────
     stat1_label: 'Average contractor launch',
@@ -363,17 +361,16 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
       'Missed-call texts, instant lead follow-up, review requests, and appointment reminders — automated so you close more jobs without extra work.',
 
     // ── Services ─────────────────────────────────────────────────────────────
-    services_label: 'What we do',
-    services_title: ['Marketing Systems Built', 'for Contractors.'],
-    services_sub:
-      'Every service is built around one goal: more leads, more booked jobs, and more revenue for your contracting business.',
+    services_label: 'Marketing Services for Contractors',
+services_title: ['Marketing Services Built', 'for Contractors.'],
+services_sub: 'Whatever stage your business is at, we have a service built to move it forward — no generic playbooks, no wasted ad spend.',
     services: SERVICES_EN,
 
     // ── How It Works ─────────────────────────────────────────────────────────
-    how_label: 'How it works',
-    how_title: ['From Free Diagnosis', 'to Live System — Fast.'],
-    how_sub: 'Most contractors are generating leads within 5 days.',
-    steps: STEPS_EN,
+   how_label: 'How it works',
+how_title: ['From Free Audit', 'to Live System — Fast.'],
+how_sub: 'No pressure, no jargon — just a straight conversation about what\'s working, what isn\'t, and what to do next.',
+steps: STEPS_EN,
 
     // ── Niches ───────────────────────────────────────────────────────────────
     niches_label: 'Who We Help',
@@ -384,7 +381,7 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
 
     // ── Free Website ─────────────────────────────────────────────────────────
     free_label: 'Free Website',
-    free_title: ['Every Contractor Gets a', 'Free Custom Website.'],
+    free_title: ['Every Contractor', 'Gets a Free Custom Website.'],
     free_sub:
       'Fast, conversion-optimized, and built to rank — included free with any marketing plan. No templates. No drag-and-drop. Real code, real speed, built for contractors.',
     free_cta: 'Claim Your Free Contractor Website →',
@@ -395,7 +392,7 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
 
     // ── Form ─────────────────────────────────────────────────────────────────
     form_label: 'Free Diagnosis',
-    form_title: ['Ready to Get More Leads', 'and Book More Jobs?'],
+    form_title: ['Ready to Get More Jobs', 'on the Books?'],
     form_name: 'Full name',
     form_name_ph: 'Mike Johnson',
     form_phone: 'Phone',
@@ -406,11 +403,11 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
     form_type_ph: 'HVAC, Roofing, Plumbing...',
     form_challenge: 'Biggest challenge right now',
     form_challenge_ph: 'Tell us what\'s not working — leads, response time, website...',
-    form_cta: 'Get My Free Diagnosis →',
-    form_note: 'No contracts. No pressure. Just a straight answer on what\'s holding your business back.',
+    form_cta: 'Get Your Free Marketing Audit →',
+    form_note: 'No pressure, no jargon — just a straight conversation about what\'s working, what isn\'t, and what to do next.',
 
     // ── Footer ───────────────────────────────────────────────────────────────
-    footer_tagline: 'Contractor marketing agency built for the trades.',
+    footer_tagline: 'A bilingual contractor marketing agency. No generic playbooks. No wasted ad spend.',
     footer_rights: 'All rights reserved.',
     nav_home: 'Home',
     nav_about: 'About',

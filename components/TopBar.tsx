@@ -48,13 +48,15 @@ export default function TopBar({ t, lang, online, isRoot: isRootProp }: TopBarPr
   return (
     <>
       <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 60, background: 'var(--bg)', borderBottom: '1px solid var(--line)' }}>
-        <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderTop: '1px solid var(--line)' }}>
+        <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '30px 200px', borderTop: '1px solid var(--line)' }}>
 
           {/* Logo */}
-          <a href={isRoot ? '/' : `/${lang}`} style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 16, letterSpacing: '-.01em', color: 'var(--fg)', flexShrink: 0, textDecoration: 'none' }}>
-            <Image src="/ceca_logo_icon.png" alt="CECA" width={36} height={36} style={{ borderRadius: 8 }} />
-            <span style={{ lineHeight: 1.1 }}>CECA<span style={{ color: 'var(--accent)' }}>.</span><br />Marketing</span>
-          </a>
+          <a href={isRoot ? '/' : `/${lang}`} style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0, textDecoration: 'none' }}>
+  <Image src="/logo-ceca.png" alt="CECA" width={45} height={45} style={{ borderRadius: 8 }} />
+  <span style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 22, color: 'var(--fg)', lineHeight: 1.1 }}>
+    CECA<span style={{ color: 'var(--accent)' }}>.</span><br />Marketing
+  </span>
+</a>
 
           {/* Centro — Nav links (solo desktop) */}
           <div className="nav-center" style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
@@ -62,7 +64,7 @@ export default function TopBar({ t, lang, online, isRoot: isRootProp }: TopBarPr
               const isActive = pathname === link.href
               return (
                 <a key={link.href} href={link.href} style={{
-                  fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '.06em',
+                  fontFamily: 'var(--mono)', fontSize: 18, letterSpacing: '.06em',
                   textTransform: 'uppercase', textDecoration: 'none',
                   color: isActive ? 'var(--accent)' : 'var(--fg)',
                   opacity: isActive ? 1 : 0.7,
@@ -79,7 +81,7 @@ export default function TopBar({ t, lang, online, isRoot: isRootProp }: TopBarPr
           {/* Derecha — Desktop: Lang + CTA / Mobile: Lang + Hamburger */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
             {/* Lang switcher — siempre visible */}
-            <div style={{ display: 'flex', border: '1px solid var(--line)', fontFamily: 'var(--mono)', fontSize: 11, padding: 2 }}>
+            <div style={{ display: 'flex', border: '1px solid var(--line)', fontFamily: 'var(--mono)', fontSize: 19, padding: 2 }}>
               {(['en', 'es'] as const).map((L) => (
                 <button key={L} onClick={() => switchLang(L)}
                   style={{ background: lang === L ? 'var(--accent)' : 'transparent', color: lang === L ? 'var(--accent-contrast)' : 'var(--fg)', padding: '5px 8px', border: 0, cursor: 'pointer', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' }}
@@ -89,7 +91,7 @@ export default function TopBar({ t, lang, online, isRoot: isRootProp }: TopBarPr
 
             {/* CTA — solo desktop */}
             <div className="nav-cta-desktop">
-              <CtaButton lang={lang} onClick={() => router.push(`${base}/contact`)} style={{ padding: '9px 12px', fontSize: 10 }}>
+              <CtaButton lang={lang} onClick={() => router.push(`${base}/contact`)} style={{ padding: '12px 20px', fontSize: 14 }}>
                 {t.nav_cta}
               </CtaButton>
             </div>

@@ -12,17 +12,19 @@ export const ACCENTS: Record<string, AccentDef> = {
 }
 
 export interface TypePairing { name: string; display: string; mono: string }
+// PON:
 export const TYPE_PAIRINGS: Record<string, TypePairing> = {
-  inter: { name: 'Inter Tight / JetBrains', display: 'var(--font-inter-tight), system-ui, sans-serif', mono: 'var(--font-jetbrains), ui-monospace, monospace' },
+  inter: { name: 'Outfit / DM Sans', display: 'var(--font-outfit), system-ui, sans-serif', mono: 'var(--font-dm-sans), system-ui, sans-serif' },
 }
 
 export interface ThemeDef {
   bg: string; fg: string; muted: string; line: string
   panel: string; subtle: string; invBg: string; invFg: string
 }
+// PON:
 export const THEMES: Record<string, ThemeDef> = {
   light: { bg: '#f8f5ee', fg: '#0f1f3d', muted: '#586075', line: '#dcd7c8', panel: '#efeada', subtle: '#e4dfd1', invBg: '#0f1f3d', invFg: '#f8f5ee' },
-  dark:  { bg: '#0f1f3d', fg: '#f8f5ee', muted: '#9aa4bd', line: '#1a2a4a', panel: '#152848', subtle: '#1e3157', invBg: '#f8f5ee', invFg: '#0f1f3d' },
+  dark:  { bg: '#0A0F1E', fg: '#F9FAFB', muted: '#9CA3AF', line: '#1E2A45', panel: '#0F1629', subtle: '#1A2240', invBg: '#F9FAFB', invFg: '#0A0F1E' },
 }
 
 export type Lang = 'en' | 'es'
@@ -37,9 +39,10 @@ export interface Tweaks {
   lang:   Lang
 }
 
+// PON:
 export const TWEAK_DEFAULTS: Tweaks = {
   accent: 'orange',
   type:   'inter',
-  theme:  'light',
+  theme:  'dark',
   lang:   'en',
 }
