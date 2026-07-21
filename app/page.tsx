@@ -1,9 +1,9 @@
 import ClientPage from '@/components/ClientPage'
 
 export const metadata = {
-  title: 'Digital Marketing for Contractors in Houston TX | CECA Marketing',
+  title: 'Digital Marketing for Contractors | CECA Marketing',
   description:
-    'CECA Marketing helps HVAC, roofing, plumbing, electrical, and general contractors in Houston, TX generate more leads and book more jobs through SEO, websites, automation, and paid ads.',
+    'CECA Marketing is a bilingual digital marketing agency for contractors. We help home service businesses generate more leads and book more jobs.',
   alternates: {
     canonical: 'https://cecamarketing.com',
     languages: {
@@ -12,8 +12,4 @@ export const metadata = {
       'x-default': 'https://cecamarketing.com',
     },
   },
-}
-
-export default function Home() {
-  return <ClientPage lang="en" isRoot={true} />
 }

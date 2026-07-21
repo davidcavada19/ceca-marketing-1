@@ -98,7 +98,7 @@ export default function Hero({ t, accent, lang }: HeroProps) {
           <span style={{ width: 5, height: 5, borderRadius: 99, background: 'var(--accent)' }} />
           <span>{t.badge}</span>
         </div>
-        <div role="heading" aria-level={1} style={{ margin: 0, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(27px, 8vw, 50px)', lineHeight: .98, letterSpacing: '-.01em', color: 'var(--fg)' }}>
+        <h1 style={{ margin: 0, fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(27px, 8vw, 50px)', lineHeight: .98, letterSpacing: '-.01em', color: 'var(--fg)' }}>
           {t.h1_lines.map((line, i) => (
             <span key={i} style={{ display: 'block' }}>
               {i === stressIdx
@@ -115,7 +115,7 @@ export default function Hero({ t, accent, lang }: HeroProps) {
                 : line}
             </span>
           ))}
-        </div>
+          </h1>
         <p style={{ marginTop: 20, marginBottom: 0, fontSize: 16, lineHeight: 1.55, color: 'var(--muted)' }}>{t.subtitle}</p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 28, alignItems: 'center' }}>
           <CtaButton lang={lang} forceAccent onClick={() => smoothScrollTo('contact')} fullWidth style={{ padding: '16px 20px', fontSize: 13 }}>{t.cta1}</CtaButton>

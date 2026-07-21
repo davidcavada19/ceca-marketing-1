@@ -40,7 +40,7 @@ const services = [
     n: '02',
     metric: 'GRATIS CON TU PLAN',
     title: 'Diseño de Sitios Web para Contratistas que Generan Llamadas y Cotizaciones.',
-intro: 'Tu sitio web es tu herramienta de ventas #1 — y la mayoría de sitios de contratistas están perdiendo clientes antes de que lean una sola palabra. Nuestro diseño de sitios web para contratistas se construye rápido y a medida, hecho específicamente para contratistas',
+    intro: 'Tu sitio web es tu herramienta de ventas #1 — y la mayoría de sitios de contratistas están perdiendo clientes antes de que lean una sola palabra. Nuestro diseño de sitios web para contratistas se construye rápido y a medida, hecho específicamente para contratistas',
     why: 'Un sitio web profesional para contratistas genera confianza antes de la primera llamada. Los clientes te buscan en Google antes de llamarte — asegúrate de que lo que encuentren los convierta.',
     note: '* Gratis con cualquier plan mensual de marketing. Aplican restricciones. Sitio de una página, 5 secciones.',
     deliverables: [
