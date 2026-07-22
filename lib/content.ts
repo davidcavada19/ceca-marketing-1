@@ -320,7 +320,7 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
 
 h1_lines: ['Digital Marketing for Contractors', 'That Actually Brings', 'In Jobs.'],
 h1_stress_word: 'Brings',
-subtitle: 'You do the work. We make sure the phone rings. CECA Marketing is a bilingual digital marketing agency built specifically for contractors — no generic playbooks, no wasted ad spend.',
+subtitle: 'You do the work. We make sure the phone rings. CECA Marketing is a bilingual agency built specifically for contractor digital marketing — no generic playbooks, no wasted ad spend.',
 cta1: 'Get a Free Marketing Audit',
 cta2: 'See How It Works',
    ticker: [
@@ -348,8 +348,7 @@ cta2: 'See How It Works',
     value_tag1: 'CONTRACTOR SEO',
     value_title1: 'Rank when customers search',
     value_body1:
-      'We build location pages, optimize your Google Business Profile, and implement on-page SEO so contractors in your area find you first.',
-
+        'Our seo marketing for contractors builds location pages, optimizes your Google Business Profile, and implements on-page SEO so customers in your area find you first.',
     value_tag2: 'LEAD GENERATION',
     value_title2: 'More calls, more estimate requests',
     value_body2:
@@ -363,20 +362,19 @@ cta2: 'See How It Works',
     // ── Services ─────────────────────────────────────────────────────────────
     services_label: 'Marketing Services for Contractors',
 services_title: ['Marketing Services Built', 'for Contractors.'],
-services_sub: 'Whatever stage your business is at, we have a service built to move it forward — no generic playbooks, no wasted ad spend.',
+services_sub: 'Whatever stage your business is at, we build marketing strategies for contractors designed to move it forward — no generic playbooks, no wasted ad spend.',
     services: SERVICES_EN,
 
     // ── How It Works ─────────────────────────────────────────────────────────
    how_label: 'How it works',
 how_title: ['From Free Audit', 'to Live System — Fast.'],
-how_sub: 'No pressure, no jargon — just a straight conversation about what\'s working, what isn\'t, and what to do next.',
+how_sub: 'No pressure, no jargon — just a straight conversation about the best marketing strategies for contractors: what\'s working, what isn\'t, and what to do next.',
 steps: STEPS_EN,
 
     // ── Niches ───────────────────────────────────────────────────────────────
     niches_label: 'Who We Help',
     niches_title: ['Contractors We Help', 'Grow Their Business.'],
-    niches_sub:
-      'If you\'re a contractor who needs more leads and more booked jobs — we\'re built for you.',
+    niches_sub: 'From general contractor digital marketing to specialty trades — if you\'re a contractor who needs more leads and more booked jobs, we\'re built for you.',
     niches: NICHES_EN,
 
     // ── Free Website ─────────────────────────────────────────────────────────

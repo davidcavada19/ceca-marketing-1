@@ -44,7 +44,7 @@ export default function Niches({ t, lang }: NichesProps) {
   const groups = lang === 'es' ? GROUPS_ES : GROUPS_EN
   const tagline = lang === 'es'
     ? 'Si eres contratista y necesitas más leads y más trabajos cerrados — somos tu agencia.'
-    : "If you're a contractor who needs more leads and more booked jobs — we're built for you."
+      : "From general contractor digital marketing to specialty trades — if you're a contractor who needs more leads and more booked jobs, we're built for you."
 
   return (
     <section style={{ padding: '112px 28px', borderBottom: '1px solid var(--line)' }}>

@@ -12,6 +12,7 @@ import Niches from '@/components/Niches'
 import Footer from '@/components/Footer'
 import dynamic from 'next/dynamic'
 import Services from '@/components/Services'
+import ValueStrip from '@/components/ValueStrip'
 
 const ServiceDrawer = dynamic(() => import('@/components/Services').then(mod => mod.ServiceDrawer), {
   ssr: false,
@@ -45,6 +46,7 @@ export default function ClientPage({ lang, isRoot = false }: { lang: 'en' | 'es'
       <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--fg)', paddingTop: 0, overflowX: 'hidden', maxWidth: '100vw' }}>
         <TopBar t={t} lang={lang} online={t.online} isRoot={isRoot} />
         <Hero t={t} accent={accentDef.color} lang={lang} />
+        <ValueStrip t={t} />
         <Services t={t} accent={accentDef.color} lang={lang} onOpen={setDrawerService} />
         <HowItWorks t={t} lang={lang} />
         <Niches t={t} lang={lang} />
