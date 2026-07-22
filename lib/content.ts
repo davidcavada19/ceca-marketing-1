@@ -134,7 +134,7 @@ const SERVICES_EN: ServiceDef[] = [
     n: '04',
     title: 'Lead Generation',
     metric: 'MORE CALLS · MORE JOBS',
-    desc: 'Google Ads, Meta Ads, and SEO systems built to generate qualified leads for contractors — every dollar tracked, every lead counted.',
+    desc: 'Google Ads for contractors, Meta Ads, and SEO systems built to generate qualified leads — every dollar tracked, every lead counted.',
     tags: ['Google Ads', 'Meta Ads', 'Lead Tracking', 'Conversion Optimization'],
     deliverables: [
       'Discovery call (20 min)',
@@ -356,7 +356,7 @@ cta2: 'See How It Works',
       'Most agencies translate. We build. Our campaigns and websites are designed from the start to convert English and Spanish-speaking homeowners alike — opening up a customer base most competitors never touch.',
 
     value_tag3: 'SEO MARKETING FOR CONTRACTORS',
-    value_title3: 'Show up when it matters most',
+    value_title3: 'SEO for Contractors That Actually Works',
     value_body3:
       'When someone\'s AC stops working in July or a pipe bursts at midnight, they search — and they call the first contractor they find. Our seo marketing for contractors gets you into that first spot, not page three.',
     // ── Services ─────────────────────────────────────────────────────────────
