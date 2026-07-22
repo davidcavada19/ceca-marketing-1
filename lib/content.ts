@@ -345,23 +345,23 @@ cta2: 'See How It Works',
     stat4_label: 'Contractors grown',
 
     // ── Value Strip ──────────────────────────────────────────────────────────
-    value_tag1: 'CONTRACTOR SEO',
-    value_title1: 'Rank when customers search',
+    value_tag1: 'BUILT FOR TRADES',
+    value_title1: 'We speak contractor, not marketing',
     value_body1:
-        'Our seo marketing for contractors builds location pages, optimizes your Google Business Profile, and implements on-page SEO so customers in your area find you first.',
-    value_tag2: 'LEAD GENERATION',
-    value_title2: 'More calls, more estimate requests',
+      'CECA was founded by someone with real field experience in the trades — not another agency that just discovered contractors were a market. We understand the sales cycle, the seasons, and how contractors actually get customers.',
+
+    value_tag2: 'BILINGUAL BY DESIGN',
+    value_title2: 'Reach English & Spanish customers',
     value_body2:
-      'Google Ads and Meta campaigns built specifically for contractors — every dollar tracked, every lead counted, every campaign optimized around your cost-per-job.',
+      'Most agencies translate. We build. Our campaigns and websites are designed from the start to convert English and Spanish-speaking homeowners alike — opening up a customer base most competitors never touch.',
 
-    value_tag3: 'MARKETING AUTOMATION',
-    value_title3: 'Never lose a job to slow response',
+    value_tag3: 'SEO MARKETING FOR CONTRACTORS',
+    value_title3: 'Show up when it matters most',
     value_body3:
-      'Missed-call texts, instant lead follow-up, review requests, and appointment reminders — automated so you close more jobs without extra work.',
-
+      'When someone\'s AC stops working in July or a pipe bursts at midnight, they search — and they call the first contractor they find. Our seo marketing for contractors gets you into that first spot, not page three.',
     // ── Services ─────────────────────────────────────────────────────────────
     services_label: 'Marketing Services for Contractors',
-services_title: ['Marketing Services Built', 'for Contractors.'],
+services_title: ['Marketing Services', 'Built for Contractors.'],
 services_sub: 'Whatever stage your business is at, we build marketing strategies for contractors designed to move it forward — no generic playbooks, no wasted ad spend.',
     services: SERVICES_EN,
 
