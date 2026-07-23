@@ -5,9 +5,9 @@ import TopBar from '@/components/TopBar'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Contractor Marketing Services | SEO, Websites, Automation & Ads | CECA',
+   title: 'Marketing Services for Contractors | CECA Marketing',
   description:
-    'CECA Marketing offers contractor SEO, free contractor websites, marketing automation, and lead generation for HVAC, roofing, plumbing, electrical, and general contractors in Houston, TX.',
+    'Marketing services for contractors — SEO, contractor websites, marketing automation, and lead generation. Everything a home service business needs to generate more leads and book more jobs.',
   alternates: {
     canonical: 'https://cecamarketing.com/services',
     languages: {
@@ -22,7 +22,7 @@ const services = [
   {
     n: '01',
     metric: 'RANK HIGHER · GET MORE LEADS',
-    title: 'Contractor SEO That Gets You Found on Google.',
+    title: 'Local SEO for Contractors That Gets You Found on Google.',
     intro: 'When a homeowner searches "HVAC contractor near me" or "roofing company Houston" — are you showing up? Contractor SEO makes sure you do. We build location pages, optimize your Google Business Profile, and implement on-page SEO so your business ranks higher in local search results and generates more calls and estimate requests — without paying for every click. Local SEO is a long-term investment that compounds over time: the longer you do it, the harder it becomes for competitors to outrank you.',
     why: 'Over 80% of local searches result in a call or purchase within 24 hours. Contractor SEO puts your business in front of customers who are already looking for exactly what you offer.',
     note: '* Local SEO results typically take 60–90 days to show meaningful movement.',
@@ -39,7 +39,7 @@ const services = [
   {
     n: '02',
     metric: 'FREE WITH YOUR PLAN',
-    title: 'Contractor Website Design Built to Generate Calls and Estimate Requests.',
+    title: 'Contractor Websites Built to Generate Calls and Estimate Requests.',
     intro: 'Your website is your #1 sales tool — and most contractor websites are losing customers before they even read a word. Our contractor website design is built fast and custom, made specifically for contractors',
     why: 'A professional contractor website builds trust before the first phone call. Customers Google you before they call — make sure what they find converts them into a lead.',
     note: '* Free with any monthly marketing plan. Restrictions apply. One-page site, 5 sections.',
@@ -110,10 +110,10 @@ export default function ServicesPage() {
               // What We Do
             </div>
             <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(40px,7vw,80px)', lineHeight: 0.95, letterSpacing: '-.04em', color: 'var(--fg)', marginBottom: 24 }}>
-              Marketing Systems Built<br /><span style={{ color: 'var(--accent)' }}>for Contractors.</span>
+              Marketing Services<br /><span style={{ color: 'var(--accent)' }}>Built for Contractors.</span>
             </h1>
              <p style={{ fontFamily: 'var(--body)', fontSize: 'clamp(16px,2vw,20px)', color: 'var(--muted)', maxWidth: 640, lineHeight: 1.6 }}>
-               CECA is a digital marketing agency for contractors. Every service is built around one goal: more leads, more booked jobs, and more revenue for your contracting business — for general contractors, roofing, HVAC, plumbing, electrical, and remodeling companies alike.
+               CECA is a digital marketing agency for contractors. Every service is built around one goal: more leads, more booked jobs, and more revenue for your business — no generic playbooks, no wasted ad spend.
              </p>
           </section>
 
