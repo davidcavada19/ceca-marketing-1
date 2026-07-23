@@ -5,9 +5,9 @@ import TopBar from '@/components/TopBar'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Servicios de Marketing para Contratistas | SEO, Sitios Web, Automatización y Ads | CECA',
-  description:
-    'CECA Marketing ofrece SEO para contratistas, sitios web gratis, automatización de marketing y generación de leads para HVAC, roofing, plomería, electricidad y contratistas generales en Houston, TX.',
+  title: 'Servicios de Marketing para Contratistas | CECA Marketing',
+description:
+  'Servicios de marketing para contratistas — SEO, sitios web, automatización y generación de leads. Todo lo que un negocio de servicios del hogar necesita para generar más leads y cerrar más trabajos.',
   alternates: {
     canonical: 'https://cecamarketing.com/es/services',
     languages: {
@@ -109,11 +109,11 @@ export default function ServicesPageEs() {
               // Lo Que Hacemos
             </div>
             <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(40px,7vw,80px)', lineHeight: 0.95, letterSpacing: '-.04em', color: 'var(--fg)', marginBottom: 24 }}>
-              Sistemas de Marketing<br /><span style={{ color: 'var(--accent)' }}>para Contratistas.</span>
+              Servicios de Marketing<br /><span style={{ color: 'var(--accent)' }}>para Contratistas.</span>
             </h1>
             <p style={{ fontFamily: 'var(--body)', fontSize: 'clamp(16px,2vw,20px)', color: 'var(--muted)', maxWidth: 640, lineHeight: 1.6 }}>
-             CECA es una agencia de marketing digital para contratistas. Cada servicio está construido alrededor de un objetivo: más leads, más trabajos cerrados y más ingresos — para contratistas generales, roofing, HVAC, plomería, electricidad y empresas de remodelación.
-            </p>
+              CECA es una agencia de marketing digital para contratistas. Cada servicio está construido alrededor de un objetivo: más leads, más trabajos cerrados y más ingresos para tu negocio — sin fórmulas genéricas, sin desperdicio de presupuesto.
+             </p>
           </section>
 
           {/* Services */}
