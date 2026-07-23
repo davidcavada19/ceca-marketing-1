@@ -1,9 +1,9 @@
 import ClientPage from '@/components/ClientPage'
 
 export const metadata = {
-  title: 'CECA Marketing | Agencia de Marketing Digital para Contratistas en Houston TX',
-  description:
-    'CECA Marketing ayuda a contratistas de HVAC, roofing, plomería, electricidad y contratistas generales en Houston, TX a generar más leads y cerrar más trabajos a través de SEO, sitios web, automatización y anuncios pagados.',
+ title: 'Agencia de Marketing Digital para Contratistas | CECA Marketing',
+description:
+      'CECA Marketing es una agencia de marketing digital bilingüe para contratistas. Ayudamos a negocios de servicios del hogar a generar más leads y cerrar más trabajos.',
   alternates: {
     canonical: 'https://cecamarketing.com/es',
     languages: {

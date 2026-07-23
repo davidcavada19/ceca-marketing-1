@@ -419,12 +419,12 @@ steps: STEPS_EN,
   es: {
     nav_cta: 'Diagnóstico Gratis',
     online: 'EN LÍNEA',
-    badge: 'Agencia de Marketing Digital para Contratistas · Houston, TX',
+    badge: 'Agencia de Marketing Digital para Contratistas',
 
     h1_lines: ['Marketing para Contratistas', 'Que Te Consigue Más', 'Clientes y Más Trabajo.'],
     h1_stress_word: 'Más',
-    subtitle:
-  'CECA es una agencia de marketing digital para contratistas. Ayudamos a contratistas generales, roofers, HVAC, plomería, electricidad y empresas de remodelación a generar más leads, responder más rápido y cerrar más trabajos — con páginas web, SEO, automatización y sistemas de generación de leads.',
+   subtitle:
+  'Tú haces el trabajo. Nosotros nos aseguramos de que suene el teléfono. CECA Marketing es una agencia bilingüe construida específicamente para contratistas — sin fórmulas genéricas, sin desperdicio de presupuesto.',
     cta1: 'Diagnóstico Gratis',
     cta2: 'Ver Cómo Funciona',
     ticker: [
@@ -447,22 +447,21 @@ steps: STEPS_EN,
     stat3_label: 'ROAS promedio',
     stat4_label: 'Contratistas crecidos',
 
-    value_tag1: 'SEO PARA CONTRATISTAS',
-    value_title1: 'Posiciónate cuando busquen tus servicios',
+    value_tag1: 'HECHO PARA EL OFICIO',
+    value_title1: 'Hablamos tu idioma',
     value_body1:
-      'Creamos páginas de ubicación, optimizamos tu Google Business Profile e implementamos SEO on-page para que los contratistas en tu área te encuentren primero.',
+      'CECA fue fundado por alguien con experiencia real de campo en el oficio — no otra agencia que apenas descubrió que los contratistas son un mercado. Entendemos el ciclo de venta, las temporadas, y cómo los contratistas realmente consiguen clientes.',
 
-    value_tag2: 'GENERACIÓN DE LEADS',
-    value_title2: 'Más llamadas, más cotizaciones',
+    value_tag2: 'BILINGÜE DE RAÍZ',
+    value_title2: 'Alcanza clientes en inglés y español',
     value_body2:
-      'Campañas de Google Ads y Meta construidas específicamente para contratistas — cada peso rastreado, cada lead contado, cada campaña optimizada alrededor de tu costo por trabajo.',
+      'La mayoría de las agencias traducen. Nosotros construimos. Nuestras campañas y sitios web están diseñados desde el inicio para convertir a dueños de casa que hablan inglés y español — abriéndote una base de clientes que la mayoría de la competencia nunca toca.',
 
-    value_tag3: 'AUTOMATIZACIÓN',
-    value_title3: 'Nunca pierdas un trabajo por responder tarde',
+    value_tag3: 'SEO PARA CONTRATISTAS',
+    value_title3: 'SEO para contratistas que sí funciona',
     value_body3:
-      'Textos por llamada perdida, seguimiento inmediato de leads, solicitudes de reseñas y recordatorios de citas — automatizados para que cierres más trabajos sin esfuerzo extra.',
-
-    services_label: 'Lo que hacemos',
+      'Cuando el aire acondicionado deja de funcionar en julio o una tubería revienta a medianoche, la gente busca — y llama al primer contratista que encuentra. Nuestro SEO te mete en ese primer lugar, no en la página tres.',
+    services_label: 'Servicios de Marketing para Contratistas',
     services_title: ['Sistemas de Marketing', 'para Contratistas.'],
     services_sub:
       'Cada servicio está construido alrededor de un objetivo: más leads, más trabajos cerrados y más ingresos para tu negocio.',
@@ -470,7 +469,7 @@ steps: STEPS_EN,
 
     how_label: 'Cómo funciona',
     how_title: ['Del Diagnóstico Gratis', 'al Sistema en Vivo — Rápido.'],
-    how_sub: 'La mayoría de contratistas está generando leads en 5 días.',
+    how_sub: 'Sin presión, sin tecnicismos — solo una conversación directa sobre qué está funcionando, qué no, y qué hacer después.',
     steps: STEPS_ES,
 
     niches_label: 'A Quién Ayudamos',
