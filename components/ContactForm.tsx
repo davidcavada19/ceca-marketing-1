@@ -144,7 +144,7 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
             </div>
           </div>
 
-          <form className="reveal contact-card" onSubmit={submit} style={{ border: '1px solid var(--line)', background: 'var(--panel)', padding: 20 }}>
+          <form className="reveal contact-card" onSubmit={submit} style={{ border: '1px solid var(--line)', background: 'var(--panel)', padding: 10 }}>
             
             {/* Card header — tells the contractor what this is */}
             <div style={{ marginBottom: 26 }}>
