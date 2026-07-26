@@ -144,7 +144,20 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
             </div>
           </div>
 
-          <form className="reveal" onSubmit={submit} style={{ border: '1px solid var(--line)', background: 'var(--panel)', padding: 32 }}>
+          <form className="reveal contact-card" onSubmit={submit} style={{ border: '1px solid var(--line)', background: 'var(--panel)', padding: 20 }}>
+            
+            {/* Card header — tells the contractor what this is */}
+            <div style={{ marginBottom: 26 }}>
+              <div style={{ fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 6 }}>
+                {lang === 'es' ? '// Diagnóstico gratis' : '// Free diagnosis'}
+              </div>
+              <div style={{ fontFamily: 'var(--display)', fontWeight: 300, fontSize: 21, color: 'var(--fg)', lineHeight: 1.3 }}>
+                {lang === 'es'
+                  ? 'Cuéntanos de tu negocio y te decimos qué está frenando tus leads.'
+                  : "Tell us about your business and we'll show you what's holding your leads back."}
+              </div>
+            </div>
+
             <div style={{ position: 'absolute', left: '-9999px', top: '-9999px', opacity: 0, pointerEvents: 'none' }} aria-hidden="true">
               <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="nope" readOnly />
             </div>
@@ -176,7 +189,7 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
                 {lang === 'es' ? 'Verificación fallida. Intenta de nuevo.' : 'Verification failed. Please try again.'}
               </p>
             )}
-            <div style={{ marginTop: 8 }}>
+           <div style={{ marginTop: 8 }}>
               <CtaButton lang={lang} type="submit" fullWidth status={status} forceAccent onClick={() => {}}>
                 {t.form_cta}
               </CtaButton>
@@ -185,6 +198,19 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
           </form>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .contact-card {
+            border: 1px solid rgba(249, 115, 22, 0.35) !important;
+            border-top: 3px solid var(--accent) !important;
+            box-shadow:
+              0 0 60px rgba(249, 115, 22, 0.14),
+              0 16px 40px rgba(0, 0, 0, 0.4);
+          }
+        }
+      `}</style>
     </section>
   )
 }
+  
