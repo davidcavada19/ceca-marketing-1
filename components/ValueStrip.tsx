@@ -12,10 +12,20 @@ export default function ValueStrip({ t }: ValueStripProps) {
 
   return (
     <section style={{ padding: '80px 28px', borderBottom: '1px solid var(--line)' }}>
-      <div className="value-strip-grid" style={{ maxWidth: 1320, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1, border: '1px solid var(--line)' }}>
+      <div className="value-strip-grid" style={{ maxWidth: 1320, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
         {items.map((item, i) => (
-          <div key={i} className="reveal" style={{ padding: '36px 32px', background: 'var(--panel)', borderRight: i < 2 ? '1px solid var(--line)' : 'none' }}>
-            <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: 14 }}>
+          <div
+            key={i}
+            className="reveal"
+            style={{
+              padding: '36px 32px',
+              background: 'var(--bg-card)',
+              border: '1px solid var(--line)',
+              borderRadius: 12,
+              boxShadow: 'var(--shadow-card)',
+            }}
+          >
+            <div style={{ fontFamily: 'var(--body)', fontWeight: 700, fontSize: 13, color: 'var(--accent)', letterSpacing: '.14em', textTransform: 'uppercase', marginBottom: 14 }}>
               {item.tag}
             </div>
             <h3 style={{ margin: 0, fontFamily: 'var(--display)', fontWeight: 800, fontSize: 22, lineHeight: 1.1, letterSpacing: '-.02em', color: 'var(--fg)' }}>

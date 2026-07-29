@@ -16,16 +16,17 @@ function Row({ children }: { children: React.ReactNode }) {
 function Field({ label, children, state }: { label: string; children: React.ReactElement<{ className?: string; style?: CSSProperties }>; state: FieldState }) {
   const borderColor = state === 'valid' ? '#28a36a' : state === 'invalid' ? '#e23b3b' : 'var(--line)'
   const inputStyle: CSSProperties = {
-    width: '100%', background: 'transparent',
-    borderTop: 0, borderLeft: 0, borderRight: 0,
-    borderBottom: `1px solid ${borderColor}`,
-    padding: '12px 0', fontFamily: 'var(--mono)', fontSize: 14, color: 'var(--fg)', outline: 'none', resize: 'none',
+    width: '100%', background: '#ffffff',
+    border: `1px solid ${borderColor}`,
+    borderRadius: 8,
+    padding: '12px 14px', fontFamily: 'var(--body)', fontSize: 15, color: 'var(--fg)', outline: 'none', resize: 'none',
+    boxSizing: 'border-box',
     transition: 'border-color .25s ease, box-shadow .25s ease',
   }
   const cls = ['field-input', children.props.className, state].filter(Boolean).join(' ')
   return (
-    <div style={{ marginBottom: 22 }}>
-      <label style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--muted)', letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: 4 }}>
+    <div style={{ marginBottom: 18 }}>
+      <label style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', fontFamily: 'var(--body)', fontSize: 13, fontWeight: 600, color: 'var(--fg)', marginBottom: 6 }}>
         <span>{label}</span>
         {state === 'valid'   && <span style={{ color: '#28a36a' }}>✓</span>}
         {state === 'invalid' && <span style={{ color: '#e23b3b' }}>!</span>}
@@ -124,34 +125,43 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
     return valid[k as keyof typeof valid] ? 'valid' : 'invalid'
   }
 
+  const cardEyebrow = lang === 'es' ? 'Diagnóstico gratis' : 'Free diagnosis'
+
   return (
     <section id="contact" ref={formRef} style={{ padding: '112px 28px', borderBottom: '1px solid var(--line)' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <SectionLabel label={`// ${t.form_label}`} num="SEC.06 / 06" />
+        <SectionLabel label={t.form_label} />
         <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 80, alignItems: 'start' }}>
           <div>
             <H2 lines={t.form_title} />
             <div style={{ marginTop: 36 }}>
               {[
-                lang === 'es' ? '✓  Respondemos en menos de 24 horas' : '✓  We respond in less than 24 hours',
-                lang === 'es' ? '✓  Sin spam, sin presión' : '✓  No spam, no pressure',
-                lang === 'es' ? '✓  Solo una conversación honesta' : '✓  Just an honest conversation',
+                lang === 'es' ? 'Respondemos en menos de 24 horas' : 'We respond in less than 24 hours',
+                lang === 'es' ? 'Sin spam, sin presión' : 'No spam, no pressure',
+                lang === 'es' ? 'Solo una conversación honesta' : 'Just an honest conversation',
               ].map((item, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', padding: '14px 0', borderBottom: '1px solid var(--line)', fontSize: 16, color: 'var(--accent)', fontWeight: 600 }}>
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 0', borderBottom: '1px solid var(--line)', fontSize: 16, color: 'var(--fg)', fontWeight: 500 }}>
+                  <span style={{ color: 'var(--accent)', fontWeight: 700 }}>✓</span>
                   {item}
                 </div>
               ))}
             </div>
           </div>
 
-          <form className="reveal contact-card" onSubmit={submit} style={{ border: '1px solid var(--line)', background: 'var(--panel)', padding: 10 }}>
-            
-            {/* Card header — tells the contractor what this is */}
+          <form className="reveal contact-card" onSubmit={submit} style={{
+            border: '1px solid var(--line)',
+            borderRadius: 12,
+            background: 'var(--bg-card)',
+            boxShadow: 'var(--shadow-card)',
+            padding: 32,
+          }}>
+
+            {/* Card header */}
             <div style={{ marginBottom: 26 }}>
-              <div style={{ fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 6 }}>
-                {lang === 'es' ? '// Diagnóstico gratis' : '// Free diagnosis'}
+              <div style={{ fontFamily: 'var(--body)', fontSize: 12, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 8 }}>
+                {cardEyebrow}
               </div>
-              <div style={{ fontFamily: 'var(--display)', fontWeight: 300, fontSize: 21, color: 'var(--fg)', lineHeight: 1.3 }}>
+              <div style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 21, color: 'var(--fg)', lineHeight: 1.3 }}>
                 {lang === 'es'
                   ? 'Cuéntanos de tu negocio y te decimos qué está frenando tus leads.'
                   : "Tell us about your business and we'll show you what's holding your leads back."}
@@ -169,7 +179,7 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
                 <input value={values.phone} onChange={update('phone')} onBlur={blur('phone')} placeholder={t.form_phone_ph} type="tel" autoComplete="tel" />
               </Field>
             </Row>
-            <Field label={lang === 'es' ? 'CORREO ELECTRÓNICO' : 'EMAIL'} state={fieldState('email')}>
+            <Field label={lang === 'es' ? 'Correo electrónico' : 'Email'} state={fieldState('email')}>
               <input value={values.email} onChange={update('email')} onBlur={blur('email')} placeholder={lang === 'es' ? 'tu@email.com' : 'you@email.com'} type="email" autoComplete="email" />
             </Field>
             <Field label={t.form_biz} state={fieldState('biz')}>
@@ -185,32 +195,22 @@ export default function ContactForm({ t, lang, selectedNiche, formRef }: Contact
               <textarea value={values.challenge} onChange={update('challenge')} onBlur={blur('challenge')} placeholder={t.form_challenge_ph} rows={4} />
             </Field>
             {status === 'blocked' && (
-              <p style={{ color: '#e23b3b', fontFamily: 'var(--mono)', fontSize: 11, marginBottom: 8, textAlign: 'center' }}>
+              <p style={{ color: '#e23b3b', fontFamily: 'var(--body)', fontSize: 13, marginBottom: 8, textAlign: 'center' }}>
                 {lang === 'es' ? 'Verificación fallida. Intenta de nuevo.' : 'Verification failed. Please try again.'}
               </p>
             )}
-           <div style={{ marginTop: 8 }}>
-              <CtaButton lang={lang} type="submit" fullWidth status={status} forceAccent onClick={() => {}}>
-                {t.form_cta}
+            <div style={{ marginTop: 8 }}>
+              <CtaButton
+                lang={lang} type="submit" fullWidth status={status} forceAccent onClick={() => {}}
+                style={{ fontFamily: 'var(--display)', textTransform: 'none', letterSpacing: 0, fontSize: 16, borderRadius: 8, justifyContent: 'center' }}
+              >
+                {t.form_cta.replace(/→/g, '').trim()}
               </CtaButton>
             </div>
-            <p style={{ marginTop: 14, fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted)', letterSpacing: '.04em', textAlign: 'center' }}>{t.form_note}</p>
+            <p style={{ marginTop: 14, fontFamily: 'var(--body)', fontSize: 13, color: 'var(--muted)', textAlign: 'center', lineHeight: 1.5 }}>{t.form_note}</p>
           </form>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 1024px) {
-          .contact-card {
-            border: 1px solid rgba(249, 115, 22, 0.35) !important;
-            border-top: 3px solid var(--accent) !important;
-            box-shadow:
-              0 0 60px rgba(249, 115, 22, 0.14),
-              0 16px 40px rgba(0, 0, 0, 0.4);
-          }
-        }
-      `}</style>
     </section>
   )
 }
-  

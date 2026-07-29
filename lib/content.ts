@@ -92,7 +92,7 @@ const SERVICES_EN: ServiceDef[] = [
     n: '01',
     title: 'Contractor SEO',
     metric: 'RANK HIGHER · GET MORE LEADS',
-    desc: 'Rank on Google when contractors in your area search for your services. Local SEO that drives real calls and estimate requests.',
+   desc: 'Rank on Google when homeowners in your area search for your services. Local SEO that drives real calls and estimate requests.',
     tags: ['Local SEO', 'Google Business', 'Location Pages', 'On-Page SEO'],
     deliverables: [
       'Full local SEO audit',
@@ -151,7 +151,7 @@ const SERVICES_ES: ServiceDef[] = [
     n: '01',
     title: 'SEO para Contratistas',
     metric: 'POSICIONA MEJOR · MÁS LEADS',
-    desc: 'Posiciónate en Google cuando contratistas en tu área busquen tus servicios. SEO local que genera llamadas y solicitudes de cotización reales.',
+     desc: 'Posiciónate en Google cuando la gente en tu área busque tus servicios. SEO local que genera llamadas y solicitudes de cotización reales.',
     tags: ['SEO Local', 'Google Business', 'Páginas de Ubicación', 'SEO On-Page'],
     deliverables: [
       'Auditoría SEO local completa',
@@ -346,19 +346,17 @@ cta2: 'See How It Works',
 
     // ── Value Strip ──────────────────────────────────────────────────────────
     value_tag1: 'BUILT FOR TRADES',
-    value_title1: 'We speak contractor, not marketing',
-    value_body1:
-      'CECA was founded by someone with real field experience in the trades — not another agency that just discovered contractors were a market. We understand the sales cycle, the seasons, and how contractors actually get customers.',
+    value_title1: 'Founded by a contractor',
+    value_body1: 'Real field experience — we know how you actually get customers.',
 
-    value_tag2: 'BILINGUAL BY DESIGN',
-    value_title2: 'Reach English & Spanish customers',
-    value_body2:
-      'Most agencies translate. We build. Our campaigns and websites are designed from the start to convert English and Spanish-speaking homeowners alike — opening up a customer base most competitors never touch.',
+    value_tag2: 'BILINGUAL',
+    value_title2: 'English & Spanish',
+    value_body2: "Reach every homeowner in your market. Most agencies can't.",
 
-    value_tag3: 'SEO MARKETING FOR CONTRACTORS',
-    value_title3: 'SEO for Contractors That Actually Works',
-    value_body3:
-      'When someone\'s AC stops working in July or a pipe bursts at midnight, they search — and they call the first contractor they find. Our seo marketing for contractors gets you into that first spot, not page three.',
+    value_tag3: 'LOCAL SEO',
+    value_title3: 'Found on Google first',
+    value_body3: 'When someone searches, you show up — not your competitor.',
+
     // ── Services ─────────────────────────────────────────────────────────────
     services_label: 'Marketing Services for Contractors',
 services_title: ['Marketing Services', 'Built for Contractors.'],
@@ -447,20 +445,18 @@ steps: STEPS_EN,
     stat3_label: 'ROAS promedio',
     stat4_label: 'Contratistas crecidos',
 
-    value_tag1: 'HECHO PARA EL OFICIO',
-    value_title1: 'Hablamos tu idioma',
-    value_body1:
-      'CECA fue fundado por alguien con experiencia real de campo en el oficio — no otra agencia que apenas descubrió que los contratistas son un mercado. Entendemos el ciclo de venta, las temporadas, y cómo los contratistas realmente consiguen clientes.',
+   value_tag1: 'HECHO PARA EL OFICIO',
+    value_title1: 'Fundado por un contratista',
+    value_body1: 'Experiencia real de campo — sabemos cómo consigues clientes.',
 
-    value_tag2: 'BILINGÜE DE RAÍZ',
-    value_title2: 'Alcanza clientes en inglés y español',
-    value_body2:
-      'La mayoría de las agencias traducen. Nosotros construimos. Nuestras campañas y sitios web están diseñados desde el inicio para convertir a dueños de casa que hablan inglés y español — abriéndote una base de clientes que la mayoría de la competencia nunca toca.',
+    value_tag2: 'BILINGÜE',
+    value_title2: 'Inglés y español',
+    value_body2: 'Llega a todos los dueños de casa de tu mercado. La mayoría de agencias no puede.',
 
-    value_tag3: 'SEO PARA CONTRATISTAS',
-    value_title3: 'SEO para contratistas que sí funciona',
-    value_body3:
-      'Cuando el aire acondicionado deja de funcionar en julio o una tubería revienta a medianoche, la gente busca — y llama al primer contratista que encuentra. Nuestro SEO te mete en ese primer lugar, no en la página tres.',
+    value_tag3: 'SEO LOCAL',
+    value_title3: 'Primero en Google',
+    value_body3: 'Cuando alguien busca, apareces tú — no tu competencia.',
+
     services_label: 'Servicios de Marketing para Contratistas',
     services_title: ['Sistemas de Marketing', 'para Contratistas.'],
     services_sub:
@@ -513,3 +509,24 @@ steps: STEPS_EN,
     nav_contact: 'Contacto',
   },
 }
+
+// ─── HERO V2 ─────────────────────────────────────────────────────────────────
+
+export const heroV2 = {
+  en: {
+    eyebrow: 'Bilingual Agency · SEO · Websites · AI Automation',
+    h1_line1: 'Digital Marketing',
+    h1_line2: 'for Contractors.',
+    subtitle: 'You do the work. We make sure the phone rings.',
+    cta: 'Get My Free Website',
+    cta_note: 'Free with any monthly plan. No contracts.',
+  },
+  es: {
+    eyebrow: 'Agencia Bilingüe · SEO · Sitios Web · Automatización',
+    h1_line1: 'Marketing Digital',
+    h1_line2: 'para Contratistas.',
+    subtitle: 'Tú haces el trabajo. Nosotros hacemos que suene el teléfono.',
+    cta: 'Quiero Mi Sitio Web Gratis',
+    cta_note: 'Gratis con cualquier plan mensual. Sin contratos.',
+  },
+} as const

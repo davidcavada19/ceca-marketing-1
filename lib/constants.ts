@@ -1,18 +1,17 @@
-export const NAVY  = '#0f1f3d'
-export const ORANGE = '#f26419'
-export const CREAM = '#f8f5ee'
-export const INK   = '#0a1428'
+// ─── CECA brand — single source of truth ─────────────────────
+export const NAVY   = '#0a0f1e'
+export const ORANGE = '#f97316'
+export const WHITE  = '#ffffff'
+export const INK    = '#0a0f1e'
+// legacy alias (some files may still import CREAM)
+export const CREAM  = '#ffffff'
 
 export interface AccentDef { name: string; color: string; contrast: string }
 export const ACCENTS: Record<string, AccentDef> = {
-  orange: { name: 'Orange',    color: '#f26419', contrast: '#ffffff' },
-  navy:   { name: 'Deep navy', color: '#0f1f3d', contrast: '#f8f5ee' },
-  amber:  { name: 'Amber',     color: '#e89d22', contrast: '#0f1f3d' },
-  teal:   { name: 'Teal',      color: '#0d8a8a', contrast: '#ffffff' },
+  orange: { name: 'Orange', color: '#f97316', contrast: '#ffffff' },
 }
 
 export interface TypePairing { name: string; display: string; mono: string }
-// PON:
 export const TYPE_PAIRINGS: Record<string, TypePairing> = {
   inter: { name: 'Outfit / DM Sans', display: 'var(--font-outfit), system-ui, sans-serif', mono: 'var(--font-dm-sans), system-ui, sans-serif' },
 }
@@ -21,15 +20,20 @@ export interface ThemeDef {
   bg: string; fg: string; muted: string; line: string
   panel: string; subtle: string; invBg: string; invFg: string
 }
-// PON:
+// One theme only — light. 'dark' kept as an alias to the same
+// palette so nothing that references it breaks.
+const LIGHT: ThemeDef = {
+  bg: '#ffffff', fg: '#0a0f1e', muted: '#4b5563', line: '#e5e7eb',
+  panel: '#ffffff', subtle: '#f3f4f6', invBg: '#0a0f1e', invFg: '#ffffff',
+}
 export const THEMES: Record<string, ThemeDef> = {
-  light: { bg: '#f8f5ee', fg: '#0f1f3d', muted: '#586075', line: '#dcd7c8', panel: '#efeada', subtle: '#e4dfd1', invBg: '#0f1f3d', invFg: '#f8f5ee' },
-  dark:  { bg: '#0A0F1E', fg: '#F9FAFB', muted: '#9CA3AF', line: '#1E2A45', panel: '#0F1629', subtle: '#1A2240', invBg: '#F9FAFB', invFg: '#0A0F1E' },
+  light: LIGHT,
+  dark: LIGHT,
 }
 
 export type Lang = 'en' | 'es'
 export type ThemeKey = 'light' | 'dark'
-export type AccentKey = 'orange' | 'navy' | 'amber' | 'teal'
+export type AccentKey = 'orange'
 export type TypeKey = 'inter'
 
 export interface Tweaks {
@@ -39,10 +43,9 @@ export interface Tweaks {
   lang:   Lang
 }
 
-// PON:
 export const TWEAK_DEFAULTS: Tweaks = {
   accent: 'orange',
   type:   'inter',
-  theme:  'dark',
+  theme:  'light',
   lang:   'en',
 }
