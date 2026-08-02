@@ -3,8 +3,8 @@ import { Outfit, DM_Sans } from 'next/font/google'
 import './globals.css'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 
-const outfit = Outfit({ subsets: ['latin'], weight: ['700','800'], variable: '--font-outfit', display: 'swap' })
-const dmSans = DM_Sans({ subsets: ['latin'], weight: ['300','400','500','600'], variable: '--font-dm-sans', display: 'swap' })
+const outfit = Outfit({ subsets: ['latin'], weight: ['700','800','900'], variable: '--font-outfit', display: 'swap' })
+const dmSans = DM_Sans({ subsets: ['latin'], weight: ['300','400','500','600','700', '800', '900'], variable: '--font-dm-sans', display: 'swap' })
 
 const fontVars = [outfit.variable, dmSans.variable].join(' ')
 
