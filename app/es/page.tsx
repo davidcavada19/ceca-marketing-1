@@ -14,6 +14,5 @@ description:
   },
 }
 
-export default function HomeEs() {
-  return <ClientPage lang="es" isRoot={true} />
-}
+export { default } from './HomePage'
+ 
