@@ -14,6 +14,4 @@ export const metadata = {
   },
 }
 
-export default function Home() {
-  return <ClientPage lang="en" isRoot={true} />
-}
+export { default } from './HomePage'
