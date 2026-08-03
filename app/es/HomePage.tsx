@@ -199,7 +199,7 @@ function Services() {
   )
 }
 
-// ─── INDUSTRIAS ───────────────────────────────────────────────
+/// ─── INDUSTRIAS ───────────────────────────────────────────────
 
 function Industries() {
   const industries = [
@@ -209,6 +209,12 @@ function Industries() {
     { name: 'Roofing', icon: '🏠' },
     { name: 'Remodelación', icon: '🔨' },
     { name: 'Jardinería', icon: '🌿' },
+    { name: 'Pintura', icon: '🎨' },
+    { name: 'Pisos', icon: '🟫' },
+    { name: 'Albercas', icon: '🏊' },
+    { name: 'Control de Plagas', icon: '🐛' },
+    { name: 'Puertas de Garage', icon: '🚗' },
+    { name: 'Ventanas', icon: '☀️' },
   ]
 
   return (
@@ -232,6 +238,12 @@ function Industries() {
               </div>
             </Link>
           ))}
+          <Link href="/es/contact" style={{ textDecoration: 'none' }}>
+            <div style={{ padding: '28px 20px', background: 'var(--accent)', border: '1px solid var(--accent)', borderRadius: 12, textAlign: 'center', color: '#ffffff' }}>
+              <div style={{ fontSize: 32, marginBottom: 12 }}>+</div>
+              <div style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16 }}>Tu Oficio</div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
@@ -242,9 +254,9 @@ function Industries() {
 
 function FeaturedWork() {
   const projects = [
-    { name: 'Houston Cool Air', tag: 'HVAC · Houston, TX', result: 'Rebranding completo + SEO + sistema de automatización' },
-    { name: 'Fast Flow Plumbing', tag: 'Plomería · Houston, TX', result: 'Sitio de emergencia 24/7 + texto por llamada perdida' },
-    { name: 'Texas Top Roofing', tag: 'Roofing · Houston, TX', result: 'Landing page de reclamos de seguro + Google Ads' },
+    { name: 'Houston Cool Air', tag: 'HVAC · Houston, TX', result: 'Sitio viejo → Sitio rápido, optimizado para SEO + automatización' },
+    { name: 'Fast Flow Plumbing', tag: 'Plomería · Houston, TX', result: 'Sin sitio web → Sitio de emergencia 24/7 + texto por llamada perdida' },
+    { name: 'Texas Top Roofing', tag: 'Roofing · Houston, TX', result: 'Sitio desactualizado → Landing page de reclamos + Google Ads' },
   ]
 
   return (
@@ -252,12 +264,17 @@ function FeaturedWork() {
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, flexWrap: 'wrap', gap: 16 }}>
           <div>
-            <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Trabajo Destacado</p>
-            <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: 0 }}>
-              Contratistas que hemos ayudado a crecer.
+            <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>
+              Nuestro Trabajo
+            </p>
+            <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 12px' }}>
+              Sitios que reconstruimos para contratistas.
             </h2>
+            <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', margin: 0, lineHeight: 1.6, maxWidth: 540 }}>
+              Viejos, lentos o inexistentes — tomamos sitios web de contratistas y los convertimos en máquinas de generación de leads.
+            </p>
           </div>
-          <Link href="/es/portfolio" style={{ fontFamily: 'var(--body)', fontSize: 15, fontWeight: 600, color: 'var(--accent)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/es/portfolio" style={{ fontFamily: 'var(--body)', fontSize: 15, fontWeight: 600, color: 'var(--accent)', textDecoration: 'none', whiteSpace: 'nowrap', alignSelf: 'flex-start' }}>
             Ver todo el trabajo →
           </Link>
         </div>
@@ -268,7 +285,7 @@ function FeaturedWork() {
                 <div style={{ fontFamily: 'var(--body)', fontSize: 12, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 16 }}>{p.tag}</div>
                 <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 26, color: 'var(--fg)', margin: '0 0 12px', letterSpacing: '-.02em' }}>{p.name}</h3>
                 <p style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--muted)', margin: '0 0 24px', lineHeight: 1.6 }}>{p.result}</p>
-                <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 600, color: 'var(--accent)' }}>Ver proyecto →</span>
+                <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 600, color: 'var(--accent)' }}>Ver la transformación →</span>
               </div>
             </Link>
           ))}

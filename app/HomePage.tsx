@@ -210,6 +210,12 @@ function Industries() {
     { name: 'Roofing', icon: '🏠' },
     { name: 'Remodeling', icon: '🔨' },
     { name: 'Landscaping', icon: '🌿' },
+    { name: 'Painting', icon: '🎨' },
+    { name: 'Flooring', icon: '🟫' },
+    { name: 'Pool Service', icon: '🏊' },
+    { name: 'Pest Control', icon: '🐛' },
+    { name: 'Garage Doors', icon: '🚗' },
+    { name: 'Windows', icon: '☀️' },
   ]
 
   return (
@@ -233,19 +239,24 @@ function Industries() {
               </div>
             </Link>
           ))}
+          <Link href="/contact" style={{ textDecoration: 'none' }}>
+            <div style={{ padding: '28px 20px', background: 'var(--accent)', border: '1px solid var(--accent)', borderRadius: 12, textAlign: 'center', color: '#ffffff' }}>
+              <div style={{ fontSize: 32, marginBottom: 12 }}>+</div>
+              <div style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16 }}>Your Trade</div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
   )
 }
-
 // ─── FEATURED WORK ─────────────────────────────────────────────
 
 function FeaturedWork() {
   const projects = [
-    { name: 'Houston Cool Air', tag: 'HVAC · Houston, TX', result: 'Full rebrand + SEO + automation system' },
-    { name: 'Fast Flow Plumbing', tag: 'Plumbing · Houston, TX', result: '24/7 emergency site + missed-call text back' },
-    { name: 'Texas Top Roofing', tag: 'Roofing · Houston, TX', result: 'Insurance claim landing page + Google Ads' },
+    { name: 'Houston Cool Air', tag: 'HVAC · Houston, TX', result: 'Old static site → Fast, SEO-optimized site + automation' },
+    { name: 'Fast Flow Plumbing', tag: 'Plumbing · Houston, TX', result: 'No website → 24/7 emergency site + missed-call text back' },
+    { name: 'Texas Top Roofing', tag: 'Roofing · Houston, TX', result: 'Outdated site → Insurance claim landing page + Google Ads' },
   ]
 
   return (
@@ -253,12 +264,17 @@ function FeaturedWork() {
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, flexWrap: 'wrap', gap: 16 }}>
           <div>
-            <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Featured Work</p>
-            <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: 0 }}>
-              Contractors we've helped grow.
+            <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>
+              Our Work
+            </p>
+            <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 12px' }}>
+              Sites we rebuild for contractors.
             </h2>
+            <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', margin: 0, lineHeight: 1.6, maxWidth: 540 }}>
+              Old, slow, or non-existent — we take contractor websites and turn them into lead-generating machines.
+            </p>
           </div>
-          <Link href="/portfolio" style={{ fontFamily: 'var(--body)', fontSize: 15, fontWeight: 600, color: 'var(--accent)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/portfolio" style={{ fontFamily: 'var(--body)', fontSize: 15, fontWeight: 600, color: 'var(--accent)', textDecoration: 'none', whiteSpace: 'nowrap', alignSelf: 'flex-start' }}>
             See all work →
           </Link>
         </div>
@@ -269,7 +285,7 @@ function FeaturedWork() {
                 <div style={{ fontFamily: 'var(--body)', fontSize: 12, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 16 }}>{p.tag}</div>
                 <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 26, color: 'var(--fg)', margin: '0 0 12px', letterSpacing: '-.02em' }}>{p.name}</h3>
                 <p style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--muted)', margin: '0 0 24px', lineHeight: 1.6 }}>{p.result}</p>
-                <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 600, color: 'var(--accent)' }}>View project →</span>
+                <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 600, color: 'var(--accent)' }}>See the transformation →</span>
               </div>
             </Link>
           ))}
