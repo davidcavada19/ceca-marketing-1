@@ -202,6 +202,8 @@ function Services() {
 
 // ─── INDUSTRIES ───────────────────────────────────────────────
 
+// ─── INDUSTRIES ───────────────────────────────────────────────
+
 function Industries() {
   const industries = [
     { name: 'HVAC', icon: '❄️' },
@@ -211,7 +213,7 @@ function Industries() {
     { name: 'Remodeling', icon: '🔨' },
     { name: 'Landscaping', icon: '🌿' },
     { name: 'Painting', icon: '🎨' },
-    { name: 'Flooring', icon: '🟫' },
+    { name: 'Flooring', icon: '🏡' },
     { name: 'Pool Service', icon: '🏊' },
     { name: 'Pest Control', icon: '🐛' },
     { name: 'Garage Doors', icon: '🚗' },
@@ -230,17 +232,17 @@ function Industries() {
             If homeowners hire you to fix, build, or maintain their home — we're built for you.
           </p>
         </div>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16 }}>
+        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 16 }}>
           {industries.map((ind) => (
             <Link key={ind.name} href="/services" style={{ textDecoration: 'none' }}>
-              <div style={{ padding: '28px 20px', background: 'var(--bg-card)', border: '1px solid var(--line)', borderRadius: 12, boxShadow: 'var(--shadow-card)', textAlign: 'center' }}>
+              <div style={{ padding: '28px 20px', background: 'var(--bg-card)', border: '1px solid var(--line)', borderRadius: 12, boxShadow: 'var(--shadow-card)', textAlign: 'center', height: '100%', boxSizing: 'border-box' }}>
                 <div style={{ fontSize: 32, marginBottom: 12 }}>{ind.icon}</div>
                 <div style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16, color: 'var(--fg)' }}>{ind.name}</div>
               </div>
             </Link>
           ))}
           <Link href="/contact" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '28px 20px', background: 'var(--accent)', border: '1px solid var(--accent)', borderRadius: 12, textAlign: 'center', color: '#ffffff' }}>
+            <div style={{ padding: '28px 20px', background: 'var(--accent)', border: '1px solid var(--accent)', borderRadius: 12, textAlign: 'center', color: '#ffffff', height: '100%', boxSizing: 'border-box' }}>
               <div style={{ fontSize: 32, marginBottom: 12 }}>+</div>
               <div style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16 }}>Your Trade</div>
             </div>
@@ -250,6 +252,7 @@ function Industries() {
     </section>
   )
 }
+
 // ─── FEATURED WORK ─────────────────────────────────────────────
 
 function FeaturedWork() {
@@ -262,22 +265,18 @@ function FeaturedWork() {
   return (
     <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderBottom: '1px solid var(--line)' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, flexWrap: 'wrap', gap: 16 }}>
-          <div>
-            <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>
-              Our Work
-            </p>
-            <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 12px' }}>
-              Sites we rebuild for contractors.
-            </h2>
-            <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', margin: 0, lineHeight: 1.6, maxWidth: 540 }}>
-              Old, slow, or non-existent — we take contractor websites and turn them into lead-generating machines.
-            </p>
-          </div>
-          <Link href="/portfolio" style={{ fontFamily: 'var(--body)', fontSize: 15, fontWeight: 600, color: 'var(--accent)', textDecoration: 'none', whiteSpace: 'nowrap', alignSelf: 'flex-start' }}>
-            See all work →
-          </Link>
-        </div>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>
+          Our Work
+        </p>
+        <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 12px' }}>
+          Sites we rebuild for contractors.
+        </h2>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', margin: '0 0 16px', lineHeight: 1.6, maxWidth: 540 }}>
+          Old, slow, or non-existent — we take contractor websites and turn them into lead-generating machines.
+        </p>
+        <Link href="/portfolio" style={{ fontFamily: 'var(--body)', fontSize: 15, fontWeight: 600, color: 'var(--accent)', textDecoration: 'none', display: 'inline-block', marginBottom: 48 }}>
+          See all work →
+        </Link>
         <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
           {projects.map((p, i) => (
             <Link key={i} href="/portfolio" style={{ textDecoration: 'none' }}>
@@ -311,7 +310,7 @@ function Process() {
         <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 56px', maxWidth: 480 }}>
           From free audit to live system — fast.
         </h2>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0, border: '1px solid var(--line)', borderRadius: 12, overflow: 'hidden' }}>
+        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 0, border: '1px solid var(--line)', borderRadius: 12, overflow: 'hidden' }}>
           {steps.map((s, i) => (
             <div key={i} style={{ padding: '40px 36px', background: 'var(--bg-card)', borderRight: i < 2 ? '1px solid var(--line)' : 'none' }}>
               <div style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 52, color: 'var(--accent)', lineHeight: 1, letterSpacing: '-.03em', marginBottom: 20 }}>{s.n}</div>

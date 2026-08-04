@@ -116,21 +116,32 @@ export default function ServicesPage() {
         <TopBar t={t} lang={lang} online={online} />
         <main style={{ paddingTop: 80 }}>
 
-          {/* ── PAGE HERO ── */}
-          <section style={{ padding: 'clamp(56px,10vw,120px) clamp(20px,5vw,80px)', background: 'var(--bg-alt)', borderBottom: '1px solid var(--line)' }}>
-            <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-              <p style={{ fontFamily: 'var(--body)', fontSize: 16, fontWeight: 800, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 16px' }}>
-                What We Do
-              </p>
-              <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(36px,6vw,72px)', lineHeight: 1, letterSpacing: '-.03em', color: 'var(--fg)', margin: '0 0 24px', maxWidth: 700 }}>
-                Marketing Services<br />
-                <span style={{ color: 'var(--accent)' }}>Built for Contractors.</span>
-              </h1>
-              <p style={{ fontFamily: 'var(--body)', fontSize: 20, fontWeight: 800, letterSpacing: '.0009em', color: 'var(--muted)', maxWidth: 460, lineHeight: 1.3, margin: 0 }}>
-                Every service is built around one goal: more leads, more booked jobs, more revenue — no generic playbooks, no wasted ad spend.
-              </p>
-            </div>
-          </section>
+         {/* ── PAGE HERO ── */}
+<section style={{ padding: 'clamp(100px,12vw,160px) clamp(20px,5vw,80px) clamp(64px,8vw,112px)', background: 'var(--bg-alt)', borderBottom: '1px solid var(--line)' }}>
+  <div style={{ maxWidth: 1320, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(40px,6vw,80px)', alignItems: 'center' }}>
+    <div>
+      <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 16px' }}>
+        What We Do
+      </p>
+      <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(36px,6vw,72px)', lineHeight: 1, letterSpacing: '-.03em', color: 'var(--fg)', margin: '0 0 24px', maxWidth: 600 }}>
+        Marketing Services<br />
+        <span style={{ color: 'var(--accent)' }}>Built for Contractors.</span>
+      </h1>
+      <p style={{ fontFamily: 'var(--body)', fontSize: 'clamp(16px,2vw,19px)', color: 'var(--muted)', maxWidth: 480, lineHeight: 1.6, margin: 0 }}>
+        Every service is built around one goal: more leads, more booked jobs, more revenue — no generic playbooks, no wasted ad spend.
+      </p>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Image
+        src="/images/services/services-hero.webp"
+        alt="Contractor marketing services — SEO, websites, automation, lead generation"
+        width={600}
+        height={400}
+        style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 8px 24px rgba(10,15,30,0.12))' }}
+      />
+    </div>
+  </div>
+</section>
 
           {/* ── SERVICE SECTIONS ── */}
           {services.map((s, idx) => {
