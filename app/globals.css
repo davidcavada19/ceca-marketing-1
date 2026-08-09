@@ -624,4 +624,9 @@ select {
     padding: 36px 0 !important;
   }
 }
+@media (max-width: 860px) {
+  .faq-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
 }

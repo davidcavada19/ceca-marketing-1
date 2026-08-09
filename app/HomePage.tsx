@@ -14,6 +14,8 @@ import ThemeProvider from '@/components/ThemeProvider'
 import TopBar from '@/components/TopBar'
 import Footer from '@/components/Footer'
 import FAQAccordion from './FAQAccordion'
+import ContactForm from '@/components/ContactForm'
+import { useState, useRef } from 'react'
 
 const t = CECA_CONTENT.en
 const lang = 'en'
@@ -271,95 +273,70 @@ function Services() {
 
 function Industries() {
   const industries = [
-    { name: 'HVAC', icon: '❄️' },
-    { name: 'Plumbing', icon: '🔧' },
-    { name: 'Electrical', icon: '⚡' },
-    { name: 'Roofing', icon: '🏠' },
-    { name: 'Remodeling', icon: '🔨' },
-    { name: 'Landscaping', icon: '🌿' },
-    { name: 'Painting', icon: '🎨' },
-    { name: 'Flooring', icon: '🏡' },
-    { name: 'Pool Service', icon: '🏊' },
-    { name: 'Pest Control', icon: '🐛' },
-    { name: 'Garage Doors', icon: '🚗' },
-    { name: 'Windows', icon: '☀️' },
+    'HVAC', 'Plumbing', 'Electrical', 'Roofing', 'Remodeling',
+    'Landscaping', 'Painting', 'Flooring', 'Pool Service',
+    'Pest Control', 'Garage Doors', 'Windows',
   ]
 
   return (
-    <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', background: 'var(--bg-alt)', borderBottom: '1px solid var(--line)' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Who We Help</p>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 48, flexWrap: 'wrap', gap: 16 }}>
-          <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: 0, maxWidth: 480 }}>
-            Built for home service contractors.
-          </h2>
-          <p style={{ fontFamily: 'var(--body)', fontSize: 16, color: 'var(--muted)', margin: 0, maxWidth: 360, lineHeight: 1.6 }}>
-            If homeowners hire you to fix, build, or maintain their home — we're built for you.
-          </p>
-        </div>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 16 }}>
-          {industries.map((ind) => (
-            <Link key={ind.name} href="/services" style={{ textDecoration: 'none' }}>
-              <div style={{ padding: '28px 20px', background: 'var(--bg-card)', border: '1px solid var(--line)', borderRadius: 12, boxShadow: 'var(--shadow-card)', textAlign: 'center', height: '100%', boxSizing: 'border-box' }}>
-                <div style={{ fontSize: 32, marginBottom: 12 }}>{ind.icon}</div>
-                <div style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16, color: 'var(--fg)' }}>{ind.name}</div>
-              </div>
-            </Link>
-          ))}
-          <Link href="/contact" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '28px 20px', background: 'var(--accent)', border: '1px solid var(--accent)', borderRadius: 12, textAlign: 'center', color: '#ffffff', height: '100%', boxSizing: 'border-box' }}>
-              <div style={{ fontSize: 32, marginBottom: 12 }}>+</div>
-              <div style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16 }}>Your Trade</div>
-            </div>
-          </Link>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── FEATURED WORK ─────────────────────────────────────────────
-
-function FeaturedWork() {
-  const projects = [
-    { name: 'Houston Cool Air', tag: 'HVAC · Houston, TX', result: 'Old static site → Fast, SEO-optimized site + automation' },
-    { name: 'Fast Flow Plumbing', tag: 'Plumbing · Houston, TX', result: 'No website → 24/7 emergency site + missed-call text back' },
-    { name: 'Texas Top Roofing', tag: 'Roofing · Houston, TX', result: 'Outdated site → Insurance claim landing page + Google Ads' },
-  ]
-
-  return (
-    <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderBottom: '1px solid var(--line)' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>
-          Our Work
-        </p>
-        <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 12px' }}>
-          Sites we rebuild for contractors.
+    <section style={{ padding: 'clamp(56px,7vw,88px) 0', background: 'var(--bg-alt)', borderBottom: '1px solid var(--line)', overflow: 'hidden' }}>
+      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 clamp(20px,5vw,80px)' }}>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px', textAlign: 'center' }}>Who We Help</p>
+        <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(28px,3.5vw,40px)', lineHeight: 1.15, letterSpacing: '-.02em', color: 'var(--fg)', margin: '0 auto', maxWidth: 680, textAlign: 'center' }}>
+          If homeowners hire you to fix, build, or maintain their home — we're built for you.
         </h2>
-        <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', margin: '0 0 16px', lineHeight: 1.6, maxWidth: 540 }}>
-          Old, slow, or non-existent — we take contractor websites and turn them into lead-generating machines.
-        </p>
-        <Link href="/portfolio" style={{ fontFamily: 'var(--body)', fontSize: 15, fontWeight: 600, color: 'var(--accent)', textDecoration: 'none', display: 'inline-block', marginBottom: 48 }}>
-          See all work →
-        </Link>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
-          {projects.map((p, i) => (
-            <Link key={i} href="/portfolio" style={{ textDecoration: 'none' }}>
-              <div style={{ padding: '32px 28px', background: 'var(--bg-card)', border: '1px solid var(--line)', borderRadius: 12, boxShadow: 'var(--shadow-card)' }}>
-                <div style={{ fontFamily: 'var(--body)', fontSize: 12, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 16 }}>{p.tag}</div>
-                <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 26, color: 'var(--fg)', margin: '0 0 12px', letterSpacing: '-.02em' }}>{p.name}</h3>
-                <p style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--muted)', margin: '0 0 24px', lineHeight: 1.6 }}>{p.result}</p>
-                <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 600, color: 'var(--accent)' }}>See the transformation →</span>
-              </div>
-            </Link>
-          ))}
+      </div>
+
+      <div style={{ marginTop: 48, position: 'relative' }}>
+        <div style={{ display: 'flex', whiteSpace: 'nowrap' }}>
+          <div className="marquee-track" style={{ display: 'flex', alignItems: 'center', flexShrink: 0, animationDuration: '75s' }}>
+            {[...industries, ...industries].map((name, i) => (
+              <span key={i} style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                fontFamily: 'var(--display)',
+                fontWeight: 700,
+                fontSize: 'clamp(18px,2vw,22px)',
+                color: 'var(--fg)',
+                letterSpacing: '-.01em',
+                padding: '14px 28px',
+                margin: '0 12px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--line)',
+                borderRadius: 99,
+                boxShadow: 'var(--shadow-card)',
+              }}>
+                {name}
+              </span>
+            ))}
+          </div>
+          <div className="marquee-track" style={{ display: 'flex', alignItems: 'center', flexShrink: 0, animationDuration: '75s' }} aria-hidden="true">
+            {[...industries, ...industries].map((name, i) => (
+              <span key={i} style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                fontFamily: 'var(--display)',
+                fontWeight: 700,
+                fontSize: 'clamp(18px,2vw,22px)',
+                color: 'var(--fg)',
+                letterSpacing: '-.01em',
+                padding: '14px 28px',
+                margin: '0 12px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--line)',
+                borderRadius: 99,
+                boxShadow: 'var(--shadow-card)',
+              }}>
+                {name}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   )
 }
-
-// ─── PROCESS ──────────────────────────────────────────────────
+/// ─── PROCESS ──────────────────────────────────────────────────
 
 function Process() {
   const steps = [
@@ -369,7 +346,7 @@ function Process() {
   ]
 
   return (
-    <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', background: 'var(--bg-alt)', borderBottom: '1px solid var(--line)' }}>
+    <section id="how-it-works" style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', background: 'var(--bg-alt)', borderBottom: '1px solid var(--line)' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>How We Work</p>
         <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 56px', maxWidth: 480 }}>
@@ -384,40 +361,6 @@ function Process() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── TESTIMONIALS ─────────────────────────────────────────────
-
-function Testimonials() {
-  const testimonials = [
-    { quote: "Before CECA, I was spending money on ads with no idea if they were working. Now I know exactly what each lead costs and my phone actually rings.", name: 'Mike R.', biz: 'HVAC Contractor · Houston, TX' },
-    { quote: "They built my site in less than a week and it already ranks better than my competitor's site that's been up for years.", name: 'Carlos G.', biz: 'Roofing Contractor · Katy, TX' },
-    { quote: "The missed-call text back alone paid for the entire plan in the first month. I stopped losing jobs to voicemail.", name: 'James T.', biz: 'Plumber · Sugar Land, TX' },
-  ]
-
-  return (
-    <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderBottom: '1px solid var(--line)' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Testimonials</p>
-        <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 56px', maxWidth: 480 }}>
-          What contractors say.
-        </h2>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
-          {testimonials.map((item, i) => (
-            <div key={i} style={{ padding: '32px 28px', background: 'var(--bg-card)', border: '1px solid var(--line)', borderRadius: 12, boxShadow: 'var(--shadow-card)' }}>
-              <div style={{ color: 'var(--accent)', fontSize: 20, marginBottom: 16 }}>★★★★★</div>
-              <p style={{ fontFamily: 'var(--body)', fontSize: 16, color: 'var(--fg)', lineHeight: 1.65, margin: '0 0 24px', fontStyle: 'italic' }}>"{item.quote}"</p>
-              <div style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 15, color: 'var(--fg)' }}>{item.name}</div>
-              <div style={{ fontFamily: 'var(--body)', fontSize: 13, color: 'var(--muted)', marginTop: 2 }}>{item.biz}</div>
-            </div>
-          ))}
-        </div>
-        <p style={{ fontFamily: 'var(--body)', fontSize: 13, color: 'var(--muted)', marginTop: 24, fontStyle: 'italic' }}>
-          * Replace with real client reviews when available.
-        </p>
       </div>
     </section>
   )
@@ -470,19 +413,16 @@ function Insights() {
 
 function FAQPreview() {
   return (
-    <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderBottom: '1px solid var(--line)' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(40px,6vw,80px)', alignItems: 'start' }}>
+    <section id="faq" style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderBottom: '1px solid var(--line)' }}>
+  <div className="faq-grid" style={{ maxWidth: 1320, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(40px,6vw,80px)', alignItems: 'start' }}>
         <div>
           <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>FAQ</p>
           <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 16px' }}>
             Quick answers.
           </h2>
-          <p style={{ fontFamily: 'var(--body)', fontSize: 16, color: 'var(--muted)', margin: '0 0 32px', lineHeight: 1.6 }}>
-            More questions? We have answers for everything.
+          <p style={{ fontFamily: 'var(--body)', fontSize: 16, color: 'var(--muted)', margin: 0, lineHeight: 1.6 }}>
+            Have another question? Just ask us directly below.
           </p>
-          <Link href="/faq" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--body)', fontSize: 15, fontWeight: 600, color: 'var(--accent)', textDecoration: 'none' }}>
-            See all FAQs →
-          </Link>
         </div>
         <div className="reveal">
           <FAQAccordion />
@@ -505,9 +445,13 @@ function FinalCTA() {
           Start with a free diagnosis — no pressure, no contracts. We show you exactly what's holding your business back.
         </p>
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#ffffff', color: 'var(--accent)', fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16, padding: '16px 28px', borderRadius: 8, textDecoration: 'none' }}>
+          <button
+            type="button"
+            onClick={() => smoothScrollTo('contact')}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#ffffff', color: 'var(--accent)', fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16, padding: '16px 28px', borderRadius: 8, border: 'none', cursor: 'pointer' }}
+          >
             Start Your Project →
-          </Link>
+          </button>
           <a href="https://wa.me/18329082728" target="_blank" rel="noopener noreferrer"
             style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#ffffff', fontFamily: 'var(--display)', fontWeight: 600, fontSize: 16, padding: '16px 28px', borderRadius: 8, border: '2px solid rgba(255,255,255,0.5)', textDecoration: 'none' }}>
             WhatsApp Us
@@ -518,12 +462,15 @@ function FinalCTA() {
   )
 }
 
+
 // ─── PAGE EXPORT ──────────────────────────────────────────────
 
 export default function HomePage() {
   const accentDef = ACCENTS[TWEAK_DEFAULTS.accent]
   const pair = TYPE_PAIRINGS[TWEAK_DEFAULTS.type]
   const themeDef = THEMES[TWEAK_DEFAULTS.theme]
+  const [selectedNiche, setSelectedNiche] = useState(null)
+  const formRef = useRef(null)
 
   useReveal()
 
@@ -536,10 +483,10 @@ export default function HomePage() {
         <Services />
         <Industries />
         <Process />
-        <Testimonials />
         <Insights />
         <FAQPreview />
         <FinalCTA />
+        <ContactForm t={t} lang={lang} selectedNiche={selectedNiche} formRef={formRef} />
         <Footer t={t} online={t.online} />
       </div>
     </ThemeProvider>
