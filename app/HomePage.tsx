@@ -2,9 +2,6 @@
 // ═══════════════════════════════════════════════════════════════
 //   HOME PAGE — cecamarketing.com (EN)
 //   Standalone — all sections inline
-//   To change text: edit directly in this file
-//   To change colors/fonts: edit lib/constants.ts
-//   To change hero image: edit public/images/hero/
 // ═══════════════════════════════════════════════════════════════
 
 import Image from 'next/image'
@@ -21,52 +18,107 @@ import FAQAccordion from './FAQAccordion'
 const t = CECA_CONTENT.en
 const lang = 'en'
 
-// ─── HERO ─────────────────────────────────────────────────────
+// ─── HERO (nuevo) ─────────────────────────────────────────────
 
 function Hero() {
   return (
-    <section id="top" className="heroV2">
-      <div className="heroV2-media" aria-hidden="true">
-        <Image
-          src="/images/hero/roofer-contractor-marketing-houston.webp"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="heroV2-img"
-        />
-        <div className="heroV2-overlay" />
-      </div>
-      <div className="heroV2-inner">
-        <p className="heroV2-eyebrow">Bilingual Agency · SEO · Websites · AI Automation</p>
-        <h1 className="heroV2-h1">
-          Digital Marketing<br />
-          <span className="heroV2-h1Accent">for Contractors.</span>
-        </h1>
-        <p className="heroV2-sub">You do the work. We make sure the phone rings.</p>
-        <div className="heroV2-ctaWrap">
-          <button
-            type="button"
-            className="heroV2-cta"
-            onClick={() => smoothScrollTo('contact')}
-          >
-            Get My Free Website
-            <span aria-hidden="true" className="heroV2-ctaArrow">→</span>
-          </button>
-          <p className="heroV2-ctaNote">Free with any monthly plan. No contracts.</p>
+    <section id="top" style={{ padding: 'clamp(120px,14vw,180px) clamp(20px,5vw,80px) clamp(64px,8vw,112px)', position: 'relative', overflow: 'hidden' }}>
+
+      <div
+  aria-hidden="true"
+  style={{
+    position: 'absolute',
+    inset: 0,
+    backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.93) 70%, #ffffff 100%), url(/images/hero/blueprint-pattern.webp)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    pointerEvents: 'none',
+  }}
+/>
+
+      <div className="hero-grid" style={{
+        maxWidth: 1320,
+        margin: '0 auto',
+        display: 'grid',
+        gridTemplateColumns: 'minmax(320px, 560px) 1fr',
+        gridTemplateAreas: '"heading image" "body image"',
+        gap: 'clamp(32px,5vw,64px)',
+        alignItems: 'center',
+        position: 'relative',
+      }}>
+
+        <div className="hero-heading" style={{ gridArea: 'heading' }}>
+          <p className="hero-eyebrow" style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 20px' }}>
+            Bilingual Agency · SEO · Websites · AI Automation
+          </p>
+
+          <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(36px,5.5vw,64px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: 0 }}>
+            Contractor Marketing Agency That Helps You Get{' '}
+            <span style={{ color: 'var(--accent)' }}>More Qualified Leads</span>
+          </h1>
         </div>
-        <div className="heroV2-contacts">
-          <a href="https://wa.me/18329082728" target="_blank" rel="noopener noreferrer" className="heroV2-contact">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.857L.057 23.882l6.19-1.453A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.027-1.384l-.36-.214-3.733.876.936-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/>
-            </svg>
-            (832) 908-2728
-          </a>
-          <a href="mailto:info@cecamarketing.com" className="heroV2-contact">
-            info@cecamarketing.com
-          </a>
+
+        <div className="hero-image" style={{ gridArea: 'image', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 380 }}>
+          <Image
+            src="/images/hero/hero-composition.webp"
+            alt="CECA Marketing website and Google review results for a contractor client"
+            width={1000}
+            height={1000}
+            priority
+            style={{ width: '100%', height: 'auto', maxWidth: 2000, mixBlendMode: 'multiply' }}
+          />
         </div>
+
+        <div className="hero-body" style={{ gridArea: 'body' }}>
+          <p style={{ fontFamily: 'var(--body)', fontWeight: 900, fontSize: 'clamp(20px,2vw,19px)', color: 'var(--muted)', lineHeight: 1.3, margin: '0 0 36px', maxWidth: 480 }}>
+            You do the work. We make sure the phone rings. Websites, local SEO, and lead automation built specifically for home service contractors.
+          </p>
+
+          <div className="hero-cta-wrap" style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}>
+            <button
+              type="button"
+              onClick={() => smoothScrollTo('contact')}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 10,
+                justifyContent: 'center',
+                background: 'var(--accent)',
+                color: '#ffffff',
+                fontFamily: 'var(--display)',
+                fontWeight: 700,
+                fontSize: 16,
+                padding: '16px 28px',
+                borderRadius: 8,
+                border: 'none',
+                cursor: 'pointer',
+                width: 'fit-content',
+              }}
+            >
+              Book Your Growth Strategy Call
+              <span aria-hidden="true">→</span>
+            </button>
+            <p style={{ fontFamily: 'var(--body)', fontSize: 13, color: 'var(--muted)', margin: 0 }}>
+              No pressure. No contracts. Just a clear plan to get more calls.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+            <a href="https://wa.me/18329082728" target="_blank" rel="noopener noreferrer"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--body)', fontSize: 15, color: 'var(--fg)', textDecoration: 'none' }}>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.857L.057 23.882l6.19-1.453A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.027-1.384l-.36-.214-3.733.876.936-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/>
+              </svg>
+              (832) 908-2728
+            </a>
+            <a href="mailto:info@cecamarketing.com"
+              style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--fg)', textDecoration: 'none' }}>
+              info@cecamarketing.com
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
   )
@@ -77,130 +129,143 @@ function Hero() {
 function WhyCECA() {
   const reasons = [
     {
-      icon: '🔧',
-      title: 'Built by someone from the trades',
-      body: 'Not another agency that discovered contractors are a market. Real field experience in electrical and remodeling — we know how your customers find you.',
+      n: '01',
+      title: <>We know <span style={{ color: 'var(--accent)' }}>the trades</span></>,
+      body: "We've worked in electrical and remodeling ourselves. We know how people search for a contractor when something breaks.",
     },
     {
-      icon: '📍',
-      title: 'Built for leads, not vanity metrics',
-      body: "We don't report impressions. We report calls, estimate requests, and booked jobs. Every decision starts with: does this bring in more work?",
+      n: '02',
+      title: <>You'll see <span style={{ color: 'var(--accent)' }}>what's working</span></>,
+      body: "Calls. Quote requests. Jobs booked. That's what we track — not clicks or views that don't pay your bills.",
     },
     {
-      icon: '🌐',
-      title: 'Bilingual from day one',
-      body: 'English and Spanish — not translated, built. Your campaigns reach every homeowner in your market, not just half of them.',
+      n: '03',
+      title: <>We reach <span style={{ color: 'var(--accent)' }}>your whole market</span></>,
+      body: 'English and Spanish, built from the start. You reach every homeowner near you, not just half of them.',
     },
     {
-      icon: '⚡',
-      title: 'Custom-coded, not templated',
-      body: "No Wix, no WordPress, no page builders. Real code, real speed, real SEO. Sites that load fast and rank — because your competitors' don't.",
+      n: '04',
+      title: <>Built <span style={{ color: 'var(--accent)' }}>fast, found on Google</span></>,
+      body: "We build it by hand, the right way. That's why it works when other contractor sites don't.",
     },
   ]
 
   return (
-    <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderBottom: '1px solid var(--line)' }}>
+    <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderTop: 'none', borderBottom: '1px solid var(--line)' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Why CECA</p>
         <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 16px', maxWidth: 600 }}>
-          Why contractors choose us over every other agency.
+          You do the work. We make sure people find you.
         </h2>
         <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: '0 0 56px', maxWidth: 540 }}>
-          Any agency can run ads. Not every agency understands why your busy season peaks in July, or how a plumber actually gets a customer at midnight.
+          No confusing reports. No wasted money on ads that don't work. Just a website and marketing that bring you real jobs.
         </p>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
-          {reasons.map((r, i) => (
-            <div key={i} style={{ padding: '32px 28px', background: 'var(--bg-card)', border: '1px solid var(--line)', borderRadius: 12, boxShadow: 'var(--shadow-card)' }}>
-              <div style={{ fontSize: 32, marginBottom: 16 }}>{r.icon}</div>
-              <h3 style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 18, color: 'var(--fg)', margin: '0 0 10px', lineHeight: 1.2 }}>{r.title}</h3>
-              <p style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--muted)', margin: 0, lineHeight: 1.6 }}>{r.body}</p>
-            </div>
-          ))}
-        </div>
+        <div className="reveal why-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 0, border: '1px solid var(--line)', borderRadius: 12, overflow: 'hidden' }}>
+  {reasons.map((r, i) => (
+    <div key={r.n} className="why-card" style={{ padding: '40px 32px', background: 'var(--bg-card)' }}>
+      <div style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 40, color: 'var(--line)', lineHeight: 1, letterSpacing: '-.03em', marginBottom: 20 }}>{r.n}</div>
+      <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 22, color: 'var(--fg)', margin: '0 0 12px', letterSpacing: '-.02em', lineHeight: 1.15 }}>{r.title}</h3>
+      <p style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--muted)', margin: 0, lineHeight: 1.6 }}>{r.body}</p>
+    </div>
+  ))}
+</div>
       </div>
     </section>
   )
 }
 
-// ─── RESULTS ──────────────────────────────────────────────────
-
-function Results() {
-  const stats = [
-    { num: '97+', label: 'PageSpeed score on every site we build' },
-    { num: '5 days', label: 'Average time from signed to live' },
-    { num: '80%', label: 'Of local searches call within 24 hours' },
-    { num: '$0', label: 'Website cost with any monthly plan' },
-  ]
-
-  return (
-    <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', background: 'var(--bg-alt)', borderBottom: '1px solid var(--line)' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Results</p>
-        <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 56px', maxWidth: 560 }}>
-          What you can expect when you work with CECA.
-        </h2>
-        <div className="reveal stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, border: '1px solid var(--line)', borderRadius: 12, overflow: 'hidden' }}>
-          {stats.map((s, i) => (
-            <div key={i} style={{ padding: '40px 32px', background: 'var(--bg-card)', borderRight: i < 3 ? '1px solid var(--line)' : 'none', textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(36px,4vw,52px)', color: 'var(--accent)', letterSpacing: '-.02em', lineHeight: 1, marginBottom: 12 }}>{s.num}</div>
-              <div style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)', lineHeight: 1.5 }}>{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 // ─── SERVICES ─────────────────────────────────────────────────
 
 function Services() {
   const services = [
-    { n: '01', title: 'Contractor SEO', desc: 'Rank on Google when homeowners search for your trade — without paying for every click.', tags: ['Local SEO', 'Google Business', 'Location Pages'], metric: 'RANK HIGHER · GET MORE LEADS' },
-    { n: '02', title: 'Contractor Websites', desc: 'Fast, custom-coded sites built to turn visitors into calls and estimate requests.', tags: ['Mobile Optimized', 'Fast Load', 'Lead Focused'], metric: 'FREE WITH YOUR PLAN' },
-    { n: '03', title: 'AI Automation', desc: 'Missed-call texts, instant lead follow-up, review requests — running 24/7 without you.', tags: ['Missed Call Text Back', 'CRM Setup', 'Review Automation'], metric: 'NEVER MISS A LEAD' },
-    { n: '04', title: 'Lead Generation', desc: 'Google Ads and Meta Ads built around your cost per lead — not impressions.', tags: ['Google Ads', 'Meta Ads', 'Conversion Optimization'], metric: 'MORE CALLS · MORE JOBS' },
+    {
+      n: '01',
+      title: 'Your Website + Local SEO',
+      desc: "A clean, fast one-page website — built and live, with local SEO set up from day one so people searching for your trade can find you.",
+      includes: [
+        'One-page website, built for mobile',
+        'Google Business Profile set up and optimized',
+        'Shows up in local Google searches and maps',
+        'No setup fee — it\'s part of your plan',
+      ],
+    },
+    {
+      n: '02',
+      title: 'Growing Your Rankings Over Time',
+      desc: 'As your business grows, we add more to your online presence — new pages for each service you offer and each city you work in.',
+      includes: [
+        'A page for every service you offer',
+        'A page for every city or area you serve',
+        'Blog posts about what your customers are searching for',
+        'Keeps you ranking higher the longer we work together',
+      ],
+    },
+    {
+      n: '03',
+      title: 'Google & Facebook Ads',
+      desc: "We build, run, and manage your ads on Google and Facebook — so the right people see you right when they're looking for your service.",
+      includes: [
+        'Ad setup and daily management on Google and Facebook',
+        'We create the images and text for your ads',
+        'You always know what each customer cost to get',
+        'Ad spend is billed directly by Google/Facebook, separate from our fee',
+      ],
+    },
+    {
+      n: '04',
+      title: 'Never Miss a Job Again',
+      desc: "Miss a call while you're on a job site? We text them back automatically, so you don't lose the lead to silence.",
+      includes: [
+        'Instant text-back when you miss a call',
+        'Automatic review requests after a job',
+        'Follow-up texts for leads who haven\'t booked yet',
+        'Runs 24/7, even when you\'re on a roof or under a sink',
+      ],
+    },
   ]
 
   return (
     <section id="services" style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderBottom: '1px solid var(--line)' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, flexWrap: 'wrap', gap: 16 }}>
-          <div>
-            <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Services</p>
-            <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: 0, maxWidth: 480 }}>
-              Everything a contractor needs to grow online.
-            </h2>
-          </div>
-          <Link href="/services" style={{ fontFamily: 'var(--body)', fontSize: 15, fontWeight: 600, color: 'var(--accent)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
-            See all services →
-          </Link>
+        <div style={{ marginBottom: 64 }}>
+          <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Services</p>
+          <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: 0, maxWidth: 560 }}>
+            Everything you need to keep the phone ringing.
+          </h2>
         </div>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-          {services.map((s) => (
-            <Link key={s.n} href="/services" style={{ textDecoration: 'none' }}>
-              <div style={{ padding: '32px 28px', background: 'var(--bg-card)', border: '1px solid var(--line)', borderRadius: 12, boxShadow: 'var(--shadow-card)', height: '100%' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-                  <span style={{ fontFamily: 'var(--body)', fontSize: 12, fontWeight: 700, color: 'var(--muted)' }}>0{s.n}</span>
-                  <span style={{ fontFamily: 'var(--body)', fontSize: 11, fontWeight: 700, color: 'var(--accent)', letterSpacing: '.08em' }}>{s.metric}</span>
-                </div>
-                <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 24, color: 'var(--fg)', margin: '0 0 12px', letterSpacing: '-.02em' }}>{s.title}</h3>
-                <p style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--muted)', margin: '0 0 24px', lineHeight: 1.6 }}>{s.desc}</p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                  {s.tags.map((tag) => (
-                    <span key={tag} style={{ fontFamily: 'var(--body)', fontSize: 12, fontWeight: 500, color: 'var(--muted)', background: 'var(--subtle)', borderRadius: 99, padding: '5px 12px' }}>{tag}</span>
-                  ))}
-                </div>
+
+        <div>
+          {services.map((s, i) => (
+            <div key={s.n} className="service-row" style={{
+              display: 'grid',
+              gridTemplateColumns: 'minmax(240px, 420px) 1fr',
+              gap: 'clamp(32px,5vw,64px)',
+              padding: '48px 0',
+              borderTop: i === 0 ? '1px solid var(--line)' : undefined,
+              borderBottom: '1px solid var(--line)',
+              alignItems: 'start',
+            }}>
+              <div>
+                <div style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 15, color: 'var(--accent)', letterSpacing: '.05em', marginBottom: 12 }}>{s.n}</div>
+                <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 'clamp(22px,2.5vw,28px)', color: 'var(--fg)', margin: '0 0 12px', letterSpacing: '-.02em', lineHeight: 1.15 }}>{s.title}</h3>
+                <p style={{ fontFamily: 'var(--body)', fontSize: 16, color: 'var(--muted)', margin: 0, lineHeight: 1.6 }}>{s.desc}</p>
               </div>
-            </Link>
+              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 14 }}>
+                {s.includes.map((item) => (
+                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, fontFamily: 'var(--body)', fontSize: 15, color: 'var(--fg)', lineHeight: 1.5 }}>
+                    <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </div>
     </section>
   )
 }
-
-// ─── INDUSTRIES ───────────────────────────────────────────────
 
 // ─── INDUSTRIES ───────────────────────────────────────────────
 
@@ -468,10 +533,8 @@ export default function HomePage() {
         <TopBar t={t} lang={lang} online={t.online} isRoot={true} />
         <Hero />
         <WhyCECA />
-        <Results />
         <Services />
         <Industries />
-        <FeaturedWork />
         <Process />
         <Testimonials />
         <Insights />

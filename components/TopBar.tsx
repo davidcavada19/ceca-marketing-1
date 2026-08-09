@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { useRouter, usePathname } from 'next/navigation'
 import { SiteContent } from '@/lib/content'
+import { smoothScrollTo } from '@/lib/utils'
 
 interface TopBarProps {
   t: SiteContent
@@ -18,17 +19,25 @@ export default function TopBar({ t, lang, isRoot: isRootProp }: TopBarProps) {
   const isRoot = isRootProp ?? (!pathname.startsWith('/en') && !pathname.startsWith('/es'))
   const base = isRoot ? '' : `/${lang}`
 
-  const portfolioLabel = lang === 'en' ? 'Portfolio' : 'Portafolio'
-
+  // Anclas dentro de la misma landing en vez de paginas separadas.
+  // Los ids deben existir en HomePage.tsx: id="top", id="services",
+  // id="how-it-works", id="faq", id="contact"
   const navLinks = [
-    { label: t.nav_home, href: isRoot ? '/' : `/${lang}` },
-    { label: t.nav_about, href: `${base}/about` },
-    { label: t.nav_services, href: `${base}/services` },
-    { label: portfolioLabel, href: `${base}/portfolio` },
-    { label: t.nav_blog, href: `${base}/blog` },
-    { label: t.nav_faq, href: `${base}/faq` },
-    { label: t.nav_contact, href: `${base}/contact` },
+    { label: t.nav_home, id: 'top' },
+    { label: t.nav_services, id: 'services' },
+    { label: lang === 'en' ? 'How It Works' : 'Cómo Trabajamos', id: 'how-it-works' },
+    { label: t.nav_faq, id: 'faq' },
+    { label: t.nav_contact, id: 'contact' },
   ]
+
+  const goToSection = (id: string) => {
+    setMenuOpen(false)
+    if (id === 'top') {
+      smoothScrollTo('top')
+      return
+    }
+    smoothScrollTo(id)
+  }
 
   const switchLang = (L: string) => {
     if (L === 'en') {
@@ -67,48 +76,49 @@ export default function TopBar({ t, lang, isRoot: isRootProp }: TopBarProps) {
           }}
         >
           {/* Logo */}
-          <a
-            href={isRoot ? '/' : `/${lang}`}
-            style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}
+          <button
+            onClick={() => goToSection('top')}
+            style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0, background: 'transparent', border: 'none', cursor: 'pointer', padding: 0 }}
           >
-            <Image src="/logo-ceca.png" alt="CECA Marketing" width={40} height={40} style={{ borderRadius: 8 }} />
+            <Image src="/ceca_logo_icon.png" alt="CECA Marketing" width={40} height={40} style={{ borderRadius: 8 }} />
             <span
               style={{
                 fontFamily: 'var(--display)',
                 fontWeight: 900,
                 fontSize: 19,
-                color: '#e06c28',
+                color: '#1e3a5f',
                 lineHeight: 1.05,
+                textAlign: 'left',
               }}
             >
               CECA<span style={{ color: 'var(--accent)' }}>.</span>
               <br />
               Marketing
             </span>
-          </a>
+          </button>
 
           {/* Center — nav links (desktop only) */}
           <div className="nav-center" style={{ display: 'flex', alignItems: 'center', gap: 26 }}>
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href
-              return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  style={{
-                    fontFamily: 'var(--body)',
-                    fontSize: 18.5,
-                    fontWeight: isActive ? 700 : 900,
-                    color: isActive ? 'var(--accent)' : '#0a0f1e',
-                    borderBottom: isActive ? '2px solid var(--accent)' : '2px solid transparent',
-                    paddingBottom: 2,
-                    transition: 'color .15s',
-                  }}
-                >
-                  {link.label}
-                </a>
-              )
-            })}
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => goToSection(link.id)}
+                style={{
+                  fontFamily: 'var(--body)',
+                  fontSize: 18.5,
+                  fontWeight: 900,
+                  color: '#0a0f1e',
+                  background: 'transparent',
+                  border: 'none',
+                  borderBottom: '2px solid transparent',
+                  paddingBottom: 2,
+                  cursor: 'pointer',
+                  transition: 'color .15s',
+                }}
+              >
+                {link.label}
+              </button>
+            ))}
           </div>
 
           {/* Right — lang + CTA / hamburger */}
@@ -147,7 +157,7 @@ export default function TopBar({ t, lang, isRoot: isRootProp }: TopBarProps) {
             {/* CTA — desktop only */}
             <button
               className="nav-cta-desktop"
-              onClick={() => router.push(`${base}/contact`)}
+              onClick={() => goToSection('contact')}
               style={{
                 background: 'var(--accent)',
                 color: '#ffffff',
@@ -209,33 +219,30 @@ export default function TopBar({ t, lang, isRoot: isRootProp }: TopBarProps) {
             padding: '16px 24px',
             overflowY: 'auto',
           }}
-          onClick={() => setMenuOpen(false)}
         >
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                style={{
-                  fontFamily: 'var(--body)',
-                  fontSize: 16,
-                  fontWeight: isActive ? 700 : 500,
-                  color: isActive ? 'var(--accent)' : '#0a0f1e',
-                  padding: '16px 0',
-                  borderBottom: '1px solid #e5e7eb',
-                }}
-              >
-                {link.label}
-              </a>
-            )
-          })}
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => goToSection(link.id)}
+              style={{
+                textAlign: 'left',
+                fontFamily: 'var(--body)',
+                fontSize: 16,
+                fontWeight: 500,
+                color: '#0a0f1e',
+                background: 'transparent',
+                border: 'none',
+                padding: '16px 0',
+                borderBottom: '1px solid #e5e7eb',
+                cursor: 'pointer',
+              }}
+            >
+              {link.label}
+            </button>
+          ))}
           <div style={{ marginTop: 24 }}>
             <button
-              onClick={() => {
-                setMenuOpen(false)
-                router.push(`${base}/contact`)
-              }}
+              onClick={() => goToSection('contact')}
               style={{
                 width: '100%',
                 background: 'var(--accent)',

@@ -24,48 +24,103 @@ const lang = 'es'
 
 function Hero() {
   return (
-    <section id="top" className="heroV2">
-      <div className="heroV2-media" aria-hidden="true">
-        <Image
-          src="/images/hero/roofer-contractor-marketing-houston.webp"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="heroV2-img"
-        />
-        <div className="heroV2-overlay" />
-      </div>
-      <div className="heroV2-inner">
-        <p className="heroV2-eyebrow">Agencia Bilingüe · SEO · Sitios Web · Automatización</p>
-        <h1 className="heroV2-h1">
-          Marketing Digital<br />
-          <span className="heroV2-h1Accent">para Contratistas.</span>
-        </h1>
-        <p className="heroV2-sub">Tú haces el trabajo. Nosotros hacemos que suene el teléfono.</p>
-        <div className="heroV2-ctaWrap">
-          <button
-            type="button"
-            className="heroV2-cta"
-            onClick={() => smoothScrollTo('contact')}
-          >
-            Quiero Mi Sitio Web Gratis
-            <span aria-hidden="true" className="heroV2-ctaArrow">→</span>
-          </button>
-          <p className="heroV2-ctaNote">Gratis con cualquier plan mensual. Sin contratos.</p>
+    <section id="top" style={{ padding: 'clamp(120px,14vw,180px) clamp(20px,5vw,80px) clamp(64px,8vw,112px)', position: 'relative', overflow: 'hidden' }}>
+
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0.93), rgba(255,255,255,0.93)), url(/images/hero/blueprint-pattern.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          pointerEvents: 'none',
+        }}
+      />
+
+      <div className="hero-grid" style={{
+        maxWidth: 1320,
+        margin: '0 auto',
+        display: 'grid',
+        gridTemplateColumns: 'minmax(320px, 560px) 1fr',
+        gridTemplateAreas: '"heading image" "body image"',
+        gap: 'clamp(32px,5vw,64px)',
+        alignItems: 'center',
+        position: 'relative',
+      }}>
+
+        <div className="hero-heading" style={{ gridArea: 'heading' }}>
+          <p className="hero-eyebrow" style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 20px' }}>
+            Agencia Bilingüe · SEO · Sitios Web · Automatización
+          </p>
+
+          <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(36px,5.5vw,64px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: 0 }}>
+            Agencia de Marketing para Contratistas Que Te Ayuda a Conseguir{' '}
+            <span style={{ color: 'var(--accent)' }}>Más Clientes Calificados</span>
+          </h1>
         </div>
-        <div className="heroV2-contacts">
-          <a href="https://wa.me/18329082728" target="_blank" rel="noopener noreferrer" className="heroV2-contact">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.857L.057 23.882l6.19-1.453A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.027-1.384l-.36-.214-3.733.876.936-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/>
-            </svg>
-            (832) 908-2728
-          </a>
-          <a href="mailto:info@cecamarketing.com" className="heroV2-contact">
-            info@cecamarketing.com
-          </a>
+
+        <div className="hero-image" style={{ gridArea: 'image', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 380 }}>
+          <Image
+            src="/images/hero/hero-composition.webp"
+            alt="Sitio web de CECA Marketing y reseñas de Google para un cliente contratista"
+            width={1000}
+            height={1000}
+            priority
+            style={{ width: '100%', height: 'auto', maxWidth: 620, mixBlendMode: 'multiply' }}
+          />
         </div>
+
+        <div className="hero-body" style={{ gridArea: 'body' }}>
+          <p style={{ fontFamily: 'var(--body)', fontWeight: 900, fontSize: 'clamp(20px,2vw,19px)', color: 'var(--muted)', lineHeight: 1.3, margin: '0 0 36px', maxWidth: 480 }}>
+            Tú haces el trabajo. Nosotros hacemos que suene el teléfono. Sitios web, SEO local y automatización de leads hechos específicamente para contratistas de servicios del hogar.
+          </p>
+
+          <div className="hero-cta-wrap" style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}>
+            <button
+              type="button"
+              onClick={() => smoothScrollTo('contact')}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 10,
+                justifyContent: 'center',
+                background: 'var(--accent)',
+                color: '#ffffff',
+                fontFamily: 'var(--display)',
+                fontWeight: 700,
+                fontSize: 16,
+                padding: '16px 28px',
+                borderRadius: 8,
+                border: 'none',
+                cursor: 'pointer',
+                width: 'fit-content',
+              }}
+            >
+              Agenda Tu Llamada de Estrategia
+              <span aria-hidden="true">→</span>
+            </button>
+            <p style={{ fontFamily: 'var(--body)', fontSize: 13, color: 'var(--muted)', margin: 0 }}>
+              Sin presión. Sin contratos. Solo un plan claro para conseguir más llamadas.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+            <a href="https://wa.me/18329082728" target="_blank" rel="noopener noreferrer"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--body)', fontSize: 15, color: 'var(--fg)', textDecoration: 'none' }}>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.857L.057 23.882l6.19-1.453A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.027-1.384l-.36-.214-3.733.876.936-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/>
+              </svg>
+              (832) 908-2728
+            </a>
+            <a href="mailto:info@cecamarketing.com"
+              style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--fg)', textDecoration: 'none' }}>
+              info@cecamarketing.com
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
   )
@@ -76,24 +131,24 @@ function Hero() {
 function WhyCECA() {
   const reasons = [
     {
-      icon: '🔧',
-      title: 'Fundado por alguien de los oficios',
-      body: 'No somos otra agencia que descubrió que los contratistas son un mercado. Experiencia real en electricidad y remodelación — sabemos cómo consiguen clientes.',
+      n: '01',
+      title: <>Conocemos <span style={{ color: 'var(--accent)' }}>el oficio</span></>,
+      body: 'Hemos trabajado en electricidad y remodelación nosotros mismos. Sabemos cómo la gente busca un contratista cuando algo se descompone.',
     },
     {
-      icon: '📍',
-      title: 'Enfocados en leads, no en métricas vacías',
-      body: 'No reportamos impresiones. Reportamos llamadas, solicitudes de cotización y trabajos cerrados. Cada decisión parte de: ¿esto trae más trabajo?',
+      n: '02',
+      title: <>Verás <span style={{ color: 'var(--accent)' }}>qué está funcionando</span></>,
+      body: 'Llamadas. Solicitudes de cotización. Trabajos cerrados. Eso es lo que medimos — no clics o vistas que no pagan tus cuentas.',
     },
     {
-      icon: '🌐',
-      title: 'Bilingüe desde el primer día',
-      body: 'Inglés y español — no traducido, construido. Tus campañas llegan a todos los dueños de casa de tu mercado, no solo a la mitad.',
+      n: '03',
+      title: <>Llegamos a <span style={{ color: 'var(--accent)' }}>todo tu mercado</span></>,
+      body: 'Inglés y español, desde el inicio. Llegas a todos los dueños de casa cerca de ti, no solo a la mitad.',
     },
     {
-      icon: '⚡',
-      title: 'Código personalizado, no plantillas',
-      body: 'Sin Wix, sin WordPress, sin constructores de páginas. Código real, velocidad real, SEO real. Sitios que cargan rápido y rankean.',
+      n: '04',
+      title: <>Rápido <span style={{ color: 'var(--accent)' }}>y visible en Google</span></>,
+      body: 'Lo construimos a mano, de la forma correcta. Por eso funciona cuando otros sitios de contratistas no.',
     },
   ]
 
@@ -102,16 +157,16 @@ function WhyCECA() {
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Por Qué CECA</p>
         <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 16px', maxWidth: 600 }}>
-          Por qué los contratistas nos eligen sobre cualquier otra agencia.
+          Tú haces el trabajo. Nosotros hacemos que te encuentren.
         </h2>
         <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: '0 0 56px', maxWidth: 540 }}>
-          Cualquier agencia puede correr anuncios. No todas entienden por qué tu temporada alta llega en julio, o cómo un plomero consigue un cliente a medianoche.
+          Sin reportes confusos. Sin gastar dinero en anuncios que no funcionan. Solo un sitio web y marketing que te traen trabajos reales.
         </p>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
-          {reasons.map((r, i) => (
-            <div key={i} style={{ padding: '32px 28px', background: 'var(--bg-card)', border: '1px solid var(--line)', borderRadius: 12, boxShadow: 'var(--shadow-card)' }}>
-              <div style={{ fontSize: 32, marginBottom: 16 }}>{r.icon}</div>
-              <h3 style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 18, color: 'var(--fg)', margin: '0 0 10px', lineHeight: 1.2 }}>{r.title}</h3>
+        <div className="reveal why-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 0, border: '1px solid var(--line)', borderRadius: 12, overflow: 'hidden' }}>
+          {reasons.map((r) => (
+            <div key={r.n} className="why-card" style={{ padding: '40px 32px', background: 'var(--bg-card)' }}>
+              <div style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 40, color: 'var(--line)', lineHeight: 1, letterSpacing: '-.03em', marginBottom: 20 }}>{r.n}</div>
+              <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 22, color: 'var(--fg)', margin: '0 0 12px', letterSpacing: '-.02em', lineHeight: 1.15 }}>{r.title}</h3>
               <p style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--muted)', margin: 0, lineHeight: 1.6 }}>{r.body}</p>
             </div>
           ))}
@@ -155,43 +210,87 @@ function Results() {
 
 function Services() {
   const services = [
-    { n: '01', title: 'SEO para Contratistas', desc: 'Posiciónate en Google cuando los dueños de casa busquen tu oficio — sin pagar por cada clic.', tags: ['SEO Local', 'Google Business', 'Páginas de Ciudad'], metric: 'RANKEA MÁS ALTO · MÁS LEADS' },
-    { n: '02', title: 'Sitios Web para Contratistas', desc: 'Sitios rápidos y personalizados diseñados para convertir visitantes en llamadas y cotizaciones.', tags: ['Optimizado Móvil', 'Carga Rápida', 'Enfocado en Leads'], metric: 'GRATIS CON TU PLAN' },
-    { n: '03', title: 'Automatización con IA', desc: 'Textos por llamadas perdidas, seguimiento de leads y solicitudes de reseñas — corriendo 24/7 sin ti.', tags: ['Texto por Llamada Perdida', 'CRM', 'Automatización de Reseñas'], metric: 'NUNCA PIERDAS UN LEAD' },
-    { n: '04', title: 'Generación de Leads', desc: 'Google Ads y Meta Ads construidos alrededor de tu costo por lead — no impresiones.', tags: ['Google Ads', 'Meta Ads', 'Optimización de Conversión'], metric: 'MÁS LLAMADAS · MÁS TRABAJOS' },
+    {
+      n: '01',
+      title: 'Tu Sitio Web + SEO Local',
+      desc: 'Un sitio de una página, rápido y limpio — construido y en línea, con SEO local configurado desde el día uno para que la gente que busca tu oficio te encuentre.',
+      includes: [
+        'Sitio de una página, optimizado para celular',
+        'Perfil de Google Business configurado y optimizado',
+        'Apareces en búsquedas locales de Google y en el mapa',
+        'Sin costo de instalación — va incluido en tu plan',
+      ],
+    },
+    {
+      n: '02',
+      title: 'Creciendo Tus Posiciones con el Tiempo',
+      desc: 'Conforme tu negocio crece, agregamos más a tu presencia en línea — nuevas páginas para cada servicio que ofreces y cada ciudad donde trabajas.',
+      includes: [
+        'Una página por cada servicio que ofreces',
+        'Una página por cada ciudad o zona que atiendes',
+        'Artículos de blog sobre lo que tus clientes están buscando',
+        'Te mantiene subiendo en Google mientras más tiempo trabajamos juntos',
+      ],
+    },
+    {
+      n: '03',
+      title: 'Anuncios en Google y Facebook',
+      desc: 'Creamos, publicamos y administramos tus anuncios en Google y Facebook — para que la persona correcta te vea justo cuando está buscando tu servicio.',
+      includes: [
+        'Configuración y manejo diario de anuncios en Google y Facebook',
+        'Creamos las imágenes y textos de tus anuncios',
+        'Siempre sabes cuánto te costó conseguir cada cliente',
+        'El gasto en anuncios lo cobra Google/Facebook directo, aparte de nuestra tarifa',
+      ],
+    },
+    {
+      n: '04',
+      title: 'Nunca Pierdas un Trabajo',
+      desc: '¿Se te pasó una llamada mientras estabas en un trabajo? Le respondemos por texto automáticamente, para que no pierdas el cliente por no contestar.',
+      includes: [
+        'Respuesta automática por texto cuando se te pasa una llamada',
+        'Solicitud automática de reseñas después de un trabajo',
+        'Textos de seguimiento para clientes que aún no han agendado',
+        'Funciona 24/7, aunque estés en un techo o debajo de un fregadero',
+      ],
+    },
   ]
 
   return (
     <section id="services" style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderBottom: '1px solid var(--line)' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, flexWrap: 'wrap', gap: 16 }}>
-          <div>
-            <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Servicios</p>
-            <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: 0, maxWidth: 480 }}>
-              Todo lo que un contratista necesita para crecer en línea.
-            </h2>
-          </div>
-          <Link href="/es/services" style={{ fontFamily: 'var(--body)', fontSize: 15, fontWeight: 600, color: 'var(--accent)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
-            Ver todos los servicios →
-          </Link>
+        <div style={{ marginBottom: 64 }}>
+          <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Servicios</p>
+          <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: 0, maxWidth: 560 }}>
+            Todo lo que necesitas para que el teléfono no pare de sonar.
+          </h2>
         </div>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-          {services.map((s) => (
-            <Link key={s.n} href="/es/services" style={{ textDecoration: 'none' }}>
-              <div style={{ padding: '32px 28px', background: 'var(--bg-card)', border: '1px solid var(--line)', borderRadius: 12, boxShadow: 'var(--shadow-card)', height: '100%' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-                  <span style={{ fontFamily: 'var(--body)', fontSize: 12, fontWeight: 700, color: 'var(--muted)' }}>0{s.n}</span>
-                  <span style={{ fontFamily: 'var(--body)', fontSize: 11, fontWeight: 700, color: 'var(--accent)', letterSpacing: '.08em' }}>{s.metric}</span>
-                </div>
-                <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 24, color: 'var(--fg)', margin: '0 0 12px', letterSpacing: '-.02em' }}>{s.title}</h3>
-                <p style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--muted)', margin: '0 0 24px', lineHeight: 1.6 }}>{s.desc}</p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                  {s.tags.map((tag) => (
-                    <span key={tag} style={{ fontFamily: 'var(--body)', fontSize: 12, fontWeight: 500, color: 'var(--muted)', background: 'var(--subtle)', borderRadius: 99, padding: '5px 12px' }}>{tag}</span>
-                  ))}
-                </div>
+
+        <div>
+          {services.map((s, i) => (
+            <div key={s.n} className="service-row" style={{
+              display: 'grid',
+              gridTemplateColumns: 'minmax(240px, 420px) 1fr',
+              gap: 'clamp(32px,5vw,64px)',
+              padding: '48px 0',
+              borderTop: i === 0 ? '1px solid var(--line)' : undefined,
+              borderBottom: '1px solid var(--line)',
+              alignItems: 'start',
+            }}>
+              <div>
+                <div style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 15, color: 'var(--accent)', letterSpacing: '.05em', marginBottom: 12 }}>{s.n}</div>
+                <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 'clamp(22px,2.5vw,28px)', color: 'var(--fg)', margin: '0 0 12px', letterSpacing: '-.02em', lineHeight: 1.15 }}>{s.title}</h3>
+                <p style={{ fontFamily: 'var(--body)', fontSize: 16, color: 'var(--muted)', margin: 0, lineHeight: 1.6 }}>{s.desc}</p>
               </div>
-            </Link>
+              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 14 }}>
+                {s.includes.map((item) => (
+                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, fontFamily: 'var(--body)', fontSize: 15, color: 'var(--fg)', lineHeight: 1.5 }}>
+                    <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </div>
@@ -469,10 +568,8 @@ export default function HomePageEs() {
         <TopBar t={t} lang={lang} online={t.online} isRoot={true} />
         <Hero />
         <WhyCECA />
-        <Results />
         <Services />
         <Industries />
-        <FeaturedWork />
         <Process />
         <Testimonials />
         <Insights />
