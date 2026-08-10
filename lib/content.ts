@@ -6,6 +6,7 @@ export interface SiteContent {
   online: string
   nav_home: string
   nav_services: string
+  nav_blog: string
   nav_faq: string
   nav_contact: string
 
@@ -67,6 +68,7 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
     online: 'ONLINE',
     nav_home: 'Home',
     nav_services: 'Services',
+    nav_blog: 'Blog',
     nav_faq: 'FAQ',
     nav_contact: 'Contact',
 
@@ -95,6 +97,7 @@ export const CECA_CONTENT: Record<string, SiteContent> = {
     online: 'EN LÍNEA',
     nav_home: 'Inicio',
     nav_services: 'Servicios',
+    nav_blog: 'Blog',
     nav_faq: 'FAQ',
     nav_contact: 'Contacto',
 

@@ -11,13 +11,12 @@ export default function Footer({ t, online }: FooterProps) {
   const base = isEs ? '/es' : ''
 
   const navLinks = [
-    { label: t.nav_home, href: isEs ? '/es' : '/' },
-    { label: t.nav_about, href: `${base}/about` },
-    { label: t.nav_services, href: `${base}/services` },
-    { label: t.nav_blog, href: `${base}/blog` },
-    { label: t.nav_faq, href: `${base}/faq` },
-    { label: t.nav_contact, href: `${base}/contact` },
-  ]
+  { label: t.nav_home, href: isEs ? '/es' : '/' },
+  { label: t.nav_services, href: `${base}/services` },
+  { label: t.nav_blog, href: `${base}/blog` },
+  { label: t.nav_faq, href: `${base}/#faq` },
+  { label: t.nav_contact, href: `${base}/#contact` },
+]
 
   return (
     <footer style={{ padding: '60px 28px 28px', borderTop: '1px solid var(--line)' }}>
@@ -161,7 +160,7 @@ export default function Footer({ t, online }: FooterProps) {
         <div style={{ paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12, fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted)', letterSpacing: '.04em' }}>
           <div>© 2026 CECA Marketing. {t.footer_rights}</div>
           <div style={{ display: 'flex', gap: 20 }}>
-            <a href={`${base}/privacy-policy`} style={{ color: 'var(--muted)', textDecoration: 'none' }}>Privacy Policy</a>
+            <a href={`${base}/#contact`} style={{ color: 'var(--muted)', textDecoration: 'none' }}>Contact</a>
             <a href={`${base}/contact`} style={{ color: 'var(--muted)', textDecoration: 'none' }}>Contact</a>
           </div>
         </div>
