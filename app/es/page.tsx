@@ -1,5 +1,3 @@
-import ClientPage from '@/components/ClientPage'
-
 export const metadata = {
  title: 'Agencia de Marketing Digital para Contratistas | CECA Marketing',
 description:
