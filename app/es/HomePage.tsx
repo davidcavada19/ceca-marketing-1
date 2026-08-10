@@ -268,6 +268,134 @@ function Services() {
   )
 }
 
+// ─── PRECIOS ──────────────────────────────────────────────────
+
+function Pricing() {
+  const plans = [
+    {
+      name: 'Starter',
+      price: '$997',
+      desc: 'Sitio de una página + SEO local',
+      features: [
+        'Sitio web construido y en línea',
+        'SEO local configurado desde el día uno',
+        'Perfil de Google Business optimizado',
+        'Sin costo de instalación — incluido en el plan',
+      ],
+      featured: false,
+    },
+    {
+      name: 'Growth',
+      price: '$1,497–$1,997',
+      desc: 'Todo lo del Starter, más crecimiento continuo de SEO',
+      features: [
+        'Todo lo del Starter',
+        '2–4 páginas nuevas al mes (servicio, ciudad o blog)',
+        'Texto automático por llamada perdida y seguimiento',
+        'Solicitud automática de reseñas',
+      ],
+      featured: true,
+    },
+    {
+      name: 'Full Growth',
+      price: '$2,500–$3,000',
+      desc: 'Todo lo del Growth, más anuncios pagados',
+      features: [
+        'Todo lo del Growth',
+        'Anuncios en Google y Facebook, creados y administrados',
+        'El gasto en anuncios lo cobra la plataforma aparte',
+        'Rastreo completo — costo por lead, cada mes',
+      ],
+      featured: false,
+    },
+  ]
+
+  return (
+    <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderBottom: '1px solid var(--line)' }}>
+      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 56px' }}>
+          <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Cuánto Cuesta</p>
+          <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 16px' }}>
+            Precios claros. Sin sorpresas.
+          </h2>
+          <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+            Cada plan se puede ajustar a tu negocio — piensa en estos como puntos de partida, no cajas fijas. Te explicamos exactamente qué necesitas en la llamada.
+          </p>
+        </div>
+
+        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
+          {plans.map((plan) => (
+            <div key={plan.name} style={{
+              border: plan.featured ? '2px solid var(--accent)' : '1px solid var(--line)',
+              borderRadius: 16,
+              padding: 'clamp(28px,3.5vw,36px)',
+              background: 'var(--bg-card)',
+              boxShadow: plan.featured ? '0 8px 24px rgba(249,115,22,0.15)' : 'var(--shadow-card)',
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+            }}>
+              {plan.featured && (
+                <div style={{
+                  position: 'absolute', top: -14, left: '50%', transform: 'translateX(-50%)',
+                  background: 'var(--accent)', color: '#ffffff', fontFamily: 'var(--body)', fontWeight: 700,
+                  fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase', padding: '6px 16px', borderRadius: 99,
+                }}>
+                  Más Popular
+                </div>
+              )}
+              <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 22, color: 'var(--fg)', margin: '8px 0 4px' }}>
+                {plan.name}
+              </h3>
+              <p style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)', margin: '0 0 20px', lineHeight: 1.5, minHeight: 40 }}>
+                {plan.desc}
+              </p>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 24 }}>
+                <span style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(28px,3.5vw,36px)', color: 'var(--fg)', letterSpacing: '-.02em' }}>{plan.price}</span>
+                <span style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)' }}>/mes</span>
+              </div>
+              <ul style={{ listStyle: 'none', margin: '0 0 28px', padding: 0, display: 'flex', flexDirection: 'column', gap: 12, flexGrow: 1 }}>
+                {plan.features.map((f) => (
+                  <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontFamily: 'var(--body)', fontSize: 14, color: 'var(--fg)', lineHeight: 1.5 }}>
+                    <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <button
+                type="button"
+                onClick={() => smoothScrollTo('contact')}
+                style={{
+                  width: '100%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 8,
+                  background: plan.featured ? 'var(--accent)' : 'transparent',
+                  color: plan.featured ? '#ffffff' : 'var(--accent)',
+                  border: `1.5px solid var(--accent)`,
+                  fontFamily: 'var(--display)',
+                  fontWeight: 700,
+                  fontSize: 15,
+                  padding: '14px 20px',
+                  borderRadius: 8,
+                  cursor: 'pointer',
+                }}
+              >
+                Agenda una Llamada
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <p style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)', textAlign: 'center', margin: '32px 0 0' }}>
+          ¿Necesitas un sitio completo de varias páginas en vez de una sola? También está disponible — pregúntanos en la llamada.
+        </p>
+      </div>
+    </section>
+  )
+}
+
 // ─── INDUSTRIAS ───────────────────────────────────────────────
 
 function Industries() {
@@ -480,6 +608,7 @@ export default function HomePageEs() {
         <Hero />
         <WhyCECA />
         <Services />
+        <Pricing />
         <Industries />
         <Process />
         <Insights />
