@@ -4,12 +4,24 @@ import { useState } from 'react'
 
 const faqs = [
   {
-    q: 'Is the website really free?',
-    a: 'Yes. Every client gets a custom-built contractor website included free with any monthly marketing plan. No templates, no page builders — real code, real speed.',
+    q: 'How much does digital marketing for contractors cost?',
+    a: "It depends on what your business actually needs — some contractors just need a website and local SEO, others need ads or review automation too. We don't sell fixed packages. On your strategy call, we'll diagnose what's holding your business back and give you a clear, custom quote.",
   },
   {
     q: 'How long does SEO take for contractors?',
-    a: 'Most contractors start seeing meaningful movement in local rankings within 60–90 days. Paid ads generate leads immediately.',
+    a: 'Most contractors start seeing meaningful movement in local rankings within 60–90 days. Paid ads generate leads immediately while SEO builds in the background.',
+  },
+  {
+    q: 'Do I need a new website to work with CECA?',
+    a: "Not necessarily. If your current site is solid, we can focus on SEO, ads, or automation instead. If it's slow, outdated, or not built for mobile, we'll usually recommend rebuilding it first — that's where most leads get lost.",
+  },
+  {
+    q: 'Can you help me get more Google reviews?',
+    a: "Yes. We set up automatic review requests after every completed job, follow up with customers who don't respond, and make it easy for happy customers to leave a review — all without you having to chase anyone manually.",
+  },
+  {
+    q: 'Do you manage Google and Facebook Ads?',
+    a: "Yes. We build the campaigns, write the ad copy, design the creative, and manage them daily. You'll always know what each lead costs and where it came from. Ad spend is billed directly by Google/Facebook, separate from our fee.",
   },
   {
     q: 'Are there long-term contracts?',

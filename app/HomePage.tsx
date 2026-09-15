@@ -55,8 +55,8 @@ function Hero() {
           </p>
 
           <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(36px,5.5vw,64px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: 0 }}>
-            Contractor Marketing Agency That Helps You Get{' '}
-            <span style={{ color: 'var(--accent)' }}>More Qualified Leads</span>
+            Digital Marketing for Contractors{' '}
+            <span style={{ color: 'var(--accent)' }}>Built to Get You More Qualified Leads</span>
           </h1>
         </div>
 
@@ -184,45 +184,58 @@ function Services() {
     {
       n: '01',
       title: 'Your Website + Local SEO',
-      desc: "A clean, fast one-page website — built and live, with local SEO set up from day one so people searching for your trade can find you.",
+      desc: "A clean, fast website built to turn visitors into calls — with local SEO foundations that help customers find your business on Google.",
       includes: [
-        'One-page website, built for mobile',
-        'Google Business Profile set up and optimized',
-        'Shows up in local Google searches and maps',
-        'No setup fee — it\'s part of your plan',
+        'Fast, mobile-first website',
+        'Google Business Profile setup and optimization',
+        'Local SEO foundations from day one',
+        'Built to turn visitors into calls and leads',
       ],
     },
     {
       n: '02',
-      title: 'Growing Your Rankings Over Time',
-      desc: 'As your business grows, we add more to your online presence — new pages for each service you offer and each city you work in.',
+      title: 'Grow Your Rankings Over Time',
+      desc: 'We keep expanding your online presence with content built around the services you offer and the areas you serve.',
       includes: [
         'A page for every service you offer',
-        'A page for every city or area you serve',
-        'Blog posts about what your customers are searching for',
-        'Keeps you ranking higher the longer we work together',
+        'Location pages for the areas you serve',
+        'Content based on what your customers search for',
+        'Ongoing SEO improvements as your business grows',
       ],
     },
     {
       n: '03',
       title: 'Google & Facebook Ads',
-      desc: "We build, run, and manage your ads on Google and Facebook — so the right people see you right when they're looking for your service.",
+      desc: "Get in front of the right customers when they're searching — and reach new ones before they start looking.",
       includes: [
-        'Ad setup and daily management on Google and Facebook',
-        'We create the images and text for your ads',
-        'You always know what each customer cost to get',
-        'Ad spend is billed directly by Google/Facebook, separate from our fee',
+        'Google Ads for high-intent searches',
+        'Facebook & Instagram campaigns to create demand',
+        'Landing pages and ad creative built for conversion',
+        'Know what each lead costs and where it came from',
       ],
     },
     {
       n: '04',
-      title: 'Never Miss a Job Again',
-      desc: "Miss a call while you're on a job site? We text them back automatically, so you don't lose the lead to silence.",
+      title: 'Get More 5-Star Reviews — Automatically',
+      desc: "Automatically follow up after completed jobs and make it easy for customers to leave a Google review — without chasing them manually.",
       includes: [
-        'Instant text-back when you miss a call',
-        'Automatic review requests after a job',
-        'Follow-up texts for leads who haven\'t booked yet',
-        'Runs 24/7, even when you\'re on a roof or under a sink',
+        'Automatic review requests after completed jobs',
+        "Follow-up reminders when customers don't respond",
+        'Direct link to your Google review page',
+        'Track review requests and responses',
+        'Build a stronger Google reputation over time',
+      ],
+    },
+    {
+      n: '05',
+      title: 'Never Miss a Job Again',
+      desc: "Miss a call while you're on a job site? We automatically respond and follow up so potential customers don't disappear.",
+      includes: [
+        'Instant missed-call text back',
+        'Automatic lead follow-up',
+        "Follow-up for leads that haven't booked",
+        'Appointment reminders',
+        "Runs 24/7 while you're working",
       ],
     },
   ]
@@ -269,128 +282,116 @@ function Services() {
   )
 }
 
-// ─── PRICING ──────────────────────────────────────────────────
+// ─── APPROACH (reemplaza Pricing) ──────────────────────────────
 
-function Pricing() {
-  const plans = [
-    {
-      name: 'Starter',
-      price: '$997',
-      desc: 'One-page website + local SEO',
-      features: [
-        'Website built and live',
-        'Local SEO set up from day one',
-        'Google Business Profile optimized',
-        'No setup fee — included in the plan',
-      ],
-      featured: false,
-    },
-    {
-      name: 'Growth',
-      price: '$1,497–$1,997',
-      desc: 'Everything in Starter, plus ongoing SEO growth',
-      features: [
-        'Everything in Starter',
-        '2–4 new pages per month (service, city, or blog)',
-        'Missed-call text back & automatic follow-up',
-        'Automatic review requests',
-      ],
-      featured: true,
-    },
-    {
-      name: 'Full Growth',
-      price: '$2,500–$3,000',
-      desc: 'Everything in Growth, plus paid ads',
-      features: [
-        'Everything in Growth',
-        'Google & Facebook ads, built and managed',
-        'Ad spend billed separately by the platform',
-        'Full-funnel tracking — cost per lead, every month',
-      ],
-      featured: false,
-    },
-  ]
+function Approach() {
+  const flow = ['Your Business', 'We Find the Gap', 'We Build the Right System', 'You Grow']
+  const modules = ['Website & Local SEO', 'Ongoing SEO', 'Paid Ads', 'Review Automation', 'Lead Automation']
 
   return (
     <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderBottom: '1px solid var(--line)' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 56px' }}>
-          <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>What It Costs</p>
-          <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 16px' }}>
-            Straightforward pricing. No surprises.
-          </h2>
-          <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
-            Every plan can be tailored to your business — think of these as starting points, not fixed boxes. We'll walk through exactly what you need on the call.
-          </p>
-        </div>
+      <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>
+          Built Around Your Business
+        </p>
+        <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 24px' }}>
+          No cookie-cutter packages.<br />Just what your business needs.
+        </h2>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: '0 auto', maxWidth: 620 }}>
+          Every contractor is different. Some need more visibility. Some need more leads. Others need a better way to follow up and turn customers into reviews.
+        </p>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: '16px auto 0', maxWidth: 620 }}>
+          We look at where your business is today, identify what's holding back growth, and build a strategy around the services that will make the biggest impact.
+        </p>
+      </div>
 
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
-          {plans.map((plan) => (
-            <div key={plan.name} style={{
-              border: plan.featured ? '2px solid var(--accent)' : '1px solid var(--line)',
-              borderRadius: 16,
-              padding: 'clamp(28px,3.5vw,36px)',
+      {/* Flow diagram */}
+      <div className="approach-flow" style={{
+        maxWidth: 1100,
+        margin: 'clamp(56px,6vw,80px) auto 0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        gap: 12,
+      }}>
+        {flow.map((step, i) => (
+          <div key={step} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{
+              padding: '18px 28px',
+              border: '1px solid var(--line)',
+              borderRadius: 12,
               background: 'var(--bg-card)',
-              boxShadow: plan.featured ? '0 8px 24px rgba(249,115,22,0.15)' : 'var(--shadow-card)',
-              position: 'relative',
-              display: 'flex',
-              flexDirection: 'column',
+              boxShadow: 'var(--shadow-card)',
+              fontFamily: 'var(--display)',
+              fontWeight: 800,
+              fontSize: 'clamp(14px,1.6vw,17px)',
+              color: i === 3 ? 'var(--accent)' : 'var(--fg)',
+              letterSpacing: '-.01em',
+              whiteSpace: 'nowrap',
             }}>
-              {plan.featured && (
-                <div style={{
-                  position: 'absolute', top: -14, left: '50%', transform: 'translateX(-50%)',
-                  background: 'var(--accent)', color: '#ffffff', fontFamily: 'var(--body)', fontWeight: 700,
-                  fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase', padding: '6px 16px', borderRadius: 99,
-                }}>
-                  Most Popular
-                </div>
-              )}
-              <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 22, color: 'var(--fg)', margin: '8px 0 4px' }}>
-                {plan.name}
-              </h3>
-              <p style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)', margin: '0 0 20px', lineHeight: 1.5, minHeight: 40 }}>
-                {plan.desc}
-              </p>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 24 }}>
-                <span style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(28px,3.5vw,36px)', color: 'var(--fg)', letterSpacing: '-.02em' }}>{plan.price}</span>
-                <span style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)' }}>/mo</span>
-              </div>
-              <ul style={{ listStyle: 'none', margin: '0 0 28px', padding: 0, display: 'flex', flexDirection: 'column', gap: 12, flexGrow: 1 }}>
-                {plan.features.map((f) => (
-                  <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontFamily: 'var(--body)', fontSize: 14, color: 'var(--fg)', lineHeight: 1.5 }}>
-                    <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <button
-                type="button"
-                onClick={() => smoothScrollTo('contact')}
-                style={{
-                  width: '100%',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 8,
-                  background: plan.featured ? 'var(--accent)' : 'transparent',
-                  color: plan.featured ? '#ffffff' : 'var(--accent)',
-                  border: `1.5px solid var(--accent)`,
-                  fontFamily: 'var(--display)',
-                  fontWeight: 700,
-                  fontSize: 15,
-                  padding: '14px 20px',
-                  borderRadius: 8,
-                  cursor: 'pointer',
-                }}
-              >
-                Book a Call
-              </button>
+              {step}
             </div>
-          ))}
-        </div>
+            {i < flow.length - 1 && (
+              <span aria-hidden="true" style={{ color: 'var(--accent)', fontSize: 20, fontWeight: 700 }}>→</span>
+            )}
+          </div>
+        ))}
+      </div>
 
-        <p style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)', textAlign: 'center', margin: '32px 0 0' }}>
-          Need a full multi-page website instead of one-page? That's available too — ask us on the call.
+      {/* Modules */}
+      <div style={{
+        maxWidth: 900,
+        margin: 'clamp(40px,5vw,56px) auto 0',
+        display: 'flex',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        gap: 10,
+      }}>
+        {modules.map((m) => (
+          <span key={m} style={{
+            fontFamily: 'var(--body)',
+            fontSize: 14,
+            fontWeight: 600,
+            color: 'var(--muted)',
+            padding: '10px 18px',
+            border: '1px solid var(--line)',
+            borderRadius: 99,
+            background: 'var(--bg-alt)',
+          }}>
+            {m}
+          </span>
+        ))}
+      </div>
+
+      {/* CTA */}
+      <div style={{ textAlign: 'center', margin: 'clamp(56px,6vw,80px) auto 0' }}>
+        <p style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 'clamp(18px,2vw,22px)', color: 'var(--fg)', margin: '0 0 24px' }}>
+          Not sure what you need? That's what the strategy call is for.
+        </p>
+        <button
+          type="button"
+          onClick={() => smoothScrollTo('contact')}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 10,
+            background: 'var(--accent)',
+            color: '#ffffff',
+            fontFamily: 'var(--display)',
+            fontWeight: 700,
+            fontSize: 16,
+            padding: '16px 28px',
+            borderRadius: 8,
+            border: 'none',
+            cursor: 'pointer',
+          }}
+        >
+          Book Your Growth Strategy Call
+          <span aria-hidden="true">→</span>
+        </button>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 13, color: 'var(--muted)', margin: '16px 0 0' }}>
+          No pressure. No pre-built packages. Just a clear recommendation based on your business.
         </p>
       </div>
     </section>
@@ -401,10 +402,10 @@ function Pricing() {
 
 function Industries() {
   const industries = [
-    'HVAC', 'Plumbing', 'Electrical', 'Roofing', 'Remodeling',
-    'Landscaping', 'Painting', 'Flooring', 'Pool Service',
-    'Pest Control', 'Garage Doors', 'Windows',
-  ]
+  'HVAC', 'Plumbing', 'Electrical', 'Roofing', 'Remodeling',
+  'Landscaping', 'Tree Service', 'Painting', 'Flooring', 'Pool Service',
+  'Pest Control', 'Garage Doors', 'Windows',
+]
 
   return (
     <section style={{ padding: 'clamp(56px,7vw,88px) 0', background: 'var(--bg-alt)', borderBottom: '1px solid var(--line)', overflow: 'hidden' }}>
@@ -469,8 +470,8 @@ function Industries() {
 function Process() {
   const steps = [
     { n: '01', title: 'Diagnose', desc: "Free 20-min call. We audit your online presence and show you exactly where you're losing leads." },
-    { n: '02', title: 'Build', desc: 'Website, automation, and campaigns go live in 5 days. No long onboarding, no endless back-and-forth.' },
-    { n: '03', title: 'Grow', desc: "Monthly optimization based on real data. We cut what doesn't work and double down on what brings jobs." },
+    { n: '02', title: 'Build', desc: 'We build and launch the right combination of website, SEO, campaigns, and automation for your business.' },
+    { n: '03', title: 'Grow', desc: "We track results, improve what isn't working, and continuously optimize the system around what brings you more qualified leads and booked jobs." },
   ]
 
   return (
@@ -478,7 +479,7 @@ function Process() {
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>How We Work</p>
         <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 56px', maxWidth: 480 }}>
-          From free audit to live system — fast.
+          From diagnosis to a system built for growth.
         </h2>
         <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 0, border: '1px solid var(--line)', borderRadius: 12, overflow: 'hidden' }}>
           {steps.map((s, i) => (
@@ -578,7 +579,7 @@ function FinalCTA() {
             onClick={() => smoothScrollTo('contact')}
             style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#ffffff', color: 'var(--accent)', fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16, padding: '16px 28px', borderRadius: 8, border: 'none', cursor: 'pointer' }}
           >
-            Start Your Project →
+            Book Your Growth Strategy Call →
           </button>
           <a href="https://wa.me/18329082728" target="_blank" rel="noopener noreferrer"
             style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#ffffff', fontFamily: 'var(--display)', fontWeight: 600, fontSize: 16, padding: '16px 28px', borderRadius: 8, border: '2px solid rgba(255,255,255,0.5)', textDecoration: 'none' }}>
@@ -609,7 +610,7 @@ export default function HomePage() {
         <Hero />
         <WhyCECA />
         <Services />
-        <Pricing />
+        <Approach />
         <Industries />
         <Process />
         <Insights />
