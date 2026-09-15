@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ACCENTS, TYPE_PAIRINGS, THEMES, TWEAK_DEFAULTS } from '@/lib/constants'
 import { CECA_CONTENT } from '@/lib/content'
 import ThemeProvider from '@/components/ThemeProvider'
@@ -5,11 +6,11 @@ import TopBar from '@/components/TopBar'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Marketing Services for Contractors | CECA Marketing',
+  title: 'Servicios de Marketing para Contratistas | CECA Marketing',
   description:
-    'Marketing services for contractors — websites, local SEO, Google & Facebook Ads, review automation, and lead automation. Everything a home service business needs to generate more leads and book more jobs.',
+    'Servicios de marketing para contratistas — SEO, sitios web, automatización y generación de leads. Todo lo que un negocio de servicios del hogar necesita para generar más leads y cerrar más trabajos.',
   alternates: {
-    canonical: 'https://cecamarketing.com/services',
+    canonical: 'https://cecamarketing.com/es/services',
     languages: {
       en: 'https://cecamarketing.com/services',
       es: 'https://cecamarketing.com/es/services',
@@ -18,133 +19,89 @@ export const metadata = {
   },
 }
 
-// ─── Simple line icons (no external assets) ───────────────────
-
-const icons = {
-  website: (
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="6" y="10" width="36" height="28" rx="3" stroke="currentColor" strokeWidth="2.2" />
-      <line x1="6" y1="17" x2="42" y2="17" stroke="currentColor" strokeWidth="2.2" />
-      <circle cx="11" cy="13.5" r="1.4" fill="currentColor" />
-      <circle cx="16" cy="13.5" r="1.4" fill="currentColor" />
-      <path d="M14 27l5-6 4 4 6-8 5 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  ),
-  growth: (
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 34V22M18 34V16M28 34V24M38 34V10" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
-      <path d="M8 14l8-5 8 4 14-9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M32 4h6v6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  ),
-  ads: (
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="24" cy="24" r="4" stroke="currentColor" strokeWidth="2.2" />
-      <circle cx="24" cy="24" r="11" stroke="currentColor" strokeWidth="2.2" />
-      <circle cx="24" cy="24" r="18" stroke="currentColor" strokeWidth="2.2" strokeDasharray="4 4" />
-    </svg>
-  ),
-  reviews: (
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M24 6l5.9 12 13.1 1.9-9.5 9.2 2.2 13-11.7-6.3-11.7 6.3 2.2-13-9.5-9.2L18.1 18 24 6z" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" />
-    </svg>
-  ),
-  automation: (
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="14" y="6" width="20" height="14" rx="2.5" stroke="currentColor" strokeWidth="2.2" />
-      <path d="M24 20v6M17 26h14a3 3 0 013 3v9a3 3 0 01-3 3H17a3 3 0 01-3-3v-9a3 3 0 013-3z" stroke="currentColor" strokeWidth="2.2" />
-      <circle cx="20" cy="34" r="1.6" fill="currentColor" />
-      <circle cx="28" cy="34" r="1.6" fill="currentColor" />
-    </svg>
-  ),
-}
-
 const services = [
   {
     n: '01',
-    metric: 'BE FOUND ON GOOGLE',
-    title: 'Your Website + Local SEO',
-    hook: 'A site built to turn visitors into calls — with local SEO from day one.',
-    intro: 'Most contractor websites lose customers before they read a word. We build clean, fast, mobile-first sites with local SEO foundations set up from the start — so when someone searches for your trade, they find you, and when they land on your site, they call.',
-    stat: 'Customers Google you before they call. Make sure what they find converts.',
-    icon: icons.website,
+    metric: 'POSICIONA MEJOR · MÁS LEADS',
+    title: 'SEO para Contratistas que te Pone en Google.',
+    intro: 'Cuando un propietario busca "contratista HVAC cerca de mí" o "empresa de roofing Houston" — ¿estás apareciendo? El SEO para contratistas se asegura de que sí. Construimos páginas de ubicación, optimizamos tu Google Business Profile e implementamos SEO on-page para que tu negocio rankee más alto en búsquedas locales y genere más llamadas y solicitudes de cotización — sin pagar por cada clic. El SEO local es una inversión a largo plazo que se multiplica con el tiempo.',
+    why: 'Más del 80% de las búsquedas locales resultan en una llamada o compra en menos de 24 horas. El SEO para contratistas pone tu negocio frente a clientes que ya están buscando exactamente lo que ofreces.',
+    note: '* Los resultados de SEO local típicamente tardan 60–90 días en mostrar movimiento significativo.',
+    image: '/images/services/service-01-seo.webp',
+    imageAlt: 'SEO local para contratistas — ilustración de ranking en Google Maps con reseñas de 5 estrellas',
     deliverables: [
-      { title: 'Fast, Mobile-First Website', desc: 'Built for how homeowners actually search — on their phone, looking for a fast answer.' },
-      { title: 'Google Business Profile Setup', desc: 'Categories, photos, service areas, and optimization so you show up in local search and maps.' },
-      { title: 'Local SEO Foundations', desc: 'On-page SEO, schema markup, and technical setup built in from day one.' },
-      { title: 'Built to Convert', desc: 'Every section designed to move a visitor from "found you" to "calling you."' },
+      { title: 'Auditoría Completa de SEO Local', desc: 'Auditamos tu presencia en búsqueda local — Google Business Profile, citas, SEO on-page y análisis de brechas.' },
+      { title: 'Optimización de Google Business Profile', desc: 'Optimizamos completamente tu listing de GMB para rankear en el mapa local.' },
+      { title: 'Páginas de Ubicación y Servicio', desc: 'Construimos páginas optimizadas para tu oficio y áreas de servicio para rankear en las búsquedas que importan.' },
+      { title: 'SEO On-Page Local', desc: 'Optimizamos las páginas de tu sitio para keywords locales — páginas de ciudad, servicios y schema markup.' },
+      { title: 'Citas en Directorios Online', desc: 'Construimos y limpiamos tus listings en 50+ directorios — Yelp, BBB, Angi y más.' },
+      { title: 'Estrategia de Reseñas', desc: 'Construimos un sistema para generar reseñas de 5 estrellas consistentemente — el principal factor de ranking local.' },
+      { title: 'Reporte Mensual de Posiciones', desc: 'Ves exactamente dónde rankeas para tus keywords objetivo cada mes.' },
     ],
   },
   {
     n: '02',
-    metric: 'RANK HIGHER OVER TIME',
-    title: 'Grow Your Rankings Over Time',
-    hook: 'Local SEO compounds — the longer we work on it, the harder you are to outrank.',
-    intro: "As your business grows, we keep expanding your online presence with content built around the services you offer and the areas you serve. Every new page is another chance to show up for a search your next customer is already making.",
-    stat: '80% of local searches result in a call or purchase within 24 hours.',
-    note: '* Results typically take 60–90 days to show meaningful movement.',
-    icon: icons.growth,
+    metric: 'GRATIS CON TU PLAN',
+    title: 'Diseño de Sitios Web para Contratistas que Generan Llamadas y Cotizaciones.',
+    intro: 'Tu sitio web es tu herramienta de ventas #1 — y la mayoría de sitios de contratistas están perdiendo clientes antes de que lean una sola palabra. Nuestro diseño de sitios web para contratistas se construye rápido y a medida, hecho específicamente para contratistas.',
+    why: 'Un sitio web profesional para contratistas genera confianza antes de la primera llamada. Los clientes te buscan en Google antes de llamarte — asegúrate de que lo que encuentren los convierta.',
+    note: '* Gratis con cualquier plan mensual de marketing. Aplican restricciones. Sitio de una página, 5 secciones.',
+    image: '/images/services/service-02-websites.webp',
+    imageAlt: 'Diseño de sitio web para contratistas en laptop y teléfono con métricas de velocidad y crecimiento de tráfico',
     deliverables: [
-      { title: 'A Page for Every Service', desc: "Dedicated pages so you rank for the specific work you do, not just your business name." },
-      { title: 'Location Pages', desc: 'Pages targeting every city or area you serve — so you show up across your whole service area.' },
-      { title: 'Content Based on Real Searches', desc: "Blog posts and pages built around what your customers are actually typing into Google." },
-      { title: 'Ongoing SEO Improvements', desc: "Continuous optimization as your business and your online presence grow together." },
+      { title: 'Sesión de Estrategia', desc: 'Aprendemos tu negocio, tu mercado y tu cliente ideal antes de escribir una línea de código.' },
+      { title: 'Sitio Web Personalizado (5 secciones)', desc: 'Inicio, Servicios, Nosotros, Reseñas, Contacto. Todo lo que un cliente necesita para decir sí.' },
+      { title: 'Optimizado para Móvil', desc: 'Más del 70% de tus clientes te encontrarán en su teléfono. Tu sitio funciona perfecto en cada dispositivo.' },
+      { title: 'Velocidad y Core Web Vitals', desc: 'Un sitio lento pierde clientes y rankea más bajo en Google. Construimos rápido — siempre.' },
+      { title: 'Base de SEO On-Page', desc: 'Tu sitio está construido para ser encontrado. Keywords, meta tags, schema markup — todo incluido desde el día uno.' },
+      { title: 'Formulario de Contacto + Integración WhatsApp', desc: 'Facilita que los clientes te contacten como prefieran — formulario, teléfono o WhatsApp.' },
+      { title: 'Configuración de Google Analytics', desc: 'Sabe exactamente cuántas personas visitan tu sitio, de dónde vienen y qué hacen.' },
     ],
   },
   {
     n: '03',
-    metric: 'DEMAND, ON DEMAND',
-    title: 'Google & Facebook Ads',
-    hook: "Capture people searching right now — and reach new ones before they start looking.",
-    intro: "Google and Meta don't do the same job. Google Ads puts you in front of homeowners actively searching for your service. Facebook and Instagram create demand — reaching people who need a contractor before they've started looking for one. We run both, built for conversion, tracked to the dollar.",
-    stat: 'Google Ads delivers leads with purchase intent — people searching for your service right now.',
-    note: '* Minimum ad spend required. Management fee separate from ad spend.',
-    icon: icons.ads,
+    metric: 'NUNCA PIERDAS UN LEAD',
+    title: 'Automatización de Marketing para Contratistas que Trabaja Mientras Trabajas.',
+    intro: 'La mayoría de contratistas pierden leads no porque no los reciben — sino porque no hacen seguimiento lo suficientemente rápido. La automatización de marketing para contratistas arregla eso. Construimos sistemas automáticos que hacen seguimiento a cada lead al instante, envían textos por llamada perdida, solicitan reseñas y enrutan leads — todo funcionando 24/7. El lead promedio se enfría en menos de 5 minutos. Con automatización, respondes en segundos — incluso cuando estás en un trabajo.',
+    why: 'La velocidad de respuesta es el factor #1 para cerrar un trabajo. Los contratistas que responden en menos de 5 minutos tienen 9 veces más probabilidad de cerrar que los que esperan 30 minutos.',
+    note: '* Se aplica tarifa de configuración. Mantenimiento mensual incluido en el plan.',
+    image: '/images/services/service-03-automation.webp',
+    imageAlt: 'Automatización de marketing para contratistas — flujo conectado de email, llamadas, calendario y chat',
     deliverables: [
-      { title: 'Google Ads for High-Intent Searches', desc: "Campaigns targeting the exact moment someone needs your service." },
-      { title: 'Facebook & Instagram Campaigns', desc: "Creative and targeting built to create demand with homeowners in your service area." },
-      { title: 'Conversion-Built Landing Pages', desc: "Ad creative and landing pages designed to turn clicks into calls and estimate requests." },
-      { title: 'Full Cost-Per-Lead Tracking', desc: "Know exactly what each lead costs and where it came from — every month." },
+      { title: 'Auditoría y Configuración de CRM', desc: 'Auditamos tu proceso actual y configuramos un CRM que se adapta a cómo funciona tu negocio.' },
+      { title: 'Texto Automático por Llamada Perdida', desc: 'Cada llamada perdida recibe automáticamente un texto — para que nunca pierdas un lead al buzón.' },
+      { title: '5 Flujos de Automatización Principales', desc: 'Seguimiento de leads, confirmación de reserva, solicitud de reseña, flujo de reenganche y recordatorio de cita.' },
+      { title: 'Automatización SMS y Email', desc: 'Secuencias automáticas que salen al instante cuando entra un lead.' },
+      { title: 'Automatización de Reseñas', desc: 'Solicita automáticamente reseñas de Google a clientes satisfechos.' },
+      { title: 'Capacitación del Equipo', desc: 'Entrenamos a tu equipo en cómo usar el sistema para que nada se pierda.' },
+      { title: 'Revisión a los 30 Días', desc: 'Revisamos las automatizaciones después de 30 días y optimizamos basándonos en datos reales.' },
     ],
   },
   {
     n: '04',
-    metric: 'BUILD TRUST AUTOMATICALLY',
-    title: 'Get More 5-Star Reviews — Automatically',
-    hook: 'Turn every completed job into a Google review — without chasing anyone.',
-    intro: "Reviews are one of the strongest local ranking signals, and the easiest one to lose to inconsistency. We set up automatic review requests after every completed job, follow up with customers who don't respond, and make it effortless for happy customers to leave a review — all running in the background.",
-    stat: 'Reviews are one of the top factors homeowners use to choose between contractors.',
-    note: '* Setup fee applies. Monthly maintenance included in plan.',
-    icon: icons.reviews,
+    metric: 'MÁS LLAMADAS · MÁS TRABAJOS',
+    title: 'Generación de Leads para Contratistas — Más Llamadas, Más Cotizaciones.',
+    intro: 'Los anuncios pagados son la forma más rápida de conseguir leads para contratistas — pero solo cuando se manejan correctamente. Nuestro sistema de generación de leads para contratistas combina Google Ads, Meta Ads y optimización de conversión para generar un flujo constante de leads calificados. Cada campaña está construida alrededor de un número: tu costo por lead. No impresiones, no clics — leads calificados que se convierten en trabajos cerrados.',
+    why: 'Google Ads para contratistas entrega leads con intención de compra — personas que están buscando activamente tu servicio ahora mismo, no solo scrolleando un feed.',
+    note: '* Se requiere gasto mínimo en anuncios. Tarifa de manejo separada del gasto en anuncios.',
+    image: '/images/services/service-04-leadgen.webp',
+    imageAlt: 'Generación de leads para contratistas — notificación de lead de reparación HVAC con costo por lead y trabajos agendados',
     deliverables: [
-      { title: 'Automatic Review Requests', desc: "Sent after every completed job — no manual follow-up needed." },
-      { title: "Follow-Up Reminders", desc: "Automatic nudges when a customer hasn't responded yet." },
-      { title: 'Direct Link to Your Google Review Page', desc: "Makes it as easy as possible for happy customers to leave a review." },
-      { title: 'Review Tracking', desc: "See every request sent and every response, in one place." },
-    ],
-  },
-  {
-    n: '05',
-    metric: 'NEVER LOSE A LEAD',
-    title: 'Never Miss a Job Again',
-    hook: "Miss a call on a job site? We respond and follow up so the lead doesn't disappear.",
-    intro: "Most contractors don't lose leads because they don't get them — they lose them because nobody follows up fast enough. We build automated systems that text back missed calls instantly, follow up with leads who haven't booked, and keep working even when you're on a roof or under a sink.",
-    stat: 'Contractors who respond within 5 minutes are far more likely to close than those who wait 30.',
-    icon: icons.automation,
-    deliverables: [
-      { title: 'Instant Missed-Call Text Back', desc: "Every missed call gets an immediate text — no lead lost to voicemail." },
-      { title: 'Automatic Lead Follow-Up', desc: "Sequences that keep working a lead until they respond or book." },
-      { title: "Follow-Up for Leads That Haven't Booked", desc: "No lead falls through the cracks just because they didn't answer the first message." },
-      { title: 'Appointment Reminders', desc: "Automatic reminders that reduce no-shows and keep your schedule full." },
-      { title: 'Runs 24/7', desc: "Working the moment a call comes in — even when you're on the job." },
+      { title: 'Llamada de Discovery (20 min)', desc: 'Aprendemos tus objetivos, tu mercado, tu presupuesto y cómo se ve un buen lead para tu negocio.' },
+      { title: 'Investigación de Audiencia y Competencia', desc: 'Analizamos quiénes son tus mejores clientes y qué están haciendo tus competidores.' },
+      { title: 'Arquitectura de Campaña + Copy', desc: 'Construimos toda la estructura de campaña desde cero.' },
+      { title: 'Google Ads para Contratistas', desc: 'Optimización semanal de pujas, keywords negativas, pruebas A/B y asignación de presupuesto.' },
+      { title: 'Meta Ads para Contratistas', desc: 'Anuncios en Facebook e Instagram dirigidos a propietarios en tu área de servicio.' },
+      { title: 'Optimización de Conversión', desc: 'Optimizamos tus páginas de destino para convertir clics en llamadas y solicitudes de cotización.' },
+      { title: 'Reporte Mensual en Lenguaje Claro', desc: 'Sin jerga. Un reporte claro mostrando leads generados, costo por lead, gasto en anuncios y ROAS.' },
     ],
   },
 ]
 
-export default function ServicesPage() {
-  const lang = 'en'
-  const t = CECA_CONTENT.en
-  const online = 'ONLINE'
+export default function ServicesPageEs() {
+  const lang = 'es'
+  const t = CECA_CONTENT.es
+  const online = 'EN LÍNEA'
   const accentDef = ACCENTS[TWEAK_DEFAULTS.accent]
   const pair = TYPE_PAIRINGS[TWEAK_DEFAULTS.type]
   const themeDef = THEMES[TWEAK_DEFAULTS.theme]
@@ -155,125 +112,183 @@ export default function ServicesPage() {
         <TopBar t={t} lang={lang} online={online} />
         <main style={{ paddingTop: 80 }}>
 
-          {/* ── PAGE HERO ── */}
-          <section style={{ padding: 'clamp(100px,12vw,160px) clamp(20px,5vw,80px) clamp(64px,8vw,112px)', background: 'var(--bg-alt)', borderBottom: '1px solid var(--line)', position: 'relative', overflow: 'hidden' }}>
-            <div aria-hidden="true" style={{
-              position: 'absolute', top: '-20%', right: '-8%', width: 480, height: 480,
-              background: 'radial-gradient(circle, rgba(249,115,22,0.10) 0%, transparent 70%)',
-              pointerEvents: 'none',
-            }} />
-            <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
-              <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 16px' }}>
-                What We Do
-              </p>
-              <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(36px,6vw,72px)', lineHeight: 1.02, letterSpacing: '-.03em', color: 'var(--fg)', margin: '0 0 24px' }}>
-                Marketing Services<br />
-                <span style={{ color: 'var(--accent)' }}>Built for Contractors.</span>
+          {/* ── HERO ──
+               Desktop: imagen de fondo completa + gradiente.
+               Móvil: fondo oculto, solo texto. */}
+          <section style={{ position: 'relative', overflow: 'hidden', padding: 'clamp(60px,12vw,140px) clamp(20px,5vw,80px)' }}>
+            <div className="hero-bg" style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+              <Image
+                src="/images/services/services-hero.webp"
+                alt=""
+                aria-hidden="true"
+                fill
+                priority
+                sizes="(max-width: 1024px) 1px, 100vw"
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+              />
+              <div style={{
+                position: 'absolute', inset: 0,
+                background: 'linear-gradient(90deg, var(--bg) 30%, rgba(0,0,0,0.55) 70%, transparent 100%)',
+              }} />
+            </div>
+            <div style={{ maxWidth: 1320, margin: '0 auto', position: 'relative', zIndex: 2 }}>
+              <div style={{ fontFamily: 'var(--mono)', fontSize: 14, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 16 }}>
+                // Lo Que Hacemos
+              </div>
+              <h1 className="hero-h1" style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(40px,7vw,80px)', lineHeight: 0.95, letterSpacing: '-.04em', color: 'var(--fg)', marginBottom: 24 }}>
+                Servicios de Marketing<br /><span style={{ color: 'var(--accent)' }}>para Contratistas.</span>
               </h1>
-              <p style={{ fontFamily: 'var(--body)', fontSize: 'clamp(16px,2vw,19px)', color: 'var(--muted)', maxWidth: 560, margin: '0 auto', lineHeight: 1.6 }}>
-                Every contractor is different. Below are the pieces we build with — website, SEO, ads, reviews, and lead automation. On your strategy call, we'll recommend the combination that fits your business.
+              <p className="hero-p" style={{ fontFamily: 'var(--body)', fontSize: 'clamp(16px,2vw,20px)', color: 'var(--muted)', maxWidth: 580, lineHeight: 1.6 }}>
+                CECA es una agencia de marketing digital para contratistas. Cada servicio está construido alrededor de un objetivo: más leads, más trabajos cerrados y más ingresos para tu negocio — sin fórmulas genéricas, sin desperdicio de presupuesto.
               </p>
             </div>
           </section>
 
-          {/* ── SERVICE SECTIONS ── */}
+          {/* ── SECCIONES DE SERVICIO ──
+               Desktop: imagen de fondo (75%, scale 1.5, anclada al borde) + gradiente alternado + grid 3 columnas con spacer.
+               Móvil: fondo oculto; imagen entre H2 y texto; una columna. */}
           {services.map((s, idx) => {
-            const iconRight = idx % 2 === 0
+            const imageRight = idx % 2 === 0
             return (
               <section
                 key={s.n}
                 style={{
-                  padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)',
-                  borderBottom: '1px solid var(--line)',
-                  background: idx % 2 === 0 ? 'var(--bg)' : 'var(--bg-alt)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  padding: 'clamp(48px,8vw,100px) clamp(20px,5vw,80px)',
                 }}
               >
-                <div style={{ maxWidth: 1320, margin: '0 auto' }}>
+                {/* Imagen de fondo — solo desktop */}
+                <div className="svc-bg" style={{
+                  position: 'absolute',
+                  top: 100,
+                  bottom: 100,
+                  left: imageRight ? '25%' : 0,
+                  right: imageRight ? 0 : '25%',
+                  zIndex: 0,
+                }}>
+                  <Image
+                    src={s.image}
+                    alt=""
+                    aria-hidden="true"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 1024px) 1px, 75vw"
+                    style={{
+                      objectFit: 'contain',
+                      objectPosition: imageRight ? 'right center' : 'left center',
+                      transform: 'scale(1.5)',
+                      transformOrigin: imageRight ? 'right center' : 'left center',
+                    }}
+                  />
+                </div>
 
-                  {/* ── Top row: number + metric ── */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 40, flexWrap: 'wrap', gap: 8 }}>
-                    <span style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, color: 'var(--muted)', letterSpacing: '.06em' }}>{s.n}</span>
-                    <span style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, color: 'var(--accent)', letterSpacing: '.1em' }}>{s.metric}</span>
+                {/* Gradiente — solo desktop */}
+                <div className="svc-gradient" style={{
+                  position: 'absolute', inset: 0, zIndex: 1,
+                  background: imageRight
+                    ? 'linear-gradient(90deg, var(--bg) 0%, var(--bg) 48%, rgba(6,9,18,0.85) 62%, rgba(6,9,18,0.35) 78%, transparent 95%)'
+                    : 'linear-gradient(270deg, var(--bg) 0%, var(--bg) 48%, rgba(6,9,18,0.85) 62%, rgba(6,9,18,0.35) 78%, transparent 95%)',
+                }} />
+
+                {/* Contenido */}
+                <div style={{ maxWidth: 1320, margin: '0 auto', position: 'relative', zIndex: 2 }}>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 16, marginBottom: 32 }}>
+                    <div className="svc-number" style={{ fontFamily: 'var(--mono)', fontSize: 20, color: 'var(--muted)', letterSpacing: '.08em' }}>{s.n}</div>
+                    <div className="svc-metric" style={{ fontFamily: 'var(--mono)', fontSize: 20, color: 'var(--accent)', letterSpacing: '.1em' }}>{s.metric}</div>
                   </div>
 
-                  {/* ── Split: text + visual card ── */}
-                  <div className={`svc-split ${iconRight ? 'img-right' : 'img-left'}`}>
+                  <h2 className="svc-h2" style={{
+                    fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(28px,4vw,58px)',
+                    lineHeight: 1, letterSpacing: '-.002em', color: 'var(--fg)',
+                    marginBottom: 48, maxWidth: 860,
+                    marginLeft: imageRight ? 0 : 'auto',
+                  }}>
+                    {s.title}
+                  </h2>
 
-                    {/* Text column */}
-                    <div className="svc-text">
-                      <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(28px,3.5vw,48px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 12px' }}>
-                        {s.title}
-                      </h2>
-                      <p style={{ fontFamily: 'var(--display)', fontWeight: 600, fontSize: 'clamp(18px,2vw,22px)', color: 'var(--accent)', margin: '0 0 24px', lineHeight: 1.3 }}>
-                        {s.hook}
-                      </p>
-                      <p style={{ fontFamily: 'var(--body)', fontSize: 16, color: 'var(--muted)', lineHeight: 1.7, margin: '0 0 28px' }}>
+                  {/* Imagen solo móvil — entre H2 y texto */}
+                  <div className="svc-mobile-img">
+                    <Image
+                      src={s.image}
+                      alt={s.imageAlt}
+                      width={1024}
+                      height={1536}
+                      loading="lazy"
+                      sizes="(max-width: 1024px) 80vw, 1px"
+                      style={{ width: '100%', height: 'auto', display: 'block' }}
+                    />
+                  </div>
+
+                  <div
+                    className="svc-grid"
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(3, minmax(0,1fr))',
+                      gap: 'clamp(28px,3.5vw,52px)',
+                      alignItems: 'start',
+                    }}
+                  >
+
+                    {!imageRight && <div className="svc-spacer" aria-hidden="true" />}
+
+                    <div>
+                      <p className="svc-intro" style={{ fontFamily: 'var(--body)', fontSize: 16, color: 'var(--muted)', lineHeight: 1.75, marginBottom: 28 }}>
                         {s.intro}
                       </p>
-                      <div style={{ padding: '16px 20px', borderLeft: '3px solid var(--accent)', background: 'rgba(249,115,22,0.06)', borderRadius: '0 8px 8px 0', marginBottom: 28 }}>
-                        <p style={{ fontFamily: 'var(--body)', fontSize: 15, fontWeight: 600, color: 'var(--fg)', margin: 0, lineHeight: 1.5 }}>
-                          {s.stat}
-                        </p>
+
+                      <div className="svc-label" style={{ fontFamily: 'var(--mono)', fontSize: 14, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 12 }}>
+                        // Por qué importa
                       </div>
+                      <p className="svc-why" style={{ fontFamily: 'var(--body)', fontSize: 15, color: 'var(--fg)', lineHeight: 1.7, margin: 0, fontStyle: 'italic' }}>
+                        "{s.why}"
+                      </p>
+
                       {s.note && (
-                        <p style={{ fontFamily: 'var(--body)', fontSize: 13, color: 'var(--muted)', margin: 0, lineHeight: 1.5 }}>
+                        <p className="svc-note" style={{ fontFamily: 'var(--mono)', fontSize: 13, color: 'var(--muted)', letterSpacing: '.04em', marginTop: 24 }}>
                           {s.note}
                         </p>
                       )}
                     </div>
 
-                    {/* Visual card — icon + big ghost number, no image asset needed */}
-                    <div className="svc-visual">
-                      <div className="svc-visual-inner">
-                        <span aria-hidden="true" className="svc-ghost-number">{s.n}</span>
-                        <div className="svc-icon">{s.icon}</div>
+                    <div>
+                      <div className="svc-label" style={{ fontFamily: 'var(--mono)', fontSize: 14, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 20 }}>
+                        // Qué incluye
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+                        {s.deliverables.map((d, i) => (
+                          <div key={i} style={{ padding: '12px 0' }}>
+                            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                              <span style={{ color: 'var(--accent)', fontSize: 8, marginTop: 6, flexShrink: 0 }}>◆</span>
+                              <div>
+                                <div className="svc-d-title" style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16, color: 'var(--fg)', marginBottom: 4 }}>{d.title}</div>
+                                <div className="svc-d-desc" style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)', lineHeight: 1.6 }}>{d.desc}</div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
 
-                  </div>
+                    {imageRight && <div className="svc-spacer" aria-hidden="true" />}
 
-                  {/* ── Deliverables ── */}
-                  <div style={{ marginTop: 56 }}>
-                    <p style={{ fontFamily: 'var(--body)', fontSize: 12, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--muted)', margin: '0 0 24px' }}>
-                      What's included
-                    </p>
-                    <div className="svc-deliverables">
-                      {s.deliverables.map((d, i) => (
-                        <div key={i} style={{ padding: '16px 0', borderTop: '1px solid var(--line)', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                          <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>
-                          <div>
-                            <div style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 15, color: 'var(--fg)', marginBottom: 3 }}>{d.title}</div>
-                            <div style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)', lineHeight: 1.55 }}>{d.desc}</div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
                   </div>
-
                 </div>
               </section>
             )
           })}
 
-          {/* ── CTA ── */}
-          <section style={{ background: 'var(--accent)', padding: 'clamp(48px,6vw,88px) clamp(20px,5vw,80px)', textAlign: 'center' }}>
-            <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(28px,4vw,48px)', color: '#ffffff', margin: '0 0 16px', letterSpacing: '-.03em' }}>
-              Not Sure What You Need?
+          {/* ── CTA ÚNICO ── */}
+          <section style={{ background: 'var(--accent)', padding: 'clamp(40px,6vw,80px) clamp(20px,5vw,80px)', textAlign: 'center' }}>
+            <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(28px,4vw,48px)', color: 'var(--accent-contrast)', marginBottom: 16, letterSpacing: '-.03em' }}>
+              ¿Listo para Conseguir Más Leads y Cerrar Más Trabajos?
             </h2>
-            <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'rgba(255,255,255,0.88)', margin: '0 0 32px', lineHeight: 1.6 }}>
-              That's what the strategy call is for. We'll diagnose what's holding your business back and recommend the right combination — no pre-built packages.
+            <p style={{ fontFamily: 'var(--body)', fontSize: 16, color: 'var(--accent-contrast)', opacity: 0.85, marginBottom: 28 }}>
+              Obtén un diagnóstico de marketing gratis y descubre exactamente qué está frenando tu negocio.
             </p>
-            
-              href="/#contact"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: 10,
-                background: '#ffffff', color: 'var(--accent)',
-                fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16,
-                padding: '16px 28px', borderRadius: 8, textDecoration: 'none',
-                transition: 'transform .15s ease',
-              }}
-            >
-              Book Your Growth Strategy Call →
+            <a href="/es/contact" style={{ display: 'inline-block', background: 'var(--accent-contrast)', color: 'var(--accent)', fontFamily: 'var(--mono)', fontSize: 12, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', padding: '14px 28px', textDecoration: 'none' }}>
+              Obtener Mi Diagnóstico Gratis →
             </a>
           </section>
 
@@ -281,81 +296,52 @@ export default function ServicesPage() {
         <Footer t={t} online={online} />
       </div>
 
+      {/* ════════════════════════════════════════════════════════
+           RESPONSIVE + PANEL DE TIPOGRAFÍA MÓVIL
+           Todo lo que afecta SOLO al móvil (≤1024px) vive aquí.
+           Cambia los font-size a tu gusto — no afectan desktop.
+         ════════════════════════════════════════════════════════ */}
       <style>{`
-        /* ── Split layout ── */
-        .svc-split {
-          display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: clamp(40px, 5vw, 80px);
-          align-items: center;
-        }
-        .svc-split.img-right { }
-        .svc-split.img-left .svc-text { order: 2; }
-        .svc-split.img-left .svc-visual { order: 1; }
-
-        /* ── Visual card (icon + ghost number) ── */
-        .svc-visual {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .svc-visual-inner {
-          position: relative;
-          width: 100%;
-          max-width: 380px;
-          aspect-ratio: 1 / 1;
-          border-radius: 24px;
-          background: var(--bg-card);
-          border: 1px solid var(--line);
-          box-shadow: var(--shadow-card);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-        }
-        .svc-ghost-number {
-          position: absolute;
-          font-family: var(--display);
-          font-weight: 900;
-          font-size: clamp(140px, 18vw, 220px);
-          line-height: 1;
-          color: var(--line);
-          opacity: 0.6;
-          letter-spacing: -.04em;
-          user-select: none;
-        }
-        .svc-icon {
-          position: relative;
-          width: clamp(72px, 8vw, 96px);
-          height: clamp(72px, 8vw, 96px);
-          color: var(--accent);
-          z-index: 1;
-        }
-        .svc-icon svg { width: 100%; height: 100%; }
-
-        /* ── Deliverables grid ── */
-        .svc-deliverables {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 0 48px;
+        .svc-mobile-img {
+          display: none;
         }
 
-        /* ── Mobile ── */
-        @media (max-width: 900px) {
-          .svc-split {
+        @media (max-width: 1024px) {
+
+          /* ── Layout móvil ── */
+          .hero-bg,
+          .svc-bg,
+          .svc-gradient {
+            display: none;
+          }
+          .svc-mobile-img {
+            display: block;
+            max-width: 300px;       /* tamaño de la imagen de servicio en móvil */
+            margin: -24px auto 4px; /* margen negativo arriba compensa el aire transparente del PNG */
+          }
+          .svc-grid {
             grid-template-columns: 1fr !important;
             gap: 32px !important;
           }
-          .svc-split.img-left .svc-text { order: 1; }
-          .svc-split.img-left .svc-visual { order: 2; }
-          .svc-deliverables {
-            grid-template-columns: 1fr !important;
+          .svc-grid .svc-spacer {
+            display: none;
           }
-          .svc-visual-inner { max-width: 280px; }
-        }
+          .svc-h2 {
+            margin-bottom: 12px !important;
+          }
 
-        @media (prefers-reduced-motion: reduce) {
-          a { transition: none; }
+          /* ── TAMAÑOS DE LETRA SOLO MÓVIL — edita aquí ── */
+          .hero-h1     { font-size: 38px !important; }
+          .hero-p      { font-size: 16px !important; }
+          .svc-h2      { font-size: 28px !important; }
+          .svc-number  { font-size: 14px !important; }
+          .svc-metric  { font-size: 13px !important; }
+          .svc-intro   { font-size: 15px !important; }
+          .svc-label   { font-size: 12px !important; }
+          .svc-why     { font-size: 14px !important; }
+          .svc-note    { font-size: 12px !important; }
+          .svc-d-title { font-size: 15px !important; }
+          .svc-d-desc  { font-size: 13px !important; }
         }
       `}</style>
     </ThemeProvider>
