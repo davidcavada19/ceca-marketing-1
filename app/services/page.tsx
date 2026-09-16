@@ -234,16 +234,16 @@ export default function ServicesPage() {
                       What is included
                     </p>
                     <div className="svc-deliverables">
-                      {s.deliverables.map((d, i) => (
-                        <div key={i} style={{ padding: '16px 0', borderTop: '1px solid var(--line)', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                          <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0, marginTop: 1 }}>{'\u2713'}</span>
-                          <div>
-                            <div style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 15, color: 'var(--fg)', marginBottom: 3 }}>{d.title}</div>
-                            <div style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)', lineHeight: 1.55 }}>{d.desc}</div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+  {s.deliverables.map((d, i) => (
+    <div key={i} style={{ padding: '16px 0', borderTop: '1px solid var(--line)', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+      <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0, marginTop: 1 }}>{'\u2713'}</span>
+      <div>
+        <h3 style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 15, color: 'var(--fg)', marginBottom: 3, marginTop: 0 }}>{d.title}</h3>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)', lineHeight: 1.55, margin: 0 }}>{d.desc}</p>
+      </div>
+    </div>
+  ))}
+</div>
                   </div>
 
                 </div>
@@ -292,9 +292,10 @@ export default function ServicesPage() {
           '.svc-split.img-left .svc-visual { order: 1; }',
           '.svc-visual { display: flex; align-items: center; justify-content: center; }',
           '.svc-visual-inner { position: relative; width: 100%; max-width: 380px; aspect-ratio: 1 / 1; border-radius: 24px; background: var(--bg-card); border: 1px solid var(--line); box-shadow: var(--shadow-card); display: flex; align-items: center; justify-content: center; overflow: hidden; }',
-          '.svc-ghost-number { position: absolute; font-family: var(--display); font-weight: 900; font-size: clamp(140px, 18vw, 220px); line-height: 1; color: var(--line); opacity: 0.6; letter-spacing: -.04em; user-select: none; }',
-          '.svc-icon { position: relative; width: clamp(72px, 8vw, 96px); height: clamp(72px, 8vw, 96px); color: var(--accent); z-index: 1; }',
-          '.svc-icon svg { width: 100%; height: 100%; }',
+          '.svc-ghost-number { position: absolute; font-family: var(--display); font-weight: 900; font-size: clamp(140px, 18vw, 220px); line-height: 1; color: var(--accent); opacity: 0.14; letter-spacing: -.04em; user-select: none; }',
+'.svc-icon { position: relative; width: clamp(110px, 12vw, 150px); height: clamp(110px, 12vw, 150px); color: var(--accent); z-index: 1; }',
+'.svc-icon svg { width: 100%; height: 100%; }',
+'.svc-icon svg [stroke]:not([stroke="none"]) { stroke-width: 3; }',
           '.svc-deliverables { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; }',
           '@media (max-width: 900px) { .svc-split { grid-template-columns: 1fr !important; gap: 32px !important; } .svc-split.img-left .svc-text { order: 1; } .svc-split.img-left .svc-visual { order: 2; } .svc-deliverables { grid-template-columns: 1fr !important; } .svc-visual-inner { max-width: 280px; } }',
         ].join(' ')}

@@ -19,24 +19,36 @@ export default function TopBar({ t, lang, isRoot: isRootProp }: TopBarProps) {
   const isRoot = isRootProp ?? (!pathname.startsWith('/en') && !pathname.startsWith('/es'))
   const base = isRoot ? '' : `/${lang}`
 
-  // Anclas dentro de la misma landing en vez de paginas separadas.
-  // Los ids deben existir en HomePage.tsx: id="top", id="services",
-  // id="how-it-works", id="faq", id="contact"
+  // 'anchor' = ancla dentro del Home (id debe existir en HomePage.tsx)
+  // 'page' = ruta propia, navega directo con router.push
   const navLinks = [
-    { label: t.nav_home, id: 'top' },
-    { label: t.nav_services, id: 'services' },
-    { label: lang === 'en' ? 'How It Works' : 'Cómo Trabajamos', id: 'how-it-works' },
-    { label: t.nav_faq, id: 'faq' },
-    { label: t.nav_contact, id: 'contact' },
+    { label: t.nav_home, type: 'anchor' as const, id: 'top' },
+    { label: t.nav_services, type: 'page' as const, href: lang === 'es' ? '/es/services' : '/services' },
+    { label: lang === 'en' ? 'How It Works' : 'Cómo Trabajamos', type: 'anchor' as const, id: 'how-it-works' },
+    { label: t.nav_faq, type: 'anchor' as const, id: 'faq' },
+    { label: t.nav_contact, type: 'anchor' as const, id: 'contact' },
   ]
+
+  const isOnHome = pathname === '/' || pathname === '/es'
 
   const goToSection = (id: string) => {
     setMenuOpen(false)
-    if (id === 'top') {
-      smoothScrollTo('top')
+    if (isOnHome) {
+      if (id === 'top') {
+        smoothScrollTo('top')
+      } else {
+        smoothScrollTo(id)
+      }
       return
     }
-    smoothScrollTo(id)
+    // No estamos en el Home: navega ahí y deja el ancla para que el Home haga scroll al montar
+    const homePath = lang === 'es' ? '/es' : '/'
+    router.push(id === 'top' ? homePath : `${homePath}#${id}`)
+  }
+
+  const goToPage = (href: string) => {
+    setMenuOpen(false)
+    router.push(href)
   }
 
   const switchLang = (L: string) => {
@@ -101,8 +113,8 @@ export default function TopBar({ t, lang, isRoot: isRootProp }: TopBarProps) {
           <div className="nav-center" style={{ display: 'flex', alignItems: 'center', gap: 26 }}>
             {navLinks.map((link) => (
               <button
-                key={link.id}
-                onClick={() => goToSection(link.id)}
+                key={link.type === 'page' ? link.href : link.id}
+                onClick={() => (link.type === 'page' ? goToPage(link.href) : goToSection(link.id))}
                 style={{
                   fontFamily: 'var(--body)',
                   fontSize: 18.5,
@@ -222,8 +234,8 @@ export default function TopBar({ t, lang, isRoot: isRootProp }: TopBarProps) {
         >
           {navLinks.map((link) => (
             <button
-              key={link.id}
-              onClick={() => goToSection(link.id)}
+              key={link.type === 'page' ? link.href : link.id}
+              onClick={() => (link.type === 'page' ? goToPage(link.href) : goToSection(link.id))}
               style={{
                 textAlign: 'left',
                 fontFamily: 'var(--body)',

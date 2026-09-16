@@ -51,12 +51,12 @@ function Hero() {
 
         <div className="hero-heading" style={{ gridArea: 'heading' }}>
           <p className="hero-eyebrow" style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 20px' }}>
-            Agencia Bilingüe · SEO · Sitios Web · Automatización
+            Agencia Bilingüe · SEO · Sitios Web · Automatización con IA
           </p>
 
           <h1 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(36px,5.5vw,64px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: 0 }}>
-            Agencia de Marketing para Contratistas Que Te Ayuda a Conseguir{' '}
-            <span style={{ color: 'var(--accent)' }}>Más Clientes Calificados</span>
+            Marketing Digital para Contratistas{' '}
+            <span style={{ color: 'var(--accent)' }}>Que Te Trae Más Clientes Calificados</span>
           </h1>
         </div>
 
@@ -105,9 +105,9 @@ function Hero() {
             </p>
           </div>
 
-          <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+          <div className="hero-contact-row" style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             <a href="https://wa.me/18329082728" target="_blank" rel="noopener noreferrer"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--body)', fontSize: 15, color: 'var(--fg)', textDecoration: 'none' }}>
+              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8, fontFamily: 'var(--body)', fontSize: 15, color: 'var(--fg)', textDecoration: 'none' }}>
               <svg width="17" height="17" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.857L.057 23.882l6.19-1.453A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.027-1.384l-.36-.214-3.733.876.936-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/>
@@ -122,6 +122,11 @@ function Hero() {
         </div>
 
       </div>
+      <style>
+        {[
+          '@media (max-width: 640px) { .hero-contact-row { flex-direction: column !important; align-items: center !important; text-align: center; gap: 16px !important; } }',
+        ].join(' ')}
+      </style>
     </section>
   )
 }
@@ -183,45 +188,58 @@ function Services() {
     {
       n: '01',
       title: 'Tu Sitio Web + SEO Local',
-      desc: 'Un sitio de una página, rápido y limpio — construido y en línea, con SEO local configurado desde el día uno para que la gente que busca tu oficio te encuentre.',
+      desc: 'Un sitio rápido y limpio hecho para convertir visitas en llamadas — con SEO local configurado desde el día uno para que tus clientes te encuentren en Google.',
       includes: [
-        'Sitio de una página, optimizado para celular',
+        'Sitio web rápido, optimizado para celular',
         'Perfil de Google Business configurado y optimizado',
-        'Apareces en búsquedas locales de Google y en el mapa',
-        'Sin costo de instalación — va incluido en tu plan',
+        'Bases de SEO local desde el primer día',
+        'Hecho para convertir visitas en llamadas y clientes',
       ],
     },
     {
       n: '02',
-      title: 'Creciendo Tus Posiciones con el Tiempo',
-      desc: 'Conforme tu negocio crece, agregamos más a tu presencia en línea — nuevas páginas para cada servicio que ofreces y cada ciudad donde trabajas.',
+      title: 'Sube Tus Posiciones con el Tiempo',
+      desc: 'Seguimos ampliando tu presencia en línea con contenido hecho alrededor de los servicios que ofreces y las zonas donde trabajas.',
       includes: [
         'Una página por cada servicio que ofreces',
-        'Una página por cada ciudad o zona que atiendes',
-        'Artículos de blog sobre lo que tus clientes están buscando',
-        'Te mantiene subiendo en Google mientras más tiempo trabajamos juntos',
+        'Páginas de ubicación para cada zona que atiendes',
+        'Contenido basado en lo que tus clientes buscan',
+        'Mejoras de SEO constantes mientras tu negocio crece',
       ],
     },
     {
       n: '03',
       title: 'Anuncios en Google y Facebook',
-      desc: 'Creamos, publicamos y administramos tus anuncios en Google y Facebook — para que la persona correcta te vea justo cuando está buscando tu servicio.',
+      desc: 'Te ponemos frente a los clientes correctos justo cuando te están buscando — y llegamos a otros antes de que empiecen a buscar.',
       includes: [
-        'Configuración y manejo diario de anuncios en Google y Facebook',
-        'Creamos las imágenes y textos de tus anuncios',
-        'Siempre sabes cuánto te costó conseguir cada cliente',
-        'El gasto en anuncios lo cobra Google/Facebook directo, aparte de nuestra tarifa',
+        'Google Ads para búsquedas con intención de compra',
+        'Campañas en Facebook e Instagram para generar demanda',
+        'Páginas de destino y anuncios hechos para convertir',
+        'Sabes cuánto te cuesta cada cliente y de dónde viene',
       ],
     },
     {
       n: '04',
-      title: 'Nunca Pierdas un Trabajo',
-      desc: '¿Se te pasó una llamada mientras estabas en un trabajo? Le respondemos por texto automáticamente, para que no pierdas el cliente por no contestar.',
+      title: 'Consigue Más Reseñas de 5 Estrellas — Automáticamente',
+      desc: 'Damos seguimiento automático después de cada trabajo terminado y facilitamos que tus clientes dejen una reseña en Google — sin que tengas que perseguir a nadie.',
       includes: [
-        'Respuesta automática por texto cuando se te pasa una llamada',
-        'Solicitud automática de reseñas después de un trabajo',
-        'Textos de seguimiento para clientes que aún no han agendado',
-        'Funciona 24/7, aunque estés en un techo o debajo de un fregadero',
+        'Solicitud automática de reseñas después de cada trabajo',
+        'Recordatorios automáticos cuando el cliente no responde',
+        'Enlace directo a tu página de reseñas de Google',
+        'Seguimiento de solicitudes y respuestas',
+        'Construyes una mejor reputación en Google con el tiempo',
+      ],
+    },
+    {
+      n: '05',
+      title: 'Nunca Pierdas un Trabajo',
+      desc: '¿Se te pasó una llamada mientras estabas en un trabajo? Respondemos y damos seguimiento automáticamente para que ese cliente no desaparezca.',
+      includes: [
+        'Texto automático al instante cuando se te pasa una llamada',
+        'Seguimiento automático a cada lead',
+        'Seguimiento para leads que aún no han agendado',
+        'Recordatorios de citas',
+        'Funciona 24/7 mientras tú estás trabajando',
       ],
     },
   ]
@@ -268,128 +286,116 @@ function Services() {
   )
 }
 
-// ─── PRECIOS ──────────────────────────────────────────────────
+// ─── NUESTRO ENFOQUE (reemplaza Precios) ───────────────────────
 
-function Pricing() {
-  const plans = [
-    {
-      name: 'Starter',
-      price: '$997',
-      desc: 'Sitio de una página + SEO local',
-      features: [
-        'Sitio web construido y en línea',
-        'SEO local configurado desde el día uno',
-        'Perfil de Google Business optimizado',
-        'Sin costo de instalación — incluido en el plan',
-      ],
-      featured: false,
-    },
-    {
-      name: 'Growth',
-      price: '$1,497–$1,997',
-      desc: 'Todo lo del Starter, más crecimiento continuo de SEO',
-      features: [
-        'Todo lo del Starter',
-        '2–4 páginas nuevas al mes (servicio, ciudad o blog)',
-        'Texto automático por llamada perdida y seguimiento',
-        'Solicitud automática de reseñas',
-      ],
-      featured: true,
-    },
-    {
-      name: 'Full Growth',
-      price: '$2,500–$3,000',
-      desc: 'Todo lo del Growth, más anuncios pagados',
-      features: [
-        'Todo lo del Growth',
-        'Anuncios en Google y Facebook, creados y administrados',
-        'El gasto en anuncios lo cobra la plataforma aparte',
-        'Rastreo completo — costo por lead, cada mes',
-      ],
-      featured: false,
-    },
-  ]
+function Approach() {
+  const flow = ['Tu Negocio', 'Encontramos el Problema', 'Construimos el Sistema Correcto', 'Tú Creces']
+  const modules = ['Sitio Web y SEO Local', 'SEO Continuo', 'Anuncios Pagados', 'Automatización de Reseñas', 'Automatización de Leads']
 
   return (
     <section style={{ padding: 'clamp(64px,8vw,112px) clamp(20px,5vw,80px)', borderBottom: '1px solid var(--line)' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 56px' }}>
-          <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Cuánto Cuesta</p>
-          <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 16px' }}>
-            Precios claros. Sin sorpresas.
-          </h2>
-          <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
-            Cada plan se puede ajustar a tu negocio — piensa en estos como puntos de partida, no cajas fijas. Te explicamos exactamente qué necesitas en la llamada.
-          </p>
-        </div>
+      <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>
+          Hecho a la Medida de Tu Negocio
+        </p>
+        <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 24px' }}>
+          Nada de paquetes genéricos.<br />Solo lo que tu negocio necesita.
+        </h2>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: '0 auto', maxWidth: 620 }}>
+          Cada contratista es distinto. Algunos necesitan más visibilidad. Otros necesitan más clientes. Otros necesitan una mejor forma de dar seguimiento y convertir clientes en reseñas.
+        </p>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: '16px auto 0', maxWidth: 620 }}>
+          Vemos dónde está tu negocio hoy, identificamos qué está frenando tu crecimiento, y armamos una estrategia con los servicios que van a hacer la mayor diferencia.
+        </p>
+      </div>
 
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
-          {plans.map((plan) => (
-            <div key={plan.name} style={{
-              border: plan.featured ? '2px solid var(--accent)' : '1px solid var(--line)',
-              borderRadius: 16,
-              padding: 'clamp(28px,3.5vw,36px)',
+      {/* Diagrama de flujo */}
+      <div className="approach-flow" style={{
+        maxWidth: 1100,
+        margin: 'clamp(56px,6vw,80px) auto 0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        gap: 12,
+      }}>
+        {flow.map((step, i) => (
+          <div key={step} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{
+              padding: '18px 28px',
+              border: '1px solid var(--line)',
+              borderRadius: 12,
               background: 'var(--bg-card)',
-              boxShadow: plan.featured ? '0 8px 24px rgba(249,115,22,0.15)' : 'var(--shadow-card)',
-              position: 'relative',
-              display: 'flex',
-              flexDirection: 'column',
+              boxShadow: 'var(--shadow-card)',
+              fontFamily: 'var(--display)',
+              fontWeight: 800,
+              fontSize: 'clamp(14px,1.6vw,17px)',
+              color: i === 3 ? 'var(--accent)' : 'var(--fg)',
+              letterSpacing: '-.01em',
+              whiteSpace: 'nowrap',
             }}>
-              {plan.featured && (
-                <div style={{
-                  position: 'absolute', top: -14, left: '50%', transform: 'translateX(-50%)',
-                  background: 'var(--accent)', color: '#ffffff', fontFamily: 'var(--body)', fontWeight: 700,
-                  fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase', padding: '6px 16px', borderRadius: 99,
-                }}>
-                  Más Popular
-                </div>
-              )}
-              <h3 style={{ fontFamily: 'var(--display)', fontWeight: 800, fontSize: 22, color: 'var(--fg)', margin: '8px 0 4px' }}>
-                {plan.name}
-              </h3>
-              <p style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)', margin: '0 0 20px', lineHeight: 1.5, minHeight: 40 }}>
-                {plan.desc}
-              </p>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 24 }}>
-                <span style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(28px,3.5vw,36px)', color: 'var(--fg)', letterSpacing: '-.02em' }}>{plan.price}</span>
-                <span style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)' }}>/mes</span>
-              </div>
-              <ul style={{ listStyle: 'none', margin: '0 0 28px', padding: 0, display: 'flex', flexDirection: 'column', gap: 12, flexGrow: 1 }}>
-                {plan.features.map((f) => (
-                  <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontFamily: 'var(--body)', fontSize: 14, color: 'var(--fg)', lineHeight: 1.5 }}>
-                    <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <button
-                type="button"
-                onClick={() => smoothScrollTo('contact')}
-                style={{
-                  width: '100%',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 8,
-                  background: plan.featured ? 'var(--accent)' : 'transparent',
-                  color: plan.featured ? '#ffffff' : 'var(--accent)',
-                  border: `1.5px solid var(--accent)`,
-                  fontFamily: 'var(--display)',
-                  fontWeight: 700,
-                  fontSize: 15,
-                  padding: '14px 20px',
-                  borderRadius: 8,
-                  cursor: 'pointer',
-                }}
-              >
-                Agenda una Llamada
-              </button>
+              {step}
             </div>
-          ))}
-        </div>
+            {i < flow.length - 1 && (
+              <span aria-hidden="true" style={{ color: 'var(--accent)', fontSize: 20, fontWeight: 700 }}>→</span>
+            )}
+          </div>
+        ))}
+      </div>
 
-        <p style={{ fontFamily: 'var(--body)', fontSize: 14, color: 'var(--muted)', textAlign: 'center', margin: '32px 0 0' }}>
-          ¿Necesitas un sitio completo de varias páginas en vez de una sola? También está disponible — pregúntanos en la llamada.
+      {/* Módulos */}
+      <div style={{
+        maxWidth: 900,
+        margin: 'clamp(40px,5vw,56px) auto 0',
+        display: 'flex',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        gap: 10,
+      }}>
+        {modules.map((m) => (
+          <span key={m} style={{
+            fontFamily: 'var(--body)',
+            fontSize: 14,
+            fontWeight: 600,
+            color: 'var(--muted)',
+            padding: '10px 18px',
+            border: '1px solid var(--line)',
+            borderRadius: 99,
+            background: 'var(--bg-alt)',
+          }}>
+            {m}
+          </span>
+        ))}
+      </div>
+
+      {/* CTA */}
+      <div style={{ textAlign: 'center', margin: 'clamp(56px,6vw,80px) auto 0' }}>
+        <p style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 'clamp(18px,2vw,22px)', color: 'var(--fg)', margin: '0 0 24px' }}>
+          ¿No sabes qué necesitas? Para eso es la llamada de estrategia.
+        </p>
+        <button
+          type="button"
+          onClick={() => smoothScrollTo('contact')}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 10,
+            background: 'var(--accent)',
+            color: '#ffffff',
+            fontFamily: 'var(--display)',
+            fontWeight: 700,
+            fontSize: 16,
+            padding: '16px 28px',
+            borderRadius: 8,
+            border: 'none',
+            cursor: 'pointer',
+          }}
+        >
+          Agenda Tu Llamada de Estrategia
+          <span aria-hidden="true">→</span>
+        </button>
+        <p style={{ fontFamily: 'var(--body)', fontSize: 13, color: 'var(--muted)', margin: '16px 0 0' }}>
+          Sin presión. Sin paquetes prearmados. Solo una recomendación clara basada en tu negocio.
         </p>
       </div>
     </section>
@@ -401,7 +407,7 @@ function Pricing() {
 function Industries() {
   const industries = [
     'HVAC', 'Plomería', 'Electricidad', 'Roofing', 'Remodelación',
-    'Jardinería', 'Pintura', 'Pisos', 'Albercas',
+    'Jardinería', 'Poda de Árboles', 'Pintura', 'Pisos', 'Albercas',
     'Control de Plagas', 'Puertas de Garage', 'Ventanas',
   ]
 
@@ -468,9 +474,9 @@ function Industries() {
 
 function Process() {
   const steps = [
-    { n: '01', title: 'Diagnóstico', desc: 'Llamada gratis de 20 min. Auditamos tu presencia en línea y te mostramos exactamente dónde estás perdiendo leads.' },
-    { n: '02', title: 'Construir', desc: 'Sitio web, automatización y campañas en vivo en 5 días. Sin procesos largos, sin idas y venidas interminables.' },
-    { n: '03', title: 'Crecer', desc: 'Optimización mensual basada en datos reales. Cortamos lo que no funciona y apostamos doble a lo que trae trabajos.' },
+    { n: '01', title: 'Diagnóstico', desc: 'Llamada gratis de 20 minutos. Revisamos tu presencia en línea y te mostramos exactamente dónde estás perdiendo clientes.' },
+    { n: '02', title: 'Construcción', desc: 'Construimos y lanzamos la combinación correcta de sitio web, SEO, campañas y automatización para tu negocio.' },
+    { n: '03', title: 'Crecimiento', desc: 'Medimos resultados, mejoramos lo que no funciona, y optimizamos el sistema todo el tiempo alrededor de lo que te trae más clientes calificados y trabajos cerrados.' },
   ]
 
   return (
@@ -478,7 +484,7 @@ function Process() {
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <p style={{ fontFamily: 'var(--body)', fontSize: 13, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 12px' }}>Cómo Trabajamos</p>
         <h2 style={{ fontFamily: 'var(--display)', fontWeight: 900, fontSize: 'clamp(32px,4.5vw,52px)', lineHeight: 1.05, letterSpacing: '-.025em', color: 'var(--fg)', margin: '0 0 56px', maxWidth: 480 }}>
-          De auditoría gratis a sistema en vivo — rápido.
+          Del diagnóstico a un sistema hecho para crecer.
         </h2>
         <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 0, border: '1px solid var(--line)', borderRadius: 12, overflow: 'hidden' }}>
           {steps.map((s, i) => (
@@ -578,7 +584,7 @@ function FinalCTA() {
             onClick={() => smoothScrollTo('contact')}
             style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#ffffff', color: 'var(--accent)', fontFamily: 'var(--display)', fontWeight: 700, fontSize: 16, padding: '16px 28px', borderRadius: 8, border: 'none', cursor: 'pointer' }}
           >
-            Comenzar Mi Proyecto →
+            Agenda Tu Llamada de Estrategia →
           </button>
           <a href="https://wa.me/18329082728" target="_blank" rel="noopener noreferrer"
             style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: '#ffffff', fontFamily: 'var(--display)', fontWeight: 600, fontSize: 16, padding: '16px 28px', borderRadius: 8, border: '2px solid rgba(255,255,255,0.5)', textDecoration: 'none' }}>
@@ -608,7 +614,7 @@ export default function HomePageEs() {
         <Hero />
         <WhyCECA />
         <Services />
-        <Pricing />
+        <Approach />
         <Industries />
         <Process />
         <Insights />
